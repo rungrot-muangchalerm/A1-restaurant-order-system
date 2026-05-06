@@ -227,10 +227,7 @@
         <div class="col-12 col-lg-8">
           <p class="text-primary fw-semibold mb-2">เมนูครัวบ้านดี</p>
           <h1 class="h2 mb-3">เลือกเมนูที่อยากทานจาก 42 รายการพร้อมขาย</h1>
-          <p class="text-body-secondary mb-0">
-            กดหมวดอาหารด้านล่างเพื่อดูเฉพาะประเภทที่ต้องการ เช่น อาหารจานเดียว กับข้าว เครื่องดื่ม หรือของหวาน
-            แล้วกดดูรายละเอียดเพื่อเลือกจำนวนและตัวเลือกเพิ่มเติม
-          </p>
+          <p class="text-body-secondary mb-0">กดหมวดอาหารด้านล่างเพื่อดูเฉพาะประเภทที่ต้องการ เช่น อาหารจานเดียว กับข้าว เครื่องดื่ม หรือของหวาน แล้วกดดูรายละเอียดเพื่อเลือกจำนวนและตัวเลือกเพิ่มเติม</p>
         </div>
         <div class="col-12 col-lg-4">
           <div class="row g-3 text-center">
@@ -256,6 +253,7 @@
         </div>
       </div>
     </section>
+
     <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
       <form class="d-flex gap-2" action="/customer/menu.html" method="get">
         <input class="form-control" type="search" name="q" placeholder="ค้นหาเมนู เช่น กะเพรา ชาไทย" aria-label="ค้นหาเมนู">
@@ -267,6 +265,7 @@
         <i class="fa-solid fa-cart-shopping me-1"></i>ดูตะกร้า
       </a>
     </div>
+
     <ul class="nav nav-pills gap-2 mb-4" id="menuTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-pane" type="button" role="tab" aria-controls="all-pane" aria-selected="true">
@@ -278,7 +277,6 @@
         <button class="nav-link" id="single-tab" data-bs-toggle="pill" data-bs-target="#single-pane" type="button" role="tab" aria-controls="single-pane" aria-selected="false">
           <i class="fa-solid fa-bowl-rice me-1"></i>อาหารจานเดียว
           <span class="badge text-bg-light text-primary ms-1">6</span>
-          ดูเมนูและสั่งอาหาร
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -318,12 +316,11 @@
         </button>
       </li>
     </ul>
+
     <div class="tab-content" id="menuTabsContent">
       <div class="tab-pane fade show active" id="all-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-border-all me-2 text-primary"></i>รายการทั้งหมด
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-border-all me-2 text-primary"></i>รายการทั้งหมด</h2>
           <span class="badge text-bg-primary">42 เมนู</span>
         </div>
         <div class="row g-4">
@@ -1339,9 +1336,7 @@
       </div>
       <div class="tab-pane fade" id="single-pane" role="tabpanel" aria-labelledby="single-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>อาหารจานเดียว
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-rice me-2 text-primary"></i>อาหารจานเดียว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -1487,9 +1482,7 @@
       </div>
       <div class="tab-pane fade" id="shared-pane" role="tabpanel" aria-labelledby="shared-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-bowl-food me-2 text-primary"></i>กับข้าว
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-food me-2 text-primary"></i>กับข้าว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -1635,9 +1628,7 @@
       </div>
       <div class="tab-pane fade" id="noodle-pane" role="tabpanel" aria-labelledby="noodle-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-plate-wheat me-2 text-primary"></i>เส้นและแกง
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-plate-wheat me-2 text-primary"></i>เส้นและแกง</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -1783,9 +1774,7 @@
       </div>
       <div class="tab-pane fade" id="snack-pane" role="tabpanel" aria-labelledby="snack-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-drumstick-bite me-2 text-primary"></i>ของทานเล่น
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-drumstick-bite me-2 text-primary"></i>ของทานเล่น</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -1931,9 +1920,7 @@
       </div>
       <div class="tab-pane fade" id="drink-pane" role="tabpanel" aria-labelledby="drink-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-mug-saucer me-2 text-primary"></i>เครื่องดื่ม
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-mug-saucer me-2 text-primary"></i>เครื่องดื่ม</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -2079,9 +2066,7 @@
       </div>
       <div class="tab-pane fade" id="dessert-pane" role="tabpanel" aria-labelledby="dessert-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-ice-cream me-2 text-primary"></i>ของหวาน
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-ice-cream me-2 text-primary"></i>ของหวาน</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
@@ -2227,9 +2212,7 @@
       </div>
       <div class="tab-pane fade" id="set-pane" role="tabpanel" aria-labelledby="set-tab" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 mb-0">
-            <i class="fa-solid fa-people-group me-2 text-primary"></i>ชุดเซ็ต
-          </h2>
+          <h2 class="h4 mb-0"><i class="fa-solid fa-people-group me-2 text-primary"></i>ชุดเซ็ต</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
         <div class="row g-4">
