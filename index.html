@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ครัวบ้านดี | อาหารไทยอบอุ่นเหมือนกินที่บ้าน</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold d-flex" href="/">
+        <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>ครัวบ้านดี
+        <!-- <span class="d-block d-sm-none">XS</span>
+        <span class="d-none d-sm-block d-md-none">SM</span>
+        <span class="d-none d-md-block d-lg-none">MD</span>
+        <span class="d-none d-lg-block d-xl-none">LG</span>
+        <span class="d-none d-xl-block d-xxl-none">XL</span>
+        <span class="d-none d-xxl-block">XXL</span> -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="เปิดเมนู">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">
+              <i class="fa-solid fa-house me-1"></i>หน้าแรก
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>เมนู
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/cart.html">
+              <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/order-status.html">
+              <i class="fa-solid fa-receipt me-1"></i>ติดตาม
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/history.html">
+              <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#promotions">
+              <i class="fa-solid fa-tags me-1"></i>โปรโมชัน
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">
+              <i class="fa-solid fa-location-dot me-1"></i>ติดต่อ
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-table-list me-1"></i>POS
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/pos/dashboard.html">
+                  <i class="fa-solid fa-chart-line me-2"></i>แดชบอร์ดพนักงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>สถานะโต๊ะ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order.html">
+                  <i class="fa-solid fa-plus me-2"></i>เปิดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-items.html">
+                  <i class="fa-solid fa-list-check me-2"></i>เพิ่มรายการอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-detail.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>รายละเอียดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/ready-to-serve.html">
+                  <i class="fa-solid fa-bell-concierge me-2"></i>รายการพร้อมเสิร์ฟ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-kitchen-set me-1"></i>ครัว</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/kitchen/queue.html">
+                  <i class="fa-solid fa-hourglass-start me-2"></i>คิวครัว
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/preparing.html">
+                  <i class="fa-solid fa-fire-burner me-2"></i>กำลังปรุง
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/ready.html">
+                  <i class="fa-solid fa-bell me-2"></i>พร้อมเสิร์ฟ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/history.html">
+                  <i class="fa-solid fa-clock-rotate-left me-2"></i>ประวัติครัว
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cash-register me-1"></i>แคชเชียร์
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/cashier/search.html">
+                  <i class="fa-solid fa-magnifying-glass me-2"></i>ค้นหาออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/payment.html">
+                  <i class="fa-solid fa-credit-card me-2"></i>ชำระเงิน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/bill-summary.html">
+                  <i class="fa-solid fa-file-invoice-dollar me-2"></i>สรุปบิล
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/receipt.html">
+                  <i class="fa-solid fa-receipt me-2"></i>ใบเสร็จ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-shield me-1"></i>Admin
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/admin/dashboard.html">
+                  <i class="fa-solid fa-chart-pie me-2"></i>แดชบอร์ด Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/users.html">
+                  <i class="fa-solid fa-users-gear me-2"></i>ผู้ใช้และบทบาท
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/restaurant-settings.html">
+                  <i class="fa-solid fa-store me-2"></i>ข้อมูลร้าน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/categories.html">
+                  <i class="fa-solid fa-layer-group me-2"></i>หมวดหมู่เมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu.html">
+                  <i class="fa-solid fa-bowl-food me-2"></i>เมนูอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu-options.html">
+                  <i class="fa-solid fa-sliders me-2"></i>ตัวเลือกเมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/zones-tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>โต๊ะและโซน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/promotions.html">
+                  <i class="fa-solid fa-tags me-2"></i>โปรโมชั่น
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/orders.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>ค้นหาออเดอร์ Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/reports.html">
+                  <i class="fa-solid fa-chart-column me-2"></i>รายงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/audit-logs.html">
+                  <i class="fa-solid fa-shield-halved me-2"></i>ประวัติการใช้งาน
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-primary" href="/auth/login.html">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>Login
+          </a>
+          <a class="btn btn-outline-primary" href="/auth/register.html">
+            <i class="fa-solid fa-user-plus me-1"></i>Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="bg-white border-bottom">
+      <div class="container py-5">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge rounded-pill text-bg-primary">
+                <i class="fa-solid fa-store me-1"></i>ครัวไทยร่วมสมัย
+              </span>
+              <span class="badge rounded-pill text-bg-success">
+                <i class="fa-solid fa-circle-check me-1"></i>เปิดวันนี้ 10:00 - 22:00
+              </span>
+              <span class="badge rounded-pill text-bg-warning">
+                <i class="fa-solid fa-star me-1"></i>4.8 จากลูกค้า
+              </span>
+            </div>
+            <h1 class="display-5 fw-semibold mb-3">ครัวบ้านดี อาหารไทยอบอุ่นที่สั่งได้ทั้งหน้าร้านและออนไลน์</h1>
+            <p class="lead text-body-secondary mb-4">ร้านอาหารไทยสำหรับครอบครัว เพื่อนร่วมงาน และลูกค้าที่อยากกินมื้อดี ๆ แบบไม่ต้องรอนาน สแกน QR ที่โต๊ะ เลือกเมนู แจ้งหมายเหตุถึงครัว และติดตามอาหารได้ตั้งแต่เริ่มปรุงจนพร้อมเสิร์ฟ</p>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <a class="btn btn-primary btn-lg" href="/customer/menu.html">
+                <i class="fa-solid fa-utensils me-2"></i>ดูเมนูและสั่งอาหาร
+              </a>
+              <a class="btn btn-outline-primary btn-lg" href="/customer/order-status.html">
+                <i class="fa-solid fa-receipt me-2"></i>ติดตามออเดอร์
+              </a>
+            </div>
+            <div class="row g-3">
+              <div class="col-6 col-md-4">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="h4 mb-0">18</div>
+                  <div class="small text-body-secondary">นาทีเฉลี่ยต่อออเดอร์</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="h4 mb-0">42</div>
+                  <div class="small text-body-secondary">เมนูพร้อมขาย</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="h4 mb-0">3</div>
+                  <div class="small text-body-secondary">ทานที่ร้าน กลับบ้าน เดลิเวอรี</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="ratio ratio-4x3 mb-3">
+              <img class="w-100 h-100 object-fit-cover rounded shadow-sm" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="โต๊ะอาหารในร้านครัวบ้านดีพร้อมอาหารไทยหลายจาน">
+            </div>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="bg-light border rounded p-3 h-100">
+                  <div class="fw-semibold">
+                    <i class="fa-solid fa-qrcode me-2 text-primary"></i>สแกนที่โต๊ะ
+                  </div>
+                  <div class="small text-body-secondary">เริ่มออเดอร์ได้ทันที</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-light border rounded p-3 h-100">
+                  <div class="fw-semibold">
+                    <i class="fa-solid fa-user-tag me-2 text-primary"></i>มื้อไหนก็สั่งง่าย
+                  </div>
+                  <div class="small text-body-secondary">นั่งกินหรือสั่งกลับบ้านได้</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-5">
+          <div class="ratio ratio-4x3">
+            <img class="w-100 h-100 object-fit-cover rounded shadow-sm" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1000&q=80" alt="เชฟกำลังปรุงอาหารในครัว">
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <p class="text-primary fw-semibold mb-2">เรื่องของครัวบ้านดี</p>
+          <h2 class="h2 mb-3">รสชาติบ้าน ๆ ในบรรยากาศอบอุ่นของร้านไทยร่วมสมัย</h2>
+          <p class="text-body-secondary">ครัวบ้านดีเริ่มจากอาหารไทยจานคุ้นเคยที่อยากให้ลูกค้ากินได้ทุกวัน เราตั้งใจให้เห็นเมนูจริง ราคาอ่านง่าย โปรโมชันชัด และรู้ว่าอาหารของตัวเองกำลังอยู่ขั้นตอนไหนโดยไม่ต้องรอนาน</p>
+          <div class="row g-3 mt-2">
+            <div class="col-12 col-md-4">
+              <div class="border rounded bg-white p-3 h-100">
+                <i class="fa-solid fa-leaf text-success mb-3"></i>
+                <h3 class="h6">วัตถุดิบสด</h3>
+                <p class="small text-body-secondary mb-0">เตรียมใหม่ทุกวัน คุมคุณภาพจากครัวถึงโต๊ะ</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="border rounded bg-white p-3 h-100">
+                <i class="fa-solid fa-bowl-food text-primary mb-3"></i>
+                <h3 class="h6">เมนูไทยครบมื้อ</h3>
+                <p class="small text-body-secondary mb-0">อาหารจานเดียว กับข้าว ของทานเล่น และเครื่องดื่ม</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="border rounded bg-white p-3 h-100">
+                <i class="fa-solid fa-bell-concierge text-warning mb-3"></i>
+                <h3 class="h6">บริการเร็ว</h3>
+                <p class="small text-body-secondary mb-0">ครัวเตรียมอาหารตามลำดับ พนักงานเสิร์ฟได้ไว</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-top border-bottom">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="d-flex gap-3 h-100">
+              <div class="fs-3 text-primary">
+                <i class="fa-solid fa-chair"></i>
+              </div>
+              <div>
+                <h2 class="h5">ทานที่ร้าน</h2>
+                <p class="text-body-secondary mb-0">เลือกโต๊ะ สแกน QR แล้วเพิ่มเมนูเข้าตะกร้าได้เอง</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="d-flex gap-3 h-100">
+              <div class="fs-3 text-primary">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <div>
+                <h2 class="h5">กลับบ้าน</h2>
+                <p class="text-body-secondary mb-0">สั่งล่วงหน้า เลือกเวลารับอาหาร แล้วมารับที่ร้าน</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="d-flex gap-3 h-100">
+              <div class="fs-3 text-primary">
+                <i class="fa-solid fa-motorcycle"></i>
+              </div>
+              <div>
+                <h2 class="h5">เดลิเวอรี</h2>
+                <p class="text-body-secondary mb-0">บันทึกที่อยู่และเบอร์ติดต่อเพื่อจัดส่งตามพื้นที่บริการ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="d-flex gap-3 h-100">
+              <div class="fs-3 text-primary">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div>
+                <h2 class="h5">ลูกค้าประจำ</h2>
+                <p class="text-body-secondary mb-0">กลับมาสั่งเมนูโปรดและดูประวัติคำสั่งซื้อได้ง่าย</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+        <div>
+          <p class="text-primary fw-semibold mb-2">เมนูซิกเนเจอร์</p>
+          <h2 class="h3 mb-1">เมนูแนะนำวันนี้</h2>
+          <p class="text-body-secondary mb-0">เลือกเมนูได้จากหมวดอาหารจานเดียว กับข้าว เครื่องดื่ม และของหวาน</p>
+        </div>
+        <a class="btn btn-outline-primary align-self-start" href="/customer/menu.html">
+          <i class="fa-solid fa-list me-1"></i>ดูเมนูทั้งหมด
+        </a>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-4x3">
+              <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=900" alt="ข้าวกะเพราไก่ไข่ดาว">
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-success mb-3">ขายดี</span>
+              <h3 class="h5">ข้าวกะเพราไก่ไข่ดาว</h3>
+              <p class="text-body-secondary">ผัดไฟแรง กลิ่นกะเพราชัด เลือกระดับความเผ็ดได้</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>85 บาท</strong>
+                <a class="btn btn-sm btn-primary" href="/customer/menu.html">
+                  <i class="fa-solid fa-plus me-1"></i>สั่ง
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-4x3">
+              <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1628430043175-0e8820df47c3?auto=format&fit=crop&fm=jpg&q=70&w=900" alt="ต้มยำกุ้งน้ำข้น">
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-primary mb-3">แนะนำ</span>
+              <h3 class="h5">ต้มยำกุ้งน้ำข้น</h3>
+              <p class="text-body-secondary">หม้อไฟรสจัดจ้านสำหรับแบ่งกัน 2-3 คน</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>180 บาท</strong>
+                <a class="btn btn-sm btn-primary" href="/customer/menu.html">
+                  <i class="fa-solid fa-plus me-1"></i>สั่ง
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-4x3">
+              <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?auto=format&fit=crop&w=900&q=80" alt="ผัดไทยกุ้งสด">
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-danger mb-3">ครัวบ้านดี</span>
+              <h3 class="h5">ผัดไทยกุ้งสด</h3>
+              <p class="text-body-secondary">เส้นเหนียวนุ่ม ซอสหวานเค็มเปรี้ยว กุ้งตัวโต</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>120 บาท</strong>
+                <a class="btn btn-sm btn-primary" href="/customer/menu.html">
+                  <i class="fa-solid fa-plus me-1"></i>สั่ง
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-4x3">
+              <img class="w-100 h-100 object-fit-cover rounded-top" src="https://cdn.pixabay.com/photo/2022/02/06/07/00/thai-tea-6996378_640.jpg" alt="ชาไทยเย็น">
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-warning mb-3">เย็นชื่นใจ</span>
+              <h3 class="h5">ชาไทยเย็น</h3>
+              <p class="text-body-secondary">เลือกความหวาน แยกน้ำแข็ง หรือเพิ่มท็อปปิงได้</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>45 บาท</strong>
+                <a class="btn btn-sm btn-primary" href="/customer/menu.html">
+                  <i class="fa-solid fa-plus me-1"></i>สั่ง
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promotions" class="bg-white border-top border-bottom">
+      <div class="container py-5">
+        <div class="row g-4 align-items-end mb-4">
+          <div class="col-12 col-lg-7">
+            <p class="text-primary fw-semibold mb-2">สิทธิ์พิเศษ</p>
+            <h2 class="h3 mb-2">โปรโมชันสำหรับลูกค้า</h2>
+            <p class="text-body-secondary mb-0">ส่วนลดและสิทธิ์พิเศษสำหรับลูกค้าที่อยากอิ่มคุ้มขึ้นในแต่ละมื้อ เลือกเมนูที่ชอบแล้วตรวจสอบโปรโมชันได้ตอนยืนยันออเดอร์</p>
+          </div>
+          <div class="col-12 col-lg-5 text-lg-end">
+            <a class="btn btn-outline-primary" href="/customer/cart.html">
+              <i class="fa-solid fa-ticket me-1"></i>ดูส่วนลดในตะกร้า
+            </a>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="ratio ratio-4x3">
+                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.pexels.com/photos/6280393/pexels-photo-6280393.jpeg?cs=srgb&fm=jpg&w=900" alt="ป้ายโปรโมชันหน้าร้าน">
+              </div>
+              <div class="card-body">
+                <span class="badge text-bg-primary mb-3">มื้อครอบครัว</span>
+                <h3 class="h5">ลด 10% เมื่อครบ 500 บาท</h3>
+                <p class="text-body-secondary mb-0">ใช้ได้ทั้งทานที่ร้านและกลับบ้าน เงื่อนไขแสดงตอนยืนยันออเดอร์</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="ratio ratio-4x3">
+                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="เครื่องดื่มเย็นบนโต๊ะ">
+              </div>
+              <div class="card-body">
+                <span class="badge text-bg-warning mb-3">ทุกวันศุกร์</span>
+                <h3 class="h5">เครื่องดื่มลด 20 บาท</h3>
+                <p class="text-body-secondary mb-0">สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="ratio ratio-4x3">
+                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80" alt="อาหารสำหรับชุดอิ่มคุ้ม">
+              </div>
+              <div class="card-body">
+                <span class="badge text-bg-success mb-3">ชุดอิ่มคุ้ม</span>
+                <h3 class="h5">เพิ่มของทานเล่น 49 บาท</h3>
+                <p class="text-body-secondary mb-0">เมื่อสั่งเมนูหลัก 2 รายการขึ้นไป เหมาะกับโต๊ะเล็กและออฟฟิศ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="text-primary fw-semibold mb-2">บรรยากาศร้าน</p>
+          <h2 class="h3 mb-3">อบอุ่นสำหรับครอบครัว นั่งสบายสำหรับทุกมื้อ</h2>
+          <p class="text-body-secondary">ครัวบ้านดีตั้งใจให้ทุกมื้อรู้สึกเป็นกันเอง ตั้งแต่รูปเมนูที่เลือกง่าย โต๊ะนั่งสบาย ไปจนถึงอาหารที่ออกจากครัวตามลำดับและเสิร์ฟถึงโต๊ะอย่างพอดีจังหวะ</p>
+          <a class="btn btn-primary" href="/customer/menu.html">
+            <i class="fa-solid fa-bowl-rice me-1"></i>เริ่มเลือกเมนู
+          </a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="row g-3">
+            <div class="col-12 col-md-7">
+              <div class="ratio ratio-4x3">
+                <img class="w-100 h-100 object-fit-cover rounded shadow-sm" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="บรรยากาศโต๊ะอาหารในร้าน">
+              </div>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="ratio ratio-4x3 mb-3">
+                <img class="w-100 h-100 object-fit-cover rounded shadow-sm" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" alt="มุมที่นั่งภายในร้านอาหาร">
+              </div>
+              <div class="ratio ratio-4x3">
+                <img class="w-100 h-100 object-fit-cover rounded shadow-sm" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="พนักงานกำลังเสิร์ฟอาหารให้ลูกค้า">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-top border-bottom">
+      <div class="container py-5">
+        <div class="text-center mb-4">
+          <p class="text-primary fw-semibold mb-2">วิธีสั่งอาหาร</p>
+          <h2 class="h3 mb-2">จากเลือกเมนูถึงปิดบิลใน 4 ขั้นตอน</h2>
+          <p class="text-body-secondary mb-0">ลูกค้าเลือกและยืนยันออเดอร์เองได้ หรือให้พนักงานหน้าร้านช่วยรับออเดอร์ให้ก็สะดวกเหมือนกัน</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="border rounded bg-light p-4 h-100">
+              <div class="fs-3 text-primary mb-3">
+                <i class="fa-solid fa-qrcode"></i>
+              </div>
+              <h3 class="h5">1. สแกนหรือเลือกประเภท</h3>
+              <p class="text-body-secondary mb-0">เลือกทานที่ร้าน กลับบ้าน หรือเดลิเวอรี พร้อมโต๊ะหรือข้อมูลรับอาหาร</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="border rounded bg-light p-4 h-100">
+              <div class="fs-3 text-primary mb-3">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <h3 class="h5">2. เพิ่มเมนูลงตะกร้า</h3>
+              <p class="text-body-secondary mb-0">เลือกจำนวน ตัวเลือกเพิ่มเติม และหมายเหตุถึงครัวก่อนยืนยันออเดอร์</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="border rounded bg-light p-4 h-100">
+              <div class="fs-3 text-primary mb-3">
+                <i class="fa-solid fa-fire-burner"></i>
+              </div>
+              <h3 class="h5">3. ครัวรับคิว</h3>
+              <p class="text-body-secondary mb-0">รายการที่ต้องปรุงเข้าสู่หน้าครัวและอัปเดตสถานะจนพร้อมเสิร์ฟ</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="border rounded bg-light p-4 h-100">
+              <div class="fs-3 text-primary mb-3">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <h3 class="h5">4. ชำระและรับใบเสร็จ</h3>
+              <p class="text-body-secondary mb-0">ตรวจยอด ชำระเงิน และรับใบเสร็จหลังจบมื้ออาหาร</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+        <div>
+          <p class="text-primary fw-semibold mb-2">เสียงจากลูกค้า</p>
+          <h2 class="h3 mb-0">ลูกค้าชอบเพราะสั่งง่ายและเห็นสถานะชัด</h2>
+        </div>
+        <div class="align-self-lg-end">
+          <span class="badge text-bg-warning">
+            <i class="fa-solid fa-star me-1"></i>
+            คะแนนเฉลี่ย 4.8/5
+          </span>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-body-secondary">"สแกนโต๊ะแล้วสั่งเองได้เลย เห็นว่าอาหารกำลังปรุงหรือพร้อมเสิร์ฟแล้ว ไม่ต้องเรียกพนักงานบ่อย"</p>
+              <div class="fw-semibold">คุณเมย์</div>
+              <div class="small text-body-secondary">ลูกค้าทานที่ร้าน</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p class="text-body-secondary">"เมนูมีรูป ราคา และรายละเอียดชัดดี สั่งกลับบ้านแล้วรู้เวลารับอาหารโดยประมาณ"</p>
+              <div class="fw-semibold">คุณนนท์</div>
+              <div class="small text-body-secondary">ลูกค้ากลับบ้าน</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-body-secondary">"แวะหลังเลิกงานแล้วสั่งเมนูเดิมได้ไว ไม่ต้องจำชื่อเมนูยาว ๆ อาหารออกเร็วเหมือนเดิม"</p>
+              <div class="fw-semibold">คุณต้น</div>
+              <div class="small text-body-secondary">ลูกค้าประจำ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-white border-top">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-12 col-lg-5">
+            <p class="text-primary fw-semibold mb-2">ติดต่อร้าน</p>
+            <h2 class="h3 mb-3">มาที่ร้าน โทรสั่ง หรือเริ่มจากเมนูออนไลน์ได้เลย</h2>
+            <p class="text-body-secondary">ครัวบ้านดีเปิดให้บริการทุกวัน พร้อมรองรับลูกค้าที่นั่งทานในร้าน สั่งกลับบ้าน และออเดอร์เดลิเวอรีตามพื้นที่บริการ</p>
+            <div class="list-group mb-4">
+              <div class="list-group-item">
+                <i class="fa-solid fa-location-dot me-2 text-primary"></i>
+                99 ถนนสุขุมวิท กรุงเทพฯ
+              </div>
+              <div class="list-group-item">
+                <i class="fa-solid fa-phone me-2 text-primary"></i>
+                02-555-0101
+              </div>
+              <div class="list-group-item">
+                <i class="fa-solid fa-envelope me-2 text-primary"></i>
+                hello@kruabaan-dee.example
+              </div>
+              <div class="list-group-item">
+                <i class="fa-solid fa-clock me-2 text-primary"></i>
+                เปิดทุกวัน 10:00 - 22:00 น.
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-primary" href="/customer/menu.html">
+                <i class="fa-solid fa-utensils me-1"></i>สั่งอาหาร
+              </a>
+              <a class="btn btn-outline-primary" href="/auth/login.html">
+                <i class="fa-solid fa-right-to-bracket me-1"></i>เข้าสู่บัญชี
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="border rounded bg-light p-4 h-100">
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <div class="bg-white border rounded p-4 h-100">
+                    <h3 class="h5"><i class="fa-solid fa-map-location-dot me-2 text-primary"></i> แผนที่ร้าน
+                    </h3>
+                    <p class="text-body-secondary mb-0">อยู่ใกล้ BTS พร้อมที่จอดรถหลังร้าน เหมาะกับมื้อกลางวันและมื้อเย็น</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="bg-white border rounded p-4 h-100">
+                    <h3 class="h5">
+                      <i class="fa-solid fa-calendar-check me-2 text-primary"></i>ช่วงเวลายอดนิยม
+                    </h3>
+                    <p class="text-body-secondary mb-0">11:30 - 13:30 และ 18:00 - 20:00 แนะนำสั่งล่วงหน้าหากต้องการกลับบ้าน</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="ratio ratio-21x9">
+                    <img class="w-100 h-100 object-fit-cover rounded" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" alt="หน้าร้านอาหารในบรรยากาศอบอุ่น">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="bg-primary text-white rounded p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h3 mb-2">หิวแล้วใช่ไหม เลือกเมนูของครัวบ้านดีได้เลย</h2>
+            <p class="mb-0 text-white-50">แวะมาทานที่ร้าน สั่งกลับบ้าน หรือเลือกเดลิเวอรีจากเมนูออนไลน์ของครัวบ้านดีได้ทุกวัน</p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <a class="btn btn-light btn-lg" href="/customer/menu.html">
+              <i class="fa-solid fa-cart-plus me-2"></i>เริ่มสั่งอาหาร
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h2 class="h5 mb-3">
+            <i class="fa-solid fa-bowl-rice me-2 text-warning"></i>ครัวบ้านดี
+          </h2>
+          <p class="text-white-50 mb-3">ครัวบ้านดีเสิร์ฟอาหารไทยจานคุ้นเคยในบรรยากาศอบอุ่น เหมาะกับมื้อกลางวัน มื้อเย็น และวันที่อยากสั่งอาหารกลับไปกินที่บ้าน</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Line">
+              <i class="fa-brands fa-line"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ลูกค้า</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">เมนูอาหาร</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ตะกร้า</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
+            </li>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/customer/history.html">ประวัติคำสั่งซื้อ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">บริการ</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">สั่งที่โต๊ะ</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ดูตะกร้า</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
+            </li>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/#promotions">โปรโมชัน</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ติดต่อและเวลาเปิด</h3>
+          <ul class="list-unstyled text-white-50 mb-4">
+            <li class="mb-2">
+              <i class="fa-solid fa-location-dot me-2 text-warning"></i>99 ถนนสุขุมวิท กรุงเทพฯ
+            </li>
+            <li class="mb-2">
+              <i class="fa-solid fa-phone me-2 text-warning"></i>02-555-0101
+            </li>
+            <li class="mb-2">
+              <i class="fa-solid fa-envelope me-2 text-warning"></i>hello@kruabaan-dee.example
+            </li>
+            <li>
+              <i class="fa-solid fa-clock me-2 text-warning"></i>เปิดทุกวัน 10:00 - 22:00 น.
+            </li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-warning btn-sm" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>สั่งอาหาร
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="/auth/login.html">
+              <i class="fa-solid fa-right-to-bracket me-1"></i>เข้าสู่บัญชี
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-white-50 small">
+        <div>© 2026 ครัวบ้านดี</div>
+        <div>อาหารไทย · ทานที่ร้าน · กลับบ้าน · เดลิเวอรี</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายละเอียดเมนู | ครัวบ้านดี</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="/">
+        <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>ครัวบ้านดี
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="เปิดเมนู"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="fa-solid fa-house me-1"></i>หน้าแรก
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>เมนู
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/cart.html">
+              <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/order-status.html">
+              <i class="fa-solid fa-receipt me-1"></i>ติดตาม
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/history.html">
+              <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#promotions">
+              <i class="fa-solid fa-tags me-1"></i>โปรโมชัน
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">
+              <i class="fa-solid fa-location-dot me-1"></i>ติดต่อ
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-table-list me-1"></i>POS
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/pos/dashboard.html">
+                  <i class="fa-solid fa-chart-line me-2"></i>แดชบอร์ดพนักงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>สถานะโต๊ะ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order.html">
+                  <i class="fa-solid fa-plus me-2"></i>เปิดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-items.html">
+                  <i class="fa-solid fa-list-check me-2"></i>เพิ่มรายการอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-detail.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>รายละเอียดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/ready-to-serve.html">
+                  <i class="fa-solid fa-bell-concierge me-2"></i>รายการพร้อมเสิร์ฟ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-kitchen-set me-1"></i>ครัว
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/kitchen/queue.html">
+                  <i class="fa-solid fa-hourglass-start me-2"></i>คิวครัว
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/preparing.html">
+                  <i class="fa-solid fa-fire-burner me-2"></i>กำลังปรุง
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/ready.html">
+                  <i class="fa-solid fa-bell me-2"></i>พร้อมเสิร์ฟ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/history.html">
+                  <i class="fa-solid fa-clock-rotate-left me-2"></i>ประวัติครัว
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cash-register me-1"></i>แคชเชียร์
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/cashier/search.html">
+                  <i class="fa-solid fa-magnifying-glass me-2"></i>ค้นหาออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/payment.html">
+                  <i class="fa-solid fa-credit-card me-2"></i>ชำระเงิน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/bill-summary.html">
+                  <i class="fa-solid fa-file-invoice-dollar me-2"></i>สรุปบิล
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/receipt.html">
+                  <i class="fa-solid fa-receipt me-2"></i>ใบเสร็จ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-shield me-1"></i>Admin
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/admin/dashboard.html">
+                  <i class="fa-solid fa-chart-pie me-2"></i>แดชบอร์ด Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/users.html">
+                  <i class="fa-solid fa-users-gear me-2"></i>ผู้ใช้และบทบาท
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/restaurant-settings.html">
+                  <i class="fa-solid fa-store me-2"></i>ข้อมูลร้าน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/categories.html">
+                  <i class="fa-solid fa-layer-group me-2"></i>หมวดหมู่เมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu.html">
+                  <i class="fa-solid fa-bowl-food me-2"></i>เมนูอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu-options.html">
+                  <i class="fa-solid fa-sliders me-2"></i>ตัวเลือกเมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/zones-tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>โต๊ะและโซน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/promotions.html">
+                  <i class="fa-solid fa-tags me-2"></i>โปรโมชั่น
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/orders.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>ค้นหาออเดอร์ Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/reports.html">
+                  <i class="fa-solid fa-chart-column me-2"></i>รายงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/audit-logs.html">
+                  <i class="fa-solid fa-shield-halved me-2"></i>ประวัติการใช้งาน
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-primary" href="/auth/login.html">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>Login
+          </a>
+          <a class="btn btn-outline-primary" href="/auth/register.html">
+            <i class="fa-solid fa-user-plus me-1"></i>Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="mb-4">
+      <a class="btn btn-outline-primary" href="/customer/menu.html">
+        <i class="fa-solid fa-arrow-left me-1"></i>กลับไปหน้าเมนู
+      </a>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-lg-7">
+        <div class="card shadow-sm overflow-hidden">
+          <div class="ratio ratio-4x3">
+            <img
+              class="w-100 h-100 object-fit-cover"
+              src="https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=1200"
+              alt="ข้าวกะเพราไก่ไข่ดาว">
+          </div>
+          <div class="card-body p-4">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge text-bg-success">พร้อมขาย</span>
+              <span class="badge text-bg-light text-secondary border"> <i class="fa-solid fa-bowl-rice me-1"></i>อาหารจานเดียว</span>
+              <span class="badge text-bg-warning"> <i class="fa-solid fa-star me-1"></i>ขายดี</span>
+            </div>
+            <h1 class="h2 mb-3">ข้าวกะเพราไก่ไข่ดาว</h1>
+            <p class="text-body-secondary">ข้าวหอมมะลิร้อน ๆ ราดผัดกะเพราไก่สับหอมใบกะเพรา ผัดไฟแรงให้กลิ่นกระทะชัด เสิร์ฟพร้อมไข่ดาวกรอบนอกนุ่มใน และพริกน้ำปลาสูตรครัวบ้านดี</p>
+            <div class="row g-3 my-3">
+              <div class="col-6 col-md-3">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="fw-semibold">85 บาท</div>
+                  <div class="small text-body-secondary">ราคาเริ่มต้น</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="fw-semibold">10-15 นาที</div>
+                  <div class="small text-body-secondary">เวลาปรุง</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="fw-semibold">เผ็ดได้</div>
+                  <div class="small text-body-secondary">ปรับรสชาติ</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="border rounded bg-light p-3 h-100">
+                  <div class="fw-semibold">1 ที่</div>
+                  <div class="small text-body-secondary">อิ่มพอดี</div>
+                </div>
+              </div>
+            </div>
+            <h2 class="h5 mt-4">รายละเอียดเมนู</h2>
+            <dl class="row mb-0">
+              <dt class="col-sm-4">ส่วนประกอบหลัก</dt>
+              <dd class="col-sm-8">ไก่สับ ใบกะเพรา พริกสด กระเทียม ไข่ดาว และข้าวหอมมะลิ</dd>
+              <dt class="col-sm-4">เหมาะสำหรับ</dt>
+              <dd class="col-sm-8">มื้อกลางวัน มื้อเย็น หรือสั่งกลับบ้านแบบรวดเร็ว</dd>
+              <dt class="col-sm-4">หมายเหตุ</dt>
+              <dd class="col-sm-8">แจ้งไม่ใส่พริก เพิ่มไข่ดาว หรือเพิ่มข้าวได้ก่อนเพิ่มลงตะกร้า</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-header bg-white">
+            <h2 class="h5 mb-0">ตัวเลือกและจำนวน</h2>
+          </div>
+          <div class="card-body">
+            <form action="/customer/cart.html" method="get">
+              <div class="mb-3">
+                <label class="form-label" for="spicy">ระดับความเผ็ด</label>
+                <select class="form-select" id="spicy" name="spicy">
+                  <option>ไม่เผ็ด</option>
+                  <option>เผ็ดน้อย</option>
+                  <option selected>เผ็ดกลาง</option>
+                  <option>เผ็ดมาก</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="size">ขนาด</label>
+                <select class="form-select" id="size" name="size">
+                  <option>ปกติ 85 บาท</option>
+                  <option>พิเศษ +15 บาท</option>
+                </select>
+              </div>
+              <fieldset class="mb-3">
+                <legend class="form-label fs-6">ท็อปปิง</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="egg" name="topping" checked>
+                  <label class="form-check-label" for="egg">ไข่ดาว +10 บาท</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rice" name="topping">
+                  <label class="form-check-label" for="rice">เพิ่มข้าว +10 บาท</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="crispy-egg" name="topping">
+                  <label class="form-check-label" for="crispy-egg">ไข่เจียวกรอบ +15 บาท</label>
+                </div>
+              </fieldset>
+              <div class="mb-3">
+                <label class="form-label" for="qty">จำนวน</label>
+                <input class="form-control" type="number" id="qty" name="qty" min="1" value="1">
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="note">หมายเหตุถึงครัว</label>
+                <textarea class="form-control" id="note" name="note" rows="3" placeholder="เช่น ไม่ใส่ถั่วฝักยาว ขอไข่ดาวสุก"></textarea>
+              </div>
+              <div class="border rounded bg-light p-3 mb-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>ราคาเริ่มต้น</span>
+                  <span>85 บาท</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>ไข่ดาว</span>
+                  <span>+10 บาท</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>ยอดรายการ</span>
+                  <strong class="fs-5">95 บาท</strong>
+                </div>
+              </div>
+              <button class="btn btn-primary w-100" type="submit"><i class="fa-solid fa-cart-plus me-1"></i>เพิ่มลงตะกร้า</button>
+            </form>
+          </div>
+        </div>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h2 class="h5"><i class="fa-solid fa-circle-info me-2 text-primary"></i>ก่อนสั่ง</h2>
+            <p class="text-body-secondary mb-0">หากมีอาการแพ้อาหาร กรุณาระบุในช่องหมายเหตุ หรือแจ้งพนักงานหน้าร้านก่อนยืนยันออเดอร์</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h2 class="h5 mb-3"><i class="fa-solid fa-bowl-rice me-2 text-warning"></i>ครัวบ้านดี</h2>
+          <p class="text-white-50 mb-3">ครัวบ้านดีเสิร์ฟอาหารไทยจานคุ้นเคยในบรรยากาศอบอุ่น เหมาะกับมื้อกลางวัน มื้อเย็น และวันที่อยากสั่งอาหารกลับไปกินที่บ้าน</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Line">
+              <i class="fa-brands fa-line"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ลูกค้า</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">เมนูอาหาร</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ตะกร้า</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
+            </li>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/customer/history.html">ประวัติคำสั่งซื้อ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">บริการ</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">สั่งที่โต๊ะ</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ดูตะกร้า</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
+            </li>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/#promotions">โปรโมชัน</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ติดต่อและเวลาเปิด</h3>
+          <ul class="list-unstyled text-white-50 mb-4">
+            <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-warning"></i>99 ถนนสุขุมวิท กรุงเทพฯ</li>
+            <li class="mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i>02-555-0101</li>
+            <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-warning"></i>hello@kruabaan-dee.example</li>
+            <li><i class="fa-solid fa-clock me-2 text-warning"></i>เปิดทุกวัน 10:00 - 22:00 น.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-warning btn-sm" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>สั่งอาหาร
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="/auth/login.html">
+              <i class="fa-solid fa-right-to-bracket me-1"></i>เข้าสู่บัญชี
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-white-50 small">
+        <div>© 2026 ครัวบ้านดี</div>
+        <div>อาหารไทย · ทานที่ร้าน · กลับบ้าน · เดลิเวอรี</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
