@@ -1,1313 +1,1153 @@
 <!doctype html>
 <html lang="th">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>เมนูอาหาร | ครัวบ้านดี Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
-  </head>
 
-  <body class="bg-light">
-    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-semibold" href="/"><i class="fa-solid fa-bowl-rice me-2 text-primary"> </i></a>
-        <button
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="เปิดเมนู"
-          class="navbar-toggler"
-          data-bs-target="#mainNav"
-          data-bs-toggle="collapse"
-          type="button"
-        >
-          <span class="navbar-toggler-icon"> </span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/"><i class="fa-solid fa-house me-1"> </i></a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เมนูอาหาร | ครัวบ้านดี Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="/">
+        <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>ครัวบ้านดี
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="เปิดเมนู">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="fa-solid fa-house me-1"></i>หน้าแรก
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>เมนู
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/cart.html">
+              <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/order-status.html">
+              <i class="fa-solid fa-receipt me-1"></i>ติดตาม
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customer/history.html">
+              <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#promotions">
+              <i class="fa-solid fa-tags me-1"></i>โปรโมชัน
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">
+              <i class="fa-solid fa-location-dot me-1"></i>ติดต่อ
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-table-list me-1"></i>POS
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/pos/dashboard.html">
+                  <i class="fa-solid fa-chart-line me-2"></i>แดชบอร์ดพนักงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>สถานะโต๊ะ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order.html">
+                  <i class="fa-solid fa-plus me-2"></i>เปิดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-items.html">
+                  <i class="fa-solid fa-list-check me-2"></i>เพิ่มรายการอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/order-detail.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>รายละเอียดออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pos/ready-to-serve.html">
+                  <i class="fa-solid fa-bell-concierge me-2"></i>รายการพร้อมเสิร์ฟ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-kitchen-set me-1"></i>ครัว
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/kitchen/queue.html">
+                  <i class="fa-solid fa-hourglass-start me-2"></i>คิวครัว
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/preparing.html">
+                  <i class="fa-solid fa-fire-burner me-2"></i>กำลังปรุง
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/ready.html">
+                  <i class="fa-solid fa-bell me-2"></i>พร้อมเสิร์ฟ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/kitchen/history.html">
+                  <i class="fa-solid fa-clock-rotate-left me-2"></i>ประวัติครัว
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cash-register me-1"></i>แคชเชียร์
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/cashier/search.html">
+                  <i class="fa-solid fa-magnifying-glass me-2"></i>ค้นหาออเดอร์
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/payment.html">
+                  <i class="fa-solid fa-credit-card me-2"></i>ชำระเงิน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/bill-summary.html">
+                  <i class="fa-solid fa-file-invoice-dollar me-2"></i>สรุปบิล
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/cashier/receipt.html">
+                  <i class="fa-solid fa-receipt me-2"></i>ใบเสร็จ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-shield me-1"></i>Admin
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/admin/dashboard.html">
+                  <i class="fa-solid fa-chart-pie me-2"></i>แดชบอร์ด Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/users.html">
+                  <i class="fa-solid fa-users-gear me-2"></i>ผู้ใช้และบทบาท
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/restaurant-settings.html">
+                  <i class="fa-solid fa-store me-2"></i>ข้อมูลร้าน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/categories.html">
+                  <i class="fa-solid fa-layer-group me-2"></i>หมวดหมู่เมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu.html">
+                  <i class="fa-solid fa-bowl-food me-2"></i>เมนูอาหาร
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/menu-options.html">
+                  <i class="fa-solid fa-sliders me-2"></i>ตัวเลือกเมนู
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/zones-tables.html">
+                  <i class="fa-solid fa-chair me-2"></i>โต๊ะและโซน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/promotions.html">
+                  <i class="fa-solid fa-tags me-2"></i>โปรโมชั่น
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/orders.html">
+                  <i class="fa-solid fa-clipboard-list me-2"></i>ค้นหาออเดอร์ Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/reports.html">
+                  <i class="fa-solid fa-chart-column me-2"></i>รายงาน
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/admin/audit-logs.html">
+                  <i class="fa-solid fa-shield-halved me-2"></i>ประวัติการใช้งาน
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-primary" href="/auth/login.html">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>Login
+          </a>
+          <a class="btn btn-outline-primary" href="/auth/register.html">
+            <i class="fa-solid fa-user-plus me-1"></i>Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-start mb-4">
+      <div>
+        <h1 class="h3 mb-1">จัดการเมนูอาหาร</h1>
+        <p class="text-body-secondary mb-0">เพิ่ม แก้ไข จัดเรียง และจัดการหมวดหมู่เมนูอาหาร</p>
+      </div>
+      <a class="btn btn-primary" href="#">
+        <i class="fa-solid fa-plus me-1"></i>เพิ่มเมนูใหม่
+      </a>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-md-4">
+        <input class="form-control" type="search" placeholder="ค้นหาชื่อเมนู หรือรหัส">
+      </div>
+      <div class="col-12 col-md-3">
+        <select class="form-select" aria-label="หมวดหมู่">
+          <option>ทั้งหมด</option>
+          <option>จานเดียว</option>
+          <option>กับข้าว</option>
+          <option>ต้ม</option>
+          <option>ผัด</option>
+          <option>ทอด</option>
+          <option>เครื่องดื่ม</option>
+          <option>ของหวาน</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-5 d-flex gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="bestSeller">
+          <label class="form-check-label" for="bestSeller">แสดงเฉพาะสินค้าขายดี</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="outOfStock">
+          <label class="form-check-label" for="outOfStock">แสดงรายการหมด</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="กะเพราไก่ไข่ดาว" src="https://via.placeholder.com/400x240?text=กะเพราไก่ไข่ดาว">
+          <div class="card-body">
+            <h2 class="h5 card-title">กะเพราไก่ไข่ดาว</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">85 บาท</p>
+            <p class="card-text">ไข่ดาวกรอบนอกนุ่มใน ผัดกะเพราไก่สับสไตล์ร้านครัวบ้านดี</p>
+            <p class="card-text">
+              <span class="badge text-bg-warning">ขายดี</span>
+            </p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดปู" src="https://via.placeholder.com/400x240?text=ข้าวผัดปู">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดปู</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">ข้าวผัดปูเนื้อแน่น ใช้ไข่ฟูกรอบนอกนุ่มใน</p>
+            <p class="card-text">
+              <span class="badge text-bg-warning">ขายดี</span>
+            </p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหมูทอดกระเทียม" src="https://via.placeholder.com/400x240?text=ข้าวหมูทอดกระเทียม">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหมูทอดกระเทียม</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">95 บาท</p>
+            <p class="card-text">หมูทอดกระเทียมกรอบ ราดข้าวสวยร้อนๆ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวคลุกกะปิ" src="https://via.placeholder.com/400x240?text=ข้าวคลุกกะปิ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวคลุกกะปิ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">75 บาท</p>
+            <p class="card-text">ข้าวคลุกกะปิสูตรโบราณ เสิร์ฟพร้อมผักสดและปลาทู</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวมันไก่ต้ม" src="https://via.placeholder.com/400x240?text=ข้าวมันไก่ต้ม">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวมันไก่ต้ม</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">80 บาท</p>
+            <p class="card-text">ข้าวมันไก่ต้มน้ำจิ้มรสเด็ด ไก่เนื้อนุ่ม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าเป็ด" src="https://via.placeholder.com/400x240?text=ข้าวหน้าเป็ด">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าเป็ด</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">เป็ดย่างหนังกรอบ ราดน้ำราดรสเข้มข้น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวขาหมู" src="https://via.placeholder.com/400x240?text=ข้าวขาหมู">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวขาหมู</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ขาหมูตุ๋นจนเปื่อย น้ำราดหอมกรุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูแดง" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูแดง">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูแดง</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">100 บาท</p>
+            <p class="card-text">หมูแดงหมักสูตรพิเศษ ราดน้ำราดหวานนวล</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าเนื้อ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าเนื้อ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าเนื้อ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">เนื้อวัวชิ้นโต ย่างบนเตาถ่าน ราดซอสสูตรเฉพาะ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวซอย" src="https://via.placeholder.com/400x240?text=ข้าวซอย">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวซอย</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">90 บาท</p>
+            <p class="card-text">ข้าวซอยเส้นเหนียวนุ่ม น้ำซุปกะทิเข้มข้น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดอเมริกัน" src="https://via.placeholder.com/400x240?text=ข้าวผัดอเมริกัน">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดอเมริกัน</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">95 บาท</p>
+            <p class="card-text">ข้าวผัดอเมริกันรสจัด ใส่ไข่ ไส้กรอก และผักรวม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ผัดไทยกุ้งสด" src="https://via.placeholder.com/400x240?text=ผัดไทยกุ้งสด">
+          <div class="card-body">
+            <h2 class="h5 card-title">ผัดไทยกุ้งสด</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">100 บาท</p>
+            <p class="card-text">ผัดไทยเส้นจันท์ กุ้งสดตัวโต โรยถั่วลิสงคั่ว</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="หมี่กรอบราดหน้า" src="https://via.placeholder.com/400x240?text=หมี่กรอบราดหน้า">
+          <div class="card-body">
+            <h2 class="h5 card-title">หมี่กรอบราดหน้า</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">95 บาท</p>
+            <p class="card-text">หมี่กรอบทอดกรอบนอก ราดด้วยหน้าผัดรวมมิตร</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="สุกี้แห้งทะเล" src="https://via.placeholder.com/400x240?text=สุกี้แห้งทะเล">
+          <div class="card-body">
+            <h2 class="h5 card-title">สุกี้แห้งทะเล</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">สุกี้แห้งทะเลรวม กุ้ง ปลาหมึก หอยเชลล์</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ก๋วยเตี๋ยวเรือ" src="https://via.placeholder.com/400x240?text=ก๋วยเตี๋ยวเรือ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ก๋วยเตี๋ยวเรือ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">80 บาท</p>
+            <p class="card-text">ก๋วยเตี๋ยวเรือน้ำตก เนื้อนุ่ม เลือกเส้นได้</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวต้มปลากระพง" src="https://via.placeholder.com/400x240?text=ข้าวต้มปลากระพง">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวต้มปลากระพง</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">ข้าวต้มปลากระพงสด น้ำซุปใสหอมขิง</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหมูแดงกรอบ" src="https://via.placeholder.com/400x240?text=ข้าวหมูแดงกรอบ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหมูแดงกรอบ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">100 บาท</p>
+            <p class="card-text">หมูแดงกรอบนอกนุ่มใน ราดน้ำราดหวาน</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวราดหน้าหมู" src="https://via.placeholder.com/400x240?text=ข้าวราดหน้าหมู">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวราดหน้าหมู</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">85 บาท</p>
+            <p class="card-text">ราดหน้าหมูนุ่ม ผักรวมมิตร น้ำราดเข้มข้น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหมูกรอบทอดน้ำปลา" src="https://via.placeholder.com/400x240?text=ข้าวหมูกรอบทอดน้ำปลา">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหมูกรอบทอดน้ำปลา</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">หมูกรอบทอดน้ำปลา กรอบนอกนุ่มใน หอมกลิ่นกระเทียมเจียว</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวมันไก่ทอด" src="https://via.placeholder.com/400x240?text=ข้าวมันไก่ทอด">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวมันไก่ทอด</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">85 บาท</p>
+            <p class="card-text">ไก่ทอดกรอบนอกนุ่มใน เสิร์ฟพร้อมข้าวมันและน้ำจิ้ม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าไก่เทอริยากิ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าไก่เทอริยากิ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าไก่เทอริยากิ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">ไก่ย่างซอสเทอริยากิ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาแซลมอน" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาแซลมอน">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาแซลมอน</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">150 บาท</p>
+            <p class="card-text">ปลาแซลมอนย่างซีอิ๊ว ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูย่างเกาหลี" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูย่างเกาหลี">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูย่างเกาหลี</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">หมูย่างซอสเกาหลี ราดบนข้าวสวยร้อนๆ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหมูสไปซี่" src="https://via.placeholder.com/400x240?text=ข้าวหมูสไปซี่">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหมูสไปซี่</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">95 บาท</p>
+            <p class="card-text">หมูทอดสไปซี่รสจัด กรอบนอกนุ่มใน</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาซาบะ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาซาบะ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาซาบะ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ปลาซาบะย่างเกลือ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวไข่ข้น" src="https://via.placeholder.com/400x240?text=ข้าวไข่ข้น">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวไข่ข้น</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">80 บาท</p>
+            <p class="card-text">ไข่ข้นเนื้อนุ่ม ราดบนข้าวสวยร้อนๆ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดกระเทียม" src="https://via.placeholder.com/400x240?text=ข้าวผัดกระเทียม">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดกระเทียม</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">85 บาท</p>
+            <p class="card-text">ข้าวผัดกระเทียมหอมๆ ใส่ไข่และผักรวม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดพริกแกง" src="https://via.placeholder.com/400x240?text=ข้าวผัดพริกแกง">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดพริกแกง</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">90 บาท</p>
+            <p class="card-text">ข้าวผัดพริกแกงรสจัด ใส่หมูและใบกะเพรา</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดคะน้าหมูกรอบ" src="https://via.placeholder.com/400x240?text=ข้าวผัดคะน้าหมูกรอบ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดคะน้าหมูกรอบ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">100 บาท</p>
+            <p class="card-text">คะน้าผัดน้ำมันหอย หมูกรอบกรอบนอกนุ่มใน</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูชาชู" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูชาชู">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูชาชู</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">หมูชาชูสไลซ์บาง ราดซอสราเมนรสเข้มข้น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดปูผงกะหรี่" src="https://via.placeholder.com/400x240?text=ข้าวผัดปูผงกะหรี่">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดปูผงกะหรี่</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">ข้าวผัดปูผงกะหรี่ รสกลมกล่อม หอมเครื่องเทศ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าไก่คาราเกะ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าไก่คาราเกะ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าไก่คาราเกะ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ไก่คาราเกะกรอบนอกนุ่มใน ราดมายองเนส</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูย่างไข่ onsen" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูย่างไข่+onsen">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูย่างไข่ onsen</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">หมูย่างซอสญี่ปุ่น ไข่ออนเซ็นเนื้อนุ่มละลายในปาก</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดกุ้ง" src="https://via.placeholder.com/400x240?text=ข้าวผัดกุ้ง">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดกุ้ง</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">ข้าวผัดกุ้งตัวโต รสชาติกลมกล่อม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวผัดสับปะรด" src="https://via.placeholder.com/400x240?text=ข้าวผัดสับปะรด">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวผัดสับปะรด</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">100 บาท</p>
+            <p class="card-text">ข้าวผัดใส่สับปะรดหวานหอม รสชาติกลมกล่อม</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าเนื้อวากิว" src="https://via.placeholder.com/400x240?text=ข้าวหน้าเนื้อวากิว">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าเนื้อวากิว</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">250 บาท</p>
+            <p class="card-text">เนื้อวากิวสไลซ์บาง ย่างบนเตาถ่าน ราดซอสสูตรเฉพาะ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาไหล" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาไหล">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาไหล</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">180 บาท</p>
+            <p class="card-text">ปลาไหลย่างซีอิ๊ว ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาดิบรวม" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาดิบรวม">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาดิบรวม</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">200 บาท</p>
+            <p class="card-text">ปลาดิบรวมสดๆ ราดบนข้าวสวยญี่ปุ่น โรยไข่กุ้ง</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหมูทอดทงคัตสึ" src="https://via.placeholder.com/400x240?text=ข้าวหมูทอดทงคัตสึ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหมูทอดทงคัตสึ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">หมูทอดทงคัตสึกรอบนอกนุ่มใน ราดซอสโทนกัตสึ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาซาบะย่างซีอิ๊ว" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาซาบะย่างซีอิ๊ว">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาซาบะย่างซีอิ๊ว</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">120 บาท</p>
+            <p class="card-text">ปลาซาบะย่างซีอิ๊ว ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าไก่ย่างซอสเทอริยากิ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าไก่ย่างซอสเทอริยากิ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าไก่ย่างซอสเทอริยากิ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ไก่ย่างซอสเทอริยากิ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูย่างซอสมิโสะ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูย่างซอสมิโสะ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูย่างซอสมิโสะ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">หมูย่างซอสมิโสะ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าเนื้อย่างซอสพอนซึ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าเนื้อย่างซอสพอนซึ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าเนื้อย่างซอสพอนซึ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">160 บาท</p>
+            <p class="card-text">เนื้อย่างซอสพอนซึ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาแซลมอนย่างซีอิ๊ว" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาแซลมอนย่างซีอิ๊ว">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาแซลมอนย่างซีอิ๊ว</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">150 บาท</p>
+            <p class="card-text">ปลาแซลมอนย่างซีอิ๊ว ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูทอดทงคัตสึ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูทอดทงคัตสึ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูทอดทงคัตสึ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">หมูทอดทงคัตสึกรอบนอกนุ่มใน ราดซอสโทนกัตสึ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าไก่ทอดคาราเกะ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าไก่ทอดคาราเกะ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าไก่ทอดคาราเกะ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ไก่คาราเกะกรอบนอกนุ่มใน ราดมายองเนส</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าหมูชาชูราเมน" src="https://via.placeholder.com/400x240?text=ข้าวหน้าหมูชาชูราเมน">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าหมูชาชูราเมน</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">หมูชาชูสไลซ์บาง ราดซอสราเมนรสเข้มข้น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาซาบะย่างเกลือ" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาซาบะย่างเกลือ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาซาบะย่างเกลือ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">110 บาท</p>
+            <p class="card-text">ปลาซาบะย่างเกลือ ราดบนข้าวสวยญี่ปุ่น</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าไข่ข้นปู" src="https://via.placeholder.com/400x240?text=ข้าวหน้าไข่ข้นปู">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าไข่ข้นปู</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">150 บาท</p>
+            <p class="card-text">ไข่ข้นปูเนื้อนุ่ม ราดบนข้าวสวยร้อนๆ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้ากุ้งเทมปุระ" src="https://via.placeholder.com/400x240?text=ข้าวหน้ากุ้งเทมปุระ">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้ากุ้งเทมปุระ</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">140 บาท</p>
+            <p class="card-text">กุ้งเทมปุระกรอบนอกนุ่มใน ราดซอสสูตรเฉพาะ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <img class="card-img-top" alt="ข้าวหน้าปลาหมึกย่าง" src="https://via.placeholder.com/400x240?text=ข้าวหน้าปลาหมึกย่าง">
+          <div class="card-body">
+            <h2 class="h5 card-title">ข้าวหน้าปลาหมึกย่าง</h2>
+            <span class="badge text-bg-primary">จานเดียว</span>
+            <p class="card-text text-body-secondary mt-2">130 บาท</p>
+            <p class="card-text">ปลาหมึกย่างซอสญี่ปุ่น ราดบนข้าวสวยร้อนๆ</p>
+          </div>
+          <div class="card-footer bg-white d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+            <button class="btn btn-sm btn-outline-secondary">ซ่อน</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mt-4" aria-label="Pagination">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#">ก่อนหน้า</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">5</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">ถัดไป</a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h2 class="h5 mb-3">
+            <i class="fa-solid fa-bowl-rice me-2 text-warning"></i>ครัวบ้านดี
+          </h2>
+          <p class="text-white-50 mb-3">ครัวบ้านดีเสิร์ฟอาหารไทยจานคุ้นเคยในบรรยากาศอบอุ่น เหมาะกับมื้อกลางวัน มื้อเย็น และวันที่อยากสั่งอาหารกลับไปกินที่บ้าน</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Line">
+              <i class="fa-brands fa-line"></i>
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ลูกค้า</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">เมนูอาหาร</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/customer/menu.html"><i class="fa-solid fa-utensils me-1"> </i></a>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ตะกร้า</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/customer/cart.html"><i class="fa-solid fa-cart-shopping me-1"> </i></a>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/customer/order-status.html"><i class="fa-solid fa-receipt me-1"> </i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/customer/history.html"><i class="fa-solid fa-clock-rotate-left me-1"> </i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#promotions"><i class="fa-solid fa-tags me-1"> </i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#contact"><i class="fa-solid fa-location-dot me-1"> </i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                ><i class="fa-solid fa-table-list me-1"> </i
-              ></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/pos/dashboard.html"><i class="fa-solid fa-chart-line me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/pos/tables.html"><i class="fa-solid fa-chair me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/pos/order.html"><i class="fa-solid fa-plus me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/pos/order-items.html"><i class="fa-solid fa-list-check me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/pos/order-detail.html"><i class="fa-solid fa-clipboard-list me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/pos/ready-to-serve.html"><i class="fa-solid fa-bell-concierge me-2"> </i></a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                ><i class="fa-solid fa-kitchen-set me-1"> </i
-              ></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/kitchen/queue.html"><i class="fa-solid fa-hourglass-start me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/kitchen/preparing.html"><i class="fa-solid fa-fire-burner me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/kitchen/ready.html"><i class="fa-solid fa-bell me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/kitchen/history.html"><i class="fa-solid fa-clock-rotate-left me-2"> </i></a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                ><i class="fa-solid fa-cash-register me-1"> </i
-              ></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/cashier/search.html"><i class="fa-solid fa-magnifying-glass me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/cashier/payment.html"><i class="fa-solid fa-credit-card me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/cashier/bill-summary.html"><i class="fa-solid fa-file-invoice-dollar me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/cashier/receipt.html"><i class="fa-solid fa-receipt me-2"> </i></a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                ><i class="fa-solid fa-user-shield me-1"> </i
-              ></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/admin/dashboard.html"><i class="fa-solid fa-chart-pie me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/users.html"><i class="fa-solid fa-users-gear me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/restaurant-settings.html"><i class="fa-solid fa-store me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/categories.html"><i class="fa-solid fa-layer-group me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/menu.html"><i class="fa-solid fa-bowl-food me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/menu-options.html"><i class="fa-solid fa-sliders me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/zones-tables.html"><i class="fa-solid fa-chair me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/promotions.html"><i class="fa-solid fa-tags me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/orders.html"><i class="fa-solid fa-clipboard-list me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/reports.html"><i class="fa-solid fa-chart-column me-2"> </i></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/admin/audit-logs.html"><i class="fa-solid fa-shield-halved me-2"> </i></a>
-                </li>
-              </ul>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/customer/history.html">ประวัติคำสั่งซื้อ</a>
             </li>
           </ul>
-          <div class="d-flex gap-2">
-            <a class="btn btn-primary" href="/auth/login.html"><i class="fa-solid fa-right-to-bracket me-1"> </i></a>
-            <a class="btn btn-outline-primary" href="/auth/register.html"><i class="fa-solid fa-user-plus me-1"> </i></a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">บริการ</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/menu.html">สั่งที่โต๊ะ</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/cart.html">ดูตะกร้า</a>
+            </li>
+            <li class="mb-2">
+              <a class="link-light link-underline-opacity-0" href="/customer/order-status.html">ติดตามออเดอร์</a>
+            </li>
+            <li>
+              <a class="link-light link-underline-opacity-0" href="/#promotions">โปรโมชัน</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h3 class="h6 text-uppercase text-white-50 mb-3">ติดต่อและเวลาเปิด</h3>
+          <ul class="list-unstyled text-white-50 mb-4">
+            <li class="mb-2">
+              <i class="fa-solid fa-location-dot me-2 text-warning"></i>99 ถนนสุขุมวิท กรุงเทพฯ
+            </li>
+            <li class="mb-2">
+              <i class="fa-solid fa-phone me-2 text-warning"></i>02-555-0101
+            </li>
+            <li class="mb-2">
+              <i class="fa-solid fa-envelope me-2 text-warning"></i>hello@kruabaan-dee.example
+            </li>
+            <li>
+              <i class="fa-solid fa-clock me-2 text-warning"></i>เปิดทุกวัน 10:00 - 22:00 น.
+            </li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-warning btn-sm" href="/customer/menu.html">
+              <i class="fa-solid fa-utensils me-1"></i>สั่งอาหาร
+            </a>
+            <a class="btn btn-outline-light btn-sm" href="/auth/login.html">
+              <i class="fa-solid fa-right-to-bracket me-1"></i>เข้าสู่บัญชี
+            </a>
           </div>
         </div>
       </div>
-    </nav>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-white-50 small">
+        <div>© 2026 ครัวบ้านดี</div>
+        <div>อาหารไทย · ทานที่ร้าน · กลับบ้าน · เดลิเวอรี</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
-    <main class="container-fluid py-4">
-      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
-        <div>
-          <h1 class="h3 mb-1">จัดการเมนูอาหาร</h1>
-          <p class="text-body-secondary mb-0">รายการเมนูหลังบ้านต้องตรงกับหน้าเมนูลูกค้า 42 รายการ</p>
-        </div>
-        <div class="d-flex flex-wrap gap-2">
-          <span class="badge text-bg-primary align-self-start p-2"><i class="fa-solid fa-bowl-food me-1"> </i></span>
-          <span class="badge text-bg-success align-self-start p-2"><i class="fa-solid fa-circle-check me-1"> </i></span>
-          <span class="badge text-bg-light text-secondary border align-self-start p-2"><i class="fa-solid fa-layer-group me-1"> </i></span>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-12 col-xl-4">
-          <div class="card">
-            <div class="card-header bg-white fw-semibold">เพิ่มหรือแก้ไขเมนู</div>
-            <div class="card-body">
-              <form action="#" method="post">
-                <div class="mb-3">
-                  <label class="form-label" for="menuName"> ชื่อเมนู</label>
-                  <input class="form-control" id="menuName" value="ข้าวกะเพราไก่ไข่ดาว" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label" for="category"> หมวดหมู่</label>
-                  <select class="form-select" id="category">
-                    <option>อาหารจานเดียว</option>
-                    <option>กับข้าว</option>
-                    <option>เส้นและแกง</option>
-                    <option>ของทานเล่น</option>
-                    <option>เครื่องดื่ม</option>
-                    <option>ของหวาน</option>
-                    <option>ชุดเซ็ต</option>
-                  </select>
-                </div>
-                <div class="row g-3">
-                  <div class="col-6">
-                    <label class="form-label" for="price"> ราคา</label>
-                    <input class="form-control" id="price" type="number" value="85" />
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label" for="cookTime"> เวลาปรุง</label>
-                    <input class="form-control" id="cookTime" value="10-15 นาที" />
-                  </div>
-                </div>
-                <div class="mt-3">
-                  <label class="form-label" for="image"> รูปภาพ</label>
-                  <input class="form-control" id="image" placeholder="URL หรือชื่อไฟล์" />
-                </div>
-                <div class="mt-3">
-                  <label class="form-label" for="description"> รายละเอียด</label>
-                  <textarea class="form-control" id="description" rows="3">เมนูขายดีของร้าน</textarea>
-                </div>
-                <div class="row g-3 mt-1">
-                  <div class="col-6">
-                    <label class="form-label" for="available"> สถานะ</label>
-                    <select class="form-select" id="available">
-                      <option>พร้อมขาย</option>
-                      <option>ปิดขาย</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label" for="kitchen"> ส่งเข้าครัว</label>
-                    <select class="form-select" id="kitchen">
-                      <option>ต้องส่ง</option>
-                      <option>ไม่ต้องส่ง</option>
-                    </select>
-                  </div>
-                </div>
-                <button class="btn btn-primary w-100 mt-4" type="submit">บันทึกเมนู</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-xl-8">
-          <div class="card">
-            <div class="card-header bg-white">
-              <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
-                <div>
-                  <div class="fw-semibold">รายการเมนูทั้งหมด</div>
-                  <div class="small text-body-secondary">42 รายการ แบ่งแสดง 10 รายการต่อหน้า</div>
-                </div>
-                <nav aria-label="แบ่งหน้ารายการเมนูด้านบน">
-                  <ul class="pagination pagination-sm flex-wrap mb-0" id="adminMenuPagination-top" role="tablist">
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-1"
-                        aria-selected="true"
-                        class="page-link active"
-                        data-bs-target="#menu-page-1"
-                        data-bs-toggle="pill"
-                        id="menu-page-1-top-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        1
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-2"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-2"
-                        data-bs-toggle="pill"
-                        id="menu-page-2-top-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        2
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-3"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-3"
-                        data-bs-toggle="pill"
-                        id="menu-page-3-top-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        3
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-4"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-4"
-                        data-bs-toggle="pill"
-                        id="menu-page-4-top-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        4
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-5"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-5"
-                        data-bs-toggle="pill"
-                        id="menu-page-5-top-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        5
-                      </button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="tab-content" id="adminMenuPaginationContent">
-              <div aria-labelledby="menu-page-1-top-tab" class="tab-pane fade show active" id="menu-page-1" role="tabpanel" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top border-bottom bg-light">
-                  <span class="small text-body-secondary"> รายการ 1-10 จาก 42</span>
-                  <span class="badge text-bg-light text-secondary border"> หน้า 1</span>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                      <tr>
-                        <th>เมนู</th>
-                        <th>หมวดหมู่</th>
-                        <th class="text-end">ราคา</th>
-                        <th>ครัว</th>
-                        <th>สถานะ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 01</span>
-                          ข้าวกะเพราไก่ไข่ดาว
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">85</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 02</span>
-                          ข้าวผัดกุ้ง
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">95</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 03</span>
-                          ข้าวหมูทอดกระเทียม
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">89</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 04</span>
-                          ข้าวพริกแกงหมูกรอบ
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">99</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 05</span>
-                          ข้าวไข่ข้นกุ้ง
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">105</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 06</span>
-                          ข้าวไก่ผัดเม็ดมะม่วง
-                        </td>
-                        <td>อาหารจานเดียว</td>
-                        <td class="text-end">115</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 07</span>
-                          ต้มยำกุ้งน้ำข้น
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">180</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 08</span>
-                          แกงเขียวหวานไก่
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">145</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 09</span>
-                          ผัดผักรวมกุ้ง
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">130</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 10</span>
-                          หมูสามชั้นทอดน้ำปลา
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">150</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div aria-labelledby="menu-page-2-top-tab" class="tab-pane fade" id="menu-page-2" role="tabpanel" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top border-bottom bg-light">
-                  <span class="small text-body-secondary"> รายการ 11-20 จาก 42</span>
-                  <span class="badge text-bg-light text-secondary border"> หน้า 2</span>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                      <tr>
-                        <th>เมนู</th>
-                        <th>หมวดหมู่</th>
-                        <th class="text-end">ราคา</th>
-                        <th>ครัว</th>
-                        <th>สถานะ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 11</span>
-                          ไข่เจียวหมูสับ
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">90</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 12</span>
-                          ปลากะพงทอดน้ำปลา
-                        </td>
-                        <td>กับข้าว</td>
-                        <td class="text-end">320</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 13</span>
-                          ผัดไทยกุ้งสด
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">110</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 14</span>
-                          ราดหน้าหมูหมัก
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">85</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 15</span>
-                          สุกี้น้ำทะเล
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">120</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 16</span>
-                          ก๋วยเตี๋ยวคั่วไก่
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">95</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 17</span>
-                          ขนมจีนแกงเขียวหวาน
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">105</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 18</span>
-                          เส้นใหญ่ผัดซีอิ๊ว
-                        </td>
-                        <td>เส้นและแกง</td>
-                        <td class="text-end">89</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 19</span>
-                          ปอเปี๊ยะทอด
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">75</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 20</span>
-                          ไก่ทอดสมุนไพร
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">120</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div aria-labelledby="menu-page-3-top-tab" class="tab-pane fade" id="menu-page-3" role="tabpanel" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top border-bottom bg-light">
-                  <span class="small text-body-secondary"> รายการ 21-30 จาก 42</span>
-                  <span class="badge text-bg-light text-secondary border"> หน้า 3</span>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                      <tr>
-                        <th>เมนู</th>
-                        <th>หมวดหมู่</th>
-                        <th class="text-end">ราคา</th>
-                        <th>ครัว</th>
-                        <th>สถานะ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 21</span>
-                          ลูกชิ้นทอดรวม
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">80</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 22</span>
-                          เฟรนช์ฟรายส์
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">75</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 23</span>
-                          หมูมะนาว
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">130</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 24</span>
-                          ยำวุ้นเส้นทะเล
-                        </td>
-                        <td>ของทานเล่น</td>
-                        <td class="text-end">145</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 25</span>
-                          ชาไทยเย็น
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">55</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 26</span>
-                          ชามะนาว
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">50</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 27</span>
-                          กาแฟเย็น
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">60</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 28</span>
-                          น้ำลำไย
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">45</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 29</span>
-                          น้ำเก๊กฮวย
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">45</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 30</span>
-                          น้ำมะพร้าว
-                        </td>
-                        <td>เครื่องดื่ม</td>
-                        <td class="text-end">65</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div aria-labelledby="menu-page-4-top-tab" class="tab-pane fade" id="menu-page-4" role="tabpanel" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top border-bottom bg-light">
-                  <span class="small text-body-secondary"> รายการ 31-40 จาก 42</span>
-                  <span class="badge text-bg-light text-secondary border"> หน้า 4</span>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                      <tr>
-                        <th>เมนู</th>
-                        <th>หมวดหมู่</th>
-                        <th class="text-end">ราคา</th>
-                        <th>ครัว</th>
-                        <th>สถานะ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 31</span>
-                          ข้าวเหนียวมะม่วง
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">95</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 32</span>
-                          บัวลอยไข่หวาน
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">70</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 33</span>
-                          ทับทิมกรอบ
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">65</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 34</span>
-                          เฉาก๊วยนมสด
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">60</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 35</span>
-                          กล้วยบวชชี
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">55</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 36</span>
-                          ไอศกรีมกะทิ
-                        </td>
-                        <td>ของหวาน</td>
-                        <td class="text-end">65</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 37</span>
-                          ชุดครอบครัวบ้านดี
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">590</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 38</span>
-                          ชุดออฟฟิศมื้อกลางวัน
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">499</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 39</span>
-                          ชุดอิ่มคู่
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">299</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 40</span>
-                          ชุดเด็กกินง่าย
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">159</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div aria-labelledby="menu-page-5-top-tab" class="tab-pane fade" id="menu-page-5" role="tabpanel" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top border-bottom bg-light">
-                  <span class="small text-body-secondary"> รายการ 41-42 จาก 42</span>
-                  <span class="badge text-bg-light text-secondary border"> หน้า 5</span>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                      <tr>
-                        <th>เมนู</th>
-                        <th>หมวดหมู่</th>
-                        <th class="text-end">ราคา</th>
-                        <th>ครัว</th>
-                        <th>สถานะ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 41</span>
-                          ชุดเครื่องดื่มรวม
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">160</td>
-                        <td>
-                          <span class="badge text-bg-info"> ไม่เข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="text-primary fw-semibold me-2"> 42</span>
-                          ชุดของหวานหลังมื้อ
-                        </td>
-                        <td>ชุดเซ็ต</td>
-                        <td class="text-end">199</td>
-                        <td>
-                          <span class="badge text-bg-primary"> ส่งเข้าครัว</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success"> พร้อมขาย</span>
-                        </td>
-                        <td>
-                          <button class="btn btn-sm btn-outline-primary" type="button">แก้ไข</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer bg-white">
-              <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
-                <span class="small text-body-secondary"> แสดงรายการตามหน้าที่เลือก</span>
-                <nav aria-label="แบ่งหน้ารายการเมนูด้านล่าง">
-                  <ul class="pagination pagination-sm flex-wrap mb-0" id="adminMenuPagination-bottom" role="tablist">
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-1"
-                        aria-selected="true"
-                        class="page-link active"
-                        data-bs-target="#menu-page-1"
-                        data-bs-toggle="pill"
-                        id="menu-page-1-bottom-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        1
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-2"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-2"
-                        data-bs-toggle="pill"
-                        id="menu-page-2-bottom-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        2
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-3"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-3"
-                        data-bs-toggle="pill"
-                        id="menu-page-3-bottom-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        3
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-4"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-4"
-                        data-bs-toggle="pill"
-                        id="menu-page-4-bottom-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        4
-                      </button>
-                    </li>
-                    <li class="page-item" role="presentation">
-                      <button
-                        aria-controls="menu-page-5"
-                        aria-selected="false"
-                        class="page-link"
-                        data-bs-target="#menu-page-5"
-                        data-bs-toggle="pill"
-                        id="menu-page-5-bottom-tab"
-                        role="tab"
-                        type="button"
-                      >
-                        5
-                      </button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="bg-dark text-white mt-5">
-      <div class="container py-5">
-        <div class="row g-4">
-          <div class="col-12 col-lg-4">
-            <h2 class="h5 mb-3">
-              <i class="fa-solid fa-bowl-rice me-2 text-warning"> </i>
-              ครัวบ้านดี
-            </h2>
-            <p class="text-white-50 mb-3">
-              ครัวบ้านดีเสิร์ฟอาหารไทยจานคุ้นเคยในบรรยากาศอบอุ่น เหมาะกับมื้อกลางวัน มื้อเย็น และวันที่อยากสั่งอาหารกลับไปกินที่บ้าน
-            </p>
-            <div class="d-flex gap-2">
-              <a aria-label="Facebook" class="btn btn-outline-light btn-sm" href="#"><i class="fa-brands fa-facebook-f"> </i></a>
-              <a aria-label="Line" class="btn btn-outline-light btn-sm" href="#"><i class="fa-brands fa-line"> </i></a>
-              <a aria-label="Instagram" class="btn btn-outline-light btn-sm" href="#"><i class="fa-brands fa-instagram"> </i></a>
-            </div>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h3 class="h6 text-uppercase text-white-50 mb-3">ลูกค้า</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/menu.html"> เมนูอาหาร</a>
-              </li>
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/cart.html"> ตะกร้า</a>
-              </li>
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/order-status.html"> ติดตามออเดอร์</a>
-              </li>
-              <li>
-                <a class="link-light link-underline-opacity-0" href="/customer/history.html"> ประวัติคำสั่งซื้อ</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h3 class="h6 text-uppercase text-white-50 mb-3">บริการ</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/menu.html"> สั่งที่โต๊ะ</a>
-              </li>
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/cart.html"> ดูตะกร้า</a>
-              </li>
-              <li class="mb-2">
-                <a class="link-light link-underline-opacity-0" href="/customer/order-status.html"> ติดตามออเดอร์</a>
-              </li>
-              <li>
-                <a class="link-light link-underline-opacity-0" href="/#promotions"> โปรโมชัน</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-lg-4">
-            <h3 class="h6 text-uppercase text-white-50 mb-3">ติดต่อและเวลาเปิด</h3>
-            <ul class="list-unstyled text-white-50 mb-4">
-              <li class="mb-2">
-                <i class="fa-solid fa-location-dot me-2 text-warning"> </i>
-                99 ถนนสุขุมวิท กรุงเทพฯ
-              </li>
-              <li class="mb-2">
-                <i class="fa-solid fa-phone me-2 text-warning"> </i>
-                02-555-0101
-              </li>
-              <li class="mb-2">
-                <i class="fa-solid fa-envelope me-2 text-warning"> </i>
-                hello@kruabaan-dee.example
-              </li>
-              <li>
-                <i class="fa-solid fa-clock me-2 text-warning"> </i>
-                เปิดทุกวัน 10:00 - 22:00 น.
-              </li>
-            </ul>
-            <div class="d-flex flex-wrap gap-2">
-              <a class="btn btn-warning btn-sm" href="/customer/menu.html"><i class="fa-solid fa-utensils me-1"> </i></a>
-              <a class="btn btn-outline-light btn-sm" href="/auth/login.html"><i class="fa-solid fa-right-to-bracket me-1"> </i></a>
-            </div>
-          </div>
-        </div>
-        <hr class="border-secondary my-4" />
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-white-50 small">
-          <div>© 2026 ครัวบ้านดี</div>
-          <div>อาหารไทย · ทานที่ร้าน · กลับบ้าน · เดลิเวอรี</div>
-        </div>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
 </html>
