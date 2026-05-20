@@ -595,6 +595,19 @@ app.get('/api/orders', (req, res) => {
     })
 })
 
+app.get('/api/orders/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        order: {
+            id: req.params.id, tableId: "2", tableName: "A2", customerName: "คุณเมย์", total: 265, status: "served", type: "dine-in", note: "ไม่ใส่ผักชี", createdAt: "2026-05-21T11:00:00Z",
+            items: [
+                { id: "1", menuId: "1", name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, options: [{ name: "ระดับความเผ็ด", choice: "เผ็ดมาก" }, { name: "เพิ่มไข่", choice: "ไข่ดาว" }] },
+                { id: "2", menuId: "25", name: "ชาไทยเย็น", price: 45, quantity: 2, options: [{ name: "ระดับความหวาน", choice: "หวานน้อย" }] }
+            ]
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
