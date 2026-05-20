@@ -518,6 +518,13 @@ app.delete('/api/categories/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบหมวดหมู่สำเร็จ" })
 })
 
+app.get('/api/menu/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        menu: { id: req.params.id, name: "เมนูตัวอย่าง", price: "100", category: "อาหารจานเดียว", discription: "รายละเอียดเมนู", Image: "https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=900" }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
