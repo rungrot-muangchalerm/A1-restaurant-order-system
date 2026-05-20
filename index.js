@@ -491,6 +491,21 @@ app.delete('/api/tables/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบโต๊ะสำเร็จ" })
 })
 
+app.get('/api/categories', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        categories: [
+            { id: "1", name: "อาหารจานเดียว", sortOrder: 1, isActive: true },
+            { id: "2", name: "กับข้าว", sortOrder: 2, isActive: true },
+            { id: "3", name: "เส้นและแกง", sortOrder: 3, isActive: true },
+            { id: "4", name: "ของทานเล่น", sortOrder: 4, isActive: true },
+            { id: "5", name: "เครื่องดื่ม", sortOrder: 5, isActive: true },
+            { id: "6", name: "ของหวาน", sortOrder: 6, isActive: true },
+            { id: "7", name: "ชุดเซ็ต", sortOrder: 7, isActive: true }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
