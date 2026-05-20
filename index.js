@@ -6,7 +6,7 @@ app.use(express.static('public'))
 app.get('/api/me', (req, res) => {
     res.status(200).json({
         status: "200",
-        role: "POS"
+        role: "pornhub"
     })
 })
 
