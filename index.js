@@ -435,6 +435,10 @@ app.get('/api/users/:id', (req, res) => {
     })
 })
 
+app.post('/api/users', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างผู้ใช้สำเร็จ", user: { id: "99", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
