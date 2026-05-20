@@ -45,7 +45,6 @@ fetch('/api/reviewer').then(res => res.json()).then(data => {
     if (data.status === '200') {
         const container = document.getElementById('reviewer-container')
         const template = document.getElementById('reviews-list')
-        console.log(data)
         data.reviews.forEach(element => {
             const clone = template.content.cloneNode(true)
             clone.querySelector('[data-role="rate"]').textContent = element.rate
