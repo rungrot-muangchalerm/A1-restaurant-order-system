@@ -689,6 +689,16 @@ app.get('/api/kitchen/queue', (req, res) => {
     })
 })
 
+app.get('/api/kitchen/preparing', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        preparing: [
+            { id: "1002", tableName: "-", items: 2, note: "ห่อกลับบ้าน", startedAt: "2026-05-21T11:35:00Z", elapsedMinutes: 8 },
+            { id: "1006", tableName: "C1", items: 4, note: "", startedAt: "2026-05-21T12:10:00Z", elapsedMinutes: 2 }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
