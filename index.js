@@ -483,6 +483,10 @@ app.post('/api/tables', (req, res) => {
     res.status(201).json({ status: "201", message: "สร้างโต๊ะสำเร็จ", table: { id: "100", ...req.body } })
 })
 
+app.put('/api/tables/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "อัปเดตโต๊ะสำเร็จ", table: { id: req.params.id, ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
