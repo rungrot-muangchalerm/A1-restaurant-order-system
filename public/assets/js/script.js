@@ -15,11 +15,11 @@ fetch('/api/me').then(res => res.json()).then(data => {
                 document.getElementById('pos').classList.remove('d-none')
             }
             else
-                if (data.role == 'kitchen') {
+                if (data.role === 'kitchen') {
                     document.getElementById('kitchen').classList.remove('d-none')
                 }
                 else
-                    if (data.role == 'cashier') {
+                    if (data.role === 'cashier') {
                         document.getElementById('cashier').classList.remove('d-none')
                     }
     }
@@ -30,7 +30,7 @@ fetch('/api/me').then(res => res.json()).then(data => {
 })
 
 fetch('/api/restaurant-status').then(res => res.json()).then(data => {
-    if (data.status == '200') {
+    if (data.status === '200') {
         document.getElementById('average').textContent = (data.average)
         document.getElementById('menu').textContent = (data.menu)
         document.getElementById('delivery').textContent = (data.delivery)
@@ -39,21 +39,19 @@ fetch('/api/restaurant-status').then(res => res.json()).then(data => {
     }
 })
 
-// fetch('/api/me').then(r => r.json()).then(d => {
-//     if (d.status !== "200") {
-//         console.log(`status err 400`);
-//         return
-//     }
-//     const memMap = {
-//         admin: ['admin', 'cashier', 'pos', 'kitchen'],
-//         cashier: ['cashier'],
-//         kitchen: ['kitchen'],
-//         pos: ['pos']
-//     }
-
-//     const menus = memMap[d.role] || [];
-//     menus.forEach(id => {
-//         const el = document.getElementById(id);
-//         if (el) el.classList.remove('d-none')
-//     });
-// })
+fetch('/api/recommended-menus').then(res => res.json()).then(data => {
+    if (data.status === '200') {
+        const container = document.getElementById('recommended-menus-container')
+        const template = document.getElementById('recommended-menus-list')
+        data.menu.forEach(element => {
+            const clone = template.content.cloneNode(true)
+            clone.querySelector('[data-role="img"]').src = element.Image
+            clone.querySelector('[data-role="name"]').textContent = element.name
+            clone.querySelector('[data-role="discription"]').textContent = element.discription
+            clone.querySelector('[data-role="price"]').textContent = element.price
+            container.appendChild(clone)
+        });
+    } else {
+        console.log(`status err${data}`)
+    }
+})
