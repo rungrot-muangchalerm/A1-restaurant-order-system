@@ -55,3 +55,20 @@ fetch('/api/recommended-menus').then(res => res.json()).then(data => {
         console.log(`status err${data}`)
     }
 })
+
+fetch('/api/restaurant-promotion').then(res => res.json()).then(data => {
+    if (data.status === '200') {
+        const container = document.getElementById('promotion-container')
+        const template = document.getElementById('promotion-list')
+        console.log(data)
+        data.promotion.forEach(element => {
+            const clone = template.content.cloneNode(true)
+            clone.querySelector('[data-role="img"]').src = element.Image || ''
+            clone.querySelector('[data-role="promotion"]').textContent = element.promotion
+            clone.querySelector('[data-role="discription"]').textContent = element.discription
+            container.appendChild(clone)
+        });
+    } else {
+        console.log(`status err${data}`)
+    }
+})

@@ -442,43 +442,22 @@
             </a>
           </div>
         </div>
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.pexels.com/photos/6280393/pexels-photo-6280393.jpeg?cs=srgb&fm=jpg&w=900" alt="ป้ายโปรโมชันหน้าร้าน">
-              </div>
-              <div class="card-body">
-                <span class="badge text-bg-primary mb-3">มื้อครอบครัว</span>
-                <h3 class="h5">ลด 10% เมื่อครบ 500 บาท</h3>
-                <p class="text-body-secondary mb-0">ใช้ได้ทั้งทานที่ร้านและกลับบ้าน เงื่อนไขแสดงตอนยืนยันออเดอร์</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="เครื่องดื่มเย็นบนโต๊ะ">
-              </div>
-              <div class="card-body">
-                <span class="badge text-bg-warning mb-3">ทุกวันศุกร์</span>
-                <h3 class="h5">เครื่องดื่มลด 20 บาท</h3>
-                <p class="text-body-secondary mb-0">สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ</p>
+        <div id="promotion-container" class="row g-4">
+          <template id="promotion-list">
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="ratio ratio-4x3">
+                  <img data-role="img" class="w-100 h-100 object-fit-cover rounded-top" src="https://images.pexels.com/photos/6280393/pexels-photo-6280393.jpeg?cs=srgb&fm=jpg&w=900" alt="ป้ายโปรโมชันหน้าร้าน">
+                </div>
+                <div class="card-body">
+                  <span class="badge text-bg-primary mb-3">มื้อครอบครัว</span>
+                  <h3 data-role="promotion" class="h5">ลด 10% เมื่อครบ 500 บาท</h3>
+                  <p data-role="discription" class="text-body-secondary mb-0">ใช้ได้ทั้งทานที่ร้านและกลับบ้าน เงื่อนไขแสดงตอนยืนยันออเดอร์</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80" alt="อาหารสำหรับชุดอิ่มคุ้ม">
-              </div>
-              <div class="card-body">
-                <span class="badge text-bg-success mb-3">ชุดอิ่มคุ้ม</span>
-                <h3 class="h5">เพิ่มของทานเล่น 49 บาท</h3>
-                <p class="text-body-secondary mb-0">เมื่อสั่งเมนูหลัก 2 รายการขึ้นไป เหมาะกับโต๊ะเล็กและออฟฟิศ</p>
-              </div>
-            </div>
-          </div>
+          </template>
+
         </div>
       </div>
     </section>
