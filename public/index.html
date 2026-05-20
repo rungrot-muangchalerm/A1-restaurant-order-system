@@ -61,7 +61,7 @@
               <i class="fa-solid fa-location-dot me-1"></i>ติดต่อ
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li id="pos" class="nav-item dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-table-list me-1"></i>POS
             </a>
@@ -98,7 +98,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li id="kitchen" class="nav-item dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-kitchen-set me-1"></i>ครัว
             </a>
@@ -125,7 +125,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li id="cashier" class="nav-item dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-cash-register me-1"></i>แคชเชียร์
             </a>
@@ -152,7 +152,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li id="admin" class="nav-item dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-user-shield me-1"></i>Admin
             </a>
@@ -216,11 +216,14 @@
           </li>
         </ul>
         <div class="d-flex gap-2">
-          <a class="btn btn-primary" href="/auth/login.html">
+          <a id="login" class="btn btn-primary" href="/auth/login.html">
             <i class="fa-solid fa-right-to-bracket me-1"></i>Login
           </a>
-          <a class="btn btn-outline-primary" href="/auth/register.html">
+          <a id="register" class="btn btn-outline-primary" href="/auth/register.html">
             <i class="fa-solid fa-user-plus me-1"></i>Register
+          </a>
+          <a id="logout" class="btn btn-outline-primary" href="#">
+            <i class="fa-solid fa-user-plus me-1"></i>logout
           </a>
         </div>
       </div>
@@ -843,9 +846,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    console.log("hello")
-  </script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
