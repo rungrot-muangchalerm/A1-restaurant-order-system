@@ -472,6 +472,13 @@ app.get('/api/tables', (req, res) => {
     })
 })
 
+app.get('/api/tables/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        table: { id: req.params.id, zoneId: "1", name: "T" + req.params.id, seats: 4, status: "available", qrCode: "table-t" + req.params.id }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
