@@ -583,6 +583,18 @@ app.delete('/api/promotions/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบโปรโมชั่นสำเร็จ" })
 })
 
+app.get('/api/orders', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        orders: [
+            { id: "1001", tableId: "2", tableName: "A2", customerName: "คุณเมย์", total: 265, status: "served", type: "dine-in", createdAt: "2026-05-21T11:00:00Z", items: 3 },
+            { id: "1002", tableId: null, tableName: "-", customerName: "คุณนนท์", total: 120, status: "preparing", type: "takeaway", createdAt: "2026-05-21T11:30:00Z", items: 2 },
+            { id: "1003", tableId: "4", tableName: "B1", customerName: "คุณต้น", total: 590, status: "pending", type: "dine-in", createdAt: "2026-05-21T12:00:00Z", items: 5 },
+            { id: "1004", tableId: "1", tableName: "A1", customerName: "คุณแอน", total: 180, status: "ready", type: "dine-in", createdAt: "2026-05-21T12:15:00Z", items: 2 }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
