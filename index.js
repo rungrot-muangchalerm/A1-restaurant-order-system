@@ -447,6 +447,17 @@ app.delete('/api/users/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบผู้ใช้สำเร็จ" })
 })
 
+app.get('/api/zones', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        zones: [
+            { id: "1", name: "โซนหลัก", description: "โซนด้านในห้องแอร์" },
+            { id: "2", name: "โซนระเบียง", description: "โซนนอกอาคารลมโชย" },
+            { id: "3", name: "โซนชั้น 2", description: "โซนชั้นสองวิวสวน" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
