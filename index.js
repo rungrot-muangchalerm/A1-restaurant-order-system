@@ -855,6 +855,18 @@ app.get('/api/audit-logs', (req, res) => {
     })
 })
 
+app.get('/api/restaurant-settings', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        settings: {
+            restaurantName: "ร้านอาหารบ้านดี", address: "123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110",
+            phone: "02-123-4567", email: "contact@baandee.com", taxId: "1234567890123",
+            vatRate: 7, serviceChargeRate: 10, openTime: "10:00", closeTime: "22:00", isOpen: true,
+            logoUrl: "https://example.com/logo.png", socialMedia: { facebook: "baandee", line: "@baandee", instagram: "baandee" }
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
