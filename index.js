@@ -679,6 +679,16 @@ app.get('/api/order-status/:id', (req, res) => {
     })
 })
 
+app.get('/api/kitchen/queue', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        queue: [
+            { id: "1003", tableName: "B1", items: 5, note: "รีบหน่อยครับ", createdAt: "2026-05-21T12:00:00Z", elapsedMinutes: 5 },
+            { id: "1005", tableName: "A3", items: 3, note: "", createdAt: "2026-05-21T12:05:00Z", elapsedMinutes: 3 }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
