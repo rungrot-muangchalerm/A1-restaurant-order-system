@@ -556,6 +556,10 @@ app.put('/api/menu-options/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตตัวเลือกเมนูสำเร็จ", menuOption: { id: req.params.id, ...req.body } })
 })
 
+app.delete('/api/menu-options/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "ลบตัวเลือกเมนูสำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
