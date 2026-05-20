@@ -506,6 +506,10 @@ app.get('/api/categories', (req, res) => {
     })
 })
 
+app.post('/api/categories', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างหมวดหมู่สำเร็จ", category: { id: "99", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
