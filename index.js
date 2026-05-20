@@ -746,6 +746,10 @@ app.get('/api/bills/:id', (req, res) => {
     })
 })
 
+app.post('/api/payments', (req, res) => {
+    res.status(201).json({ status: "201", message: "ชำระเงินสำเร็จ", payment: { id: "P001", billId: req.body.billId, amount: req.body.amount || 253.06, method: req.body.method || "cash", paidAt: new Date().toISOString() } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
