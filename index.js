@@ -765,6 +765,19 @@ app.get('/api/receipts/:id', (req, res) => {
     })
 })
 
+app.get('/api/pos/tables', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        tables: [
+            { id: "1", name: "A1", seats: 4, status: "available", currentOrderId: null },
+            { id: "2", name: "A2", seats: 2, status: "occupied", currentOrderId: "1001" },
+            { id: "3", name: "A3", seats: 6, status: "reserved", currentOrderId: null },
+            { id: "4", name: "B1", seats: 4, status: "occupied", currentOrderId: "1003" },
+            { id: "5", name: "B2", seats: 8, status: "cleaning", currentOrderId: null }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
