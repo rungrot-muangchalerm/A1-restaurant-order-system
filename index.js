@@ -479,6 +479,10 @@ app.get('/api/tables/:id', (req, res) => {
     })
 })
 
+app.post('/api/tables', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างโต๊ะสำเร็จ", table: { id: "100", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
