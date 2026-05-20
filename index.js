@@ -548,6 +548,10 @@ app.get('/api/menu-options', (req, res) => {
     })
 })
 
+app.post('/api/menu-options', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างตัวเลือกเมนูสำเร็จ", menuOption: { id: "100", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
