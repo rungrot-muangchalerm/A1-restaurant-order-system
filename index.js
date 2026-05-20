@@ -661,6 +661,24 @@ app.get('/api/order-history', (req, res) => {
     })
 })
 
+app.get('/api/order-status/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        orderStatus: {
+            id: req.params.id,
+            currentStatus: "preparing",
+            timeline: [
+                { status: "pending", label: "รับออเดอร์", timestamp: "2026-05-21T12:00:00Z", done: true },
+                { status: "preparing", label: "กำลังปรุง", timestamp: "2026-05-21T12:05:00Z", done: true },
+                { status: "ready", label: "พร้อมเสิร์ฟ", timestamp: null, done: false },
+                { status: "served", label: "เสิร์ฟแล้ว", timestamp: null, done: false }
+            ],
+            estimatedReadyAt: "2026-05-21T12:25:00Z",
+            remainingMinutes: 15
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
