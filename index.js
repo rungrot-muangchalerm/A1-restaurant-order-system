@@ -416,6 +416,18 @@ app.post('/api/auth/logout', (req, res) => {
     res.status(200).json({ status: "200", message: "ออกจากระบบสำเร็จ" })
 })
 
+app.get('/api/users', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        users: [
+            { id: "1", username: "admin01", name: "ผู้ดูแลระบบ", role: "admin", email: "admin@restaurant.com", phone: "0811111111", status: "active", createdAt: "2026-05-01T10:00:00Z" },
+            { id: "2", username: "cashier01", name: "แคชเชียร์ กะเช้า", role: "cashier", email: "cashier@restaurant.com", phone: "0822222222", status: "active", createdAt: "2026-05-05T09:00:00Z" },
+            { id: "3", username: "kitchen01", name: "พ่อครัวใหญ่", role: "kitchen", email: "kitchen@restaurant.com", phone: "0833333333", status: "active", createdAt: "2026-05-10T08:00:00Z" },
+            { id: "4", username: "pos01", name: "พนักงาน POS", role: "pos", email: "pos@restaurant.com", phone: "0844444444", status: "inactive", createdAt: "2026-05-15T11:00:00Z" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
