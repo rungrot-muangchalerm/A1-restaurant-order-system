@@ -458,6 +458,20 @@ app.get('/api/zones', (req, res) => {
     })
 })
 
+app.get('/api/tables', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        tables: [
+            { id: "1", zoneId: "1", name: "A1", seats: 4, status: "available", qrCode: "table-a1" },
+            { id: "2", zoneId: "1", name: "A2", seats: 2, status: "occupied", qrCode: "table-a2" },
+            { id: "3", zoneId: "1", name: "A3", seats: 6, status: "reserved", qrCode: "table-a3" },
+            { id: "4", zoneId: "2", name: "B1", seats: 4, status: "available", qrCode: "table-b1" },
+            { id: "5", zoneId: "2", name: "B2", seats: 8, status: "cleaning", qrCode: "table-b2" },
+            { id: "6", zoneId: "3", name: "C1", seats: 4, status: "available", qrCode: "table-c1" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
