@@ -646,6 +646,10 @@ app.delete('/api/cart/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบสินค้าในตะกร้าสำเร็จ" })
 })
 
+app.post('/api/checkout', (req, res) => {
+    res.status(201).json({ status: "201", message: "สั่งซื้อสำเร็จ", order: { id: "5000", ...req.body, status: "pending", createdAt: new Date().toISOString() } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
