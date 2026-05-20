@@ -537,6 +537,17 @@ app.delete('/api/menu/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบเมนูสำเร็จ" })
 })
 
+app.get('/api/menu-options', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        menuOptions: [
+            { id: "1", menuId: "1", name: "ระดับความเผ็ด", type: "single", choices: [{ label: "ไม่เผ็ด", price: 0 }, { label: "เผ็ดน้อย", price: 0 }, { label: "เผ็ดกลาง", price: 0 }, { label: "เผ็ดมาก", price: 0 }] },
+            { id: "2", menuId: "1", name: "เพิ่มไข่", type: "single", choices: [{ label: "ไข่ดาว", price: 10 }, { label: "ไข่เจียว", price: 10 }, { label: "ไม่เอา", price: 0 }] },
+            { id: "3", menuId: "25", name: "ระดับความหวาน", type: "single", choices: [{ label: "หวานน้อย", price: 0 }, { label: "หวานปกติ", price: 0 }, { label: "หวานมาก", price: 0 }] }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
