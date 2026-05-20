@@ -560,6 +560,17 @@ app.delete('/api/menu-options/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบตัวเลือกเมนูสำเร็จ" })
 })
 
+app.get('/api/promotions', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        promotions: [
+            { id: "1", code: "SAVE10", name: "ลด 10% เมื่อครบ 500 บาท", description: "ใช้ได้ทั้งทานที่ร้านและกลับบ้าน", discountType: "percent", discountValue: 10, minOrder: 500, startDate: "2026-05-01", endDate: "2026-06-30", isActive: true },
+            { id: "2", code: "DRINK20", name: "เครื่องดื่มลด 20 บาท", description: "สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็น", discountType: "fixed", discountValue: 20, minOrder: 0, startDate: "2026-05-01", endDate: "2026-05-31", isActive: true },
+            { id: "3", code: "SET299", name: "ชุดอิ่มคู่ 299 บาท", description: "เมื่อสั่งเมนูหลัก 2 รายการขึ้นไป", discountType: "fixed", discountValue: 50, minOrder: 299, startDate: "2026-05-15", endDate: "2026-06-15", isActive: false }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
