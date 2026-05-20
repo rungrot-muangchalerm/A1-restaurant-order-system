@@ -650,6 +650,17 @@ app.post('/api/checkout', (req, res) => {
     res.status(201).json({ status: "201", message: "สั่งซื้อสำเร็จ", order: { id: "5000", ...req.body, status: "pending", createdAt: new Date().toISOString() } })
 })
 
+app.get('/api/order-history', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        history: [
+            { id: "9001", orderId: "1001", tableName: "A2", total: 265, status: "completed", completedAt: "2026-05-20T13:00:00Z", items: 3 },
+            { id: "9002", orderId: "1002", tableName: "-", total: 120, status: "completed", completedAt: "2026-05-19T14:30:00Z", items: 2 },
+            { id: "9003", orderId: "1003", tableName: "B1", total: 590, status: "cancelled", completedAt: "2026-05-18T12:00:00Z", items: 5 }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
