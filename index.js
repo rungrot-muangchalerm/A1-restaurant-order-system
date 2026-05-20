@@ -412,6 +412,10 @@ app.get('/api/menu', (req, res) => {
         ]
     })
 })
+app.post('/api/auth/logout', (req, res) => {
+    res.status(200).json({ status: "200", message: "ออกจากระบบสำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
