@@ -9,24 +9,17 @@ fetch('/api/me').then(res => res.json()).then(data => {
             document.getElementById('kitchen').classList.remove('d-none')
             document.getElementById('pos').classList.remove('d-none')
 
+        } else if (data.role === 'pos') {
+            document.getElementById('pos').classList.remove('d-none')
+        } else if (data.role === 'kitchen') {
+            document.getElementById('kitchen').classList.remove('d-none')
+        } else if (data.role === 'cashier') {
+            document.getElementById('cashier').classList.remove('d-none')
         }
-        else
-            if (data.role === 'pos') {
-                document.getElementById('pos').classList.remove('d-none')
-            }
-            else
-                if (data.role === 'kitchen') {
-                    document.getElementById('kitchen').classList.remove('d-none')
-                }
-                else
-                    if (data.role === 'cashier') {
-                        document.getElementById('cashier').classList.remove('d-none')
-                    }
     }
     else {
         console.log(`status err ${data}`);
     }
-
 })
 
 fetch('/api/restaurant-status').then(res => res.json()).then(data => {
@@ -72,3 +65,21 @@ fetch('/api/restaurant-promotion').then(res => res.json()).then(data => {
     }
 })
 
+fetch('/api/reviewer').then(res => res.json()).then(data => {
+    if (data.status === '200') {
+        const container = document.getElementById('reviewer-container')
+        const template = document.getElementById('reviews-list')
+        console.log(data)
+        data.reviews.forEach(element => {
+            const clone = template.content.cloneNode(true)
+            clone.querySelector('[data-role="rate"]').textContent = element.rate
+            clone.querySelector('[data-role="message"]').textContent = element.message
+            clone.querySelector('[data-role="user"]').textContent = element.user
+            clone.querySelector('[data-role="where"]').textContent = element.where
+            container.appendChild(clone)
+        })
+    } else {
+        console.log(`status err${data}`)
+    }
+
+})
