@@ -708,6 +708,16 @@ app.get('/api/kitchen/ready', (req, res) => {
     })
 })
 
+app.get('/api/kitchen/history', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        history: [
+            { id: "9001", tableName: "A2", items: 3, completedAt: "2026-05-20T13:00:00Z", totalTimeMinutes: 18 },
+            { id: "9002", tableName: "-", items: 2, completedAt: "2026-05-19T14:30:00Z", totalTimeMinutes: 12 }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
