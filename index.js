@@ -750,6 +750,21 @@ app.post('/api/payments', (req, res) => {
     res.status(201).json({ status: "201", message: "ชำระเงินสำเร็จ", payment: { id: "P001", billId: req.body.billId, amount: req.body.amount || 253.06, method: req.body.method || "cash", paidAt: new Date().toISOString() } })
 })
 
+app.get('/api/receipts/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        receipt: {
+            id: req.params.id, billId: "B001", orderId: "1001", tableName: "A2", customerName: "คุณเมย์",
+            items: [
+                { name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, subtotal: 170 },
+                { name: "ชาไทยเย็น", price: 45, quantity: 1, subtotal: 45 }
+            ],
+            total: 215, serviceCharge: 21.5, vat: 16.56, discount: 0, grandTotal: 253.06,
+            paymentMethod: "cash", received: 260, change: 6.94, printedAt: "2026-05-21T12:30:00Z"
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
