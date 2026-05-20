@@ -844,6 +844,17 @@ app.get('/api/reports/orders', (req, res) => {
     })
 })
 
+app.get('/api/audit-logs', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        logs: [
+            { id: "1", user: "admin01", action: "LOGIN", target: "ระบบ", detail: "เข้าสู่ระบบ", ip: "192.168.1.10", createdAt: "2026-05-21T08:00:00Z" },
+            { id: "2", user: "admin01", action: "CREATE", target: "เมนู", detail: "เพิ่มเมนูใหม่: ข้าวผัดปู", ip: "192.168.1.10", createdAt: "2026-05-21T09:30:00Z" },
+            { id: "3", user: "cashier01", action: "PAYMENT", target: "บิล B002", detail: "รับชำระเงิน 171.20 บาท", ip: "192.168.1.11", createdAt: "2026-05-21T12:35:00Z" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
