@@ -801,6 +801,10 @@ app.get('/api/pos/orders/:id', (req, res) => {
     })
 })
 
+app.post('/api/pos/orders', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างออเดอร์ POS สำเร็จ", order: { id: "8888", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
