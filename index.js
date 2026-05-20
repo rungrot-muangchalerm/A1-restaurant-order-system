@@ -638,6 +638,10 @@ app.post('/api/cart', (req, res) => {
     res.status(201).json({ status: "201", message: "เพิ่มสินค้าในตะกร้าสำเร็จ", cartItem: { id: "99", ...req.body } })
 })
 
+app.put('/api/cart/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "อัปเดตตะกร้าสำเร็จ", cartItem: { id: req.params.id, ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
