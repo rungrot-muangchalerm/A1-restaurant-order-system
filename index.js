@@ -23,7 +23,14 @@ app.post('/api/auth/login', (req, res) => {
         message: "success"
     })
 })
-
+app.get('/api/restaurant-status', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        average: "18",
+        menu: "42",
+        delivery: "3"
+    })
+})
 app.get('/api/recommended-menus', (req, res) => {
     res.status(200).json({
         status: "200",
