@@ -525,6 +525,10 @@ app.get('/api/menu/:id', (req, res) => {
     })
 })
 
+app.post('/api/menu', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างเมนูสำเร็จ", menu: { id: "100", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
