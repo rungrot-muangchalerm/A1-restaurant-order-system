@@ -17,6 +17,13 @@ app.post('/api/register', (req, res) => {
     })
 })
 
+app.post('/api/auth/login', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        message: "success"
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
