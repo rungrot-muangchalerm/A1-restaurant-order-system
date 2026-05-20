@@ -805,6 +805,16 @@ app.post('/api/pos/orders', (req, res) => {
     res.status(201).json({ status: "201", message: "สร้างออเดอร์ POS สำเร็จ", order: { id: "8888", ...req.body } })
 })
 
+app.get('/api/pos/dashboard', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        dashboard: {
+            todayOrders: 12, todaySales: 3840, activeTables: 5, availableTables: 8,
+            pendingOrders: 2, preparingOrders: 3, readyOrders: 1
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
