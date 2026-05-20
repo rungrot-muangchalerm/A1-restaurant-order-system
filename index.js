@@ -867,6 +867,10 @@ app.get('/api/restaurant-settings', (req, res) => {
     })
 })
 
+app.put('/api/restaurant-settings', (req, res) => {
+    res.status(200).json({ status: "200", message: "อัปเดตการตั้งค่าร้านสำเร็จ", settings: { ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
