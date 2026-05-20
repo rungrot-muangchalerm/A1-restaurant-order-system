@@ -428,6 +428,13 @@ app.get('/api/users', (req, res) => {
     })
 })
 
+app.get('/api/users/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        user: { id: req.params.id, username: "user" + req.params.id, name: "ผู้ใช้ " + req.params.id, role: "customer", email: "user" + req.params.id + "@mail.com", phone: "080000000" + req.params.id, status: "active", createdAt: "2026-05-20T10:00:00Z" }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
