@@ -732,6 +732,20 @@ app.get('/api/bills', (req, res) => {
     })
 })
 
+app.get('/api/bills/:id', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        bill: {
+            id: req.params.id, orderId: "1001", tableName: "A2", customerName: "คุณเมย์",
+            items: [
+                { name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, subtotal: 170 },
+                { name: "ชาไทยเย็น", price: 45, quantity: 1, subtotal: 45 }
+            ],
+            total: 215, serviceCharge: 21.5, vat: 16.56, discount: 0, grandTotal: 253.06, status: "unpaid", createdAt: "2026-05-21T11:00:00Z"
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
