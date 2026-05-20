@@ -642,6 +642,10 @@ app.put('/api/cart/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตตะกร้าสำเร็จ", cartItem: { id: req.params.id, ...req.body } })
 })
 
+app.delete('/api/cart/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "ลบสินค้าในตะกร้าสำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
