@@ -23,6 +23,7 @@ app.post('/api/auth/login', (req, res) => {
         message: "success"
     })
 })
+
 app.get('/api/restaurant-status', (req, res) => {
     res.status(200).json({
         status: "200",
@@ -31,6 +32,7 @@ app.get('/api/restaurant-status', (req, res) => {
         delivery: "3"
     })
 })
+
 app.get('/api/recommended-menus', (req, res) => {
     res.status(200).json({
         status: "200",
@@ -59,6 +61,24 @@ app.get('/api/recommended-menus', (req, res) => {
     })
 })
 
+app.get('/api/restaurant-promotion', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        promotion: [{
+            id: "1",
+            promotion: "ลด 10% เมื่อครบ 500 บาท",
+            discription: "ไช้ได้ทั้งทานที่ร้านและกลับบ้าน เงื่อนไขแสดงตอนยืนยันออเดอร์"
+        }, {
+            id: "2",
+            promotion: "เครื่องดื่มลด 20 บาท",
+            discription: "สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ"
+        }, {
+            id: "3",
+            promotion: "สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ",
+            discription: "เมื่อสั่งเมนูหลัก 2 รายการขึ้นไป เหมาะกับโต๊ะเล็กและออฟฟิศ"
+        }]
+    })
+})
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
