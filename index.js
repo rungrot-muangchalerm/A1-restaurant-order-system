@@ -778,6 +778,16 @@ app.get('/api/pos/tables', (req, res) => {
     })
 })
 
+app.get('/api/pos/orders', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        orders: [
+            { id: "1001", tableName: "A2", customerName: "คุณเมย์", total: 265, status: "served", createdAt: "2026-05-21T11:00:00Z" },
+            { id: "1003", tableName: "B1", customerName: "คุณต้น", total: 590, status: "pending", createdAt: "2026-05-21T12:00:00Z" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
