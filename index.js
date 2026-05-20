@@ -834,6 +834,16 @@ app.get('/api/reports/sales', (req, res) => {
     })
 })
 
+app.get('/api/reports/orders', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        report: {
+            period: "daily", date: "2026-05-21", totalOrders: 4, dineIn: 3, takeaway: 1,
+            pending: 1, preparing: 1, ready: 1, served: 1, cancelled: 0, averagePreparationMinutes: 15
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
