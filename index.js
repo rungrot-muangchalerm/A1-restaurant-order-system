@@ -443,6 +443,10 @@ app.put('/api/users/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตผู้ใช้สำเร็จ", user: { id: req.params.id, ...req.body } })
 })
 
+app.delete('/api/users/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "ลบผู้ใช้สำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
