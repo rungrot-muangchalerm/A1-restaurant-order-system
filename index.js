@@ -718,6 +718,10 @@ app.get('/api/kitchen/history', (req, res) => {
     })
 })
 
+app.put('/api/kitchen/orders/:id/status', (req, res) => {
+    res.status(200).json({ status: "200", message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ", order: { id: req.params.id, status: req.body.status || "preparing" } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
