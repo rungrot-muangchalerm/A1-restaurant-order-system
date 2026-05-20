@@ -487,6 +487,10 @@ app.put('/api/tables/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตโต๊ะสำเร็จ", table: { id: req.params.id, ...req.body } })
 })
 
+app.delete('/api/tables/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "ลบโต๊ะสำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
