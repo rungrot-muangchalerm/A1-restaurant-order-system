@@ -722,6 +722,16 @@ app.put('/api/kitchen/orders/:id/status', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ", order: { id: req.params.id, status: req.body.status || "preparing" } })
 })
 
+app.get('/api/bills', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        bills: [
+            { id: "B001", orderId: "1001", tableName: "A2", customerName: "คุณเมย์", total: 265, discount: 0, vat: 18.55, grandTotal: 283.55, status: "unpaid", createdAt: "2026-05-21T11:00:00Z" },
+            { id: "B002", orderId: "1004", tableName: "A1", customerName: "คุณแอน", total: 180, discount: 20, vat: 11.2, grandTotal: 171.2, status: "paid", createdAt: "2026-05-21T12:15:00Z" }
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
