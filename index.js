@@ -815,6 +815,25 @@ app.get('/api/pos/dashboard', (req, res) => {
     })
 })
 
+app.get('/api/reports/sales', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        report: {
+            period: "daily", date: "2026-05-21", totalSales: 1155, totalOrders: 4, averagePerOrder: 288.75,
+            topSelling: [
+                { menuId: "1", name: "ข้าวกะเพราไก่ไข่ดาว", quantity: 5, revenue: 425 },
+                { menuId: "7", name: "ต้มยำกุ้งน้ำข้น", quantity: 2, revenue: 360 }
+            ],
+            salesByCategory: [
+                { category: "อาหารจานเดียว", amount: 425 },
+                { category: "กับข้าว", amount: 360 },
+                { category: "เครื่องดื่ม", amount: 135 },
+                { category: "ชุดเซ็ต", amount: 235 }
+            ]
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
