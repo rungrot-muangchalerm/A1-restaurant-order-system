@@ -608,6 +608,10 @@ app.get('/api/orders/:id', (req, res) => {
     })
 })
 
+app.post('/api/orders', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างออเดอร์สำเร็จ", order: { id: "9999", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
