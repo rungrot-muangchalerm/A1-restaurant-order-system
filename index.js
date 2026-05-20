@@ -571,6 +571,10 @@ app.get('/api/promotions', (req, res) => {
     })
 })
 
+app.post('/api/promotions', (req, res) => {
+    res.status(201).json({ status: "201", message: "สร้างโปรโมชั่นสำเร็จ", promotion: { id: "100", ...req.body } })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
