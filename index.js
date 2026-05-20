@@ -620,6 +620,20 @@ app.delete('/api/orders/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "ลบออเดอร์สำเร็จ" })
 })
 
+app.get('/api/cart', (req, res) => {
+    res.status(200).json({
+        status: "200",
+        cart: {
+            items: [
+                { id: "1", menuId: "1", name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, options: [{ name: "ระดับความเผ็ด", choice: "เผ็ดมาก" }], subtotal: 170 },
+                { id: "2", menuId: "25", name: "ชาไทยเย็น", price: 45, quantity: 1, options: [], subtotal: 45 }
+            ],
+            total: 215,
+            itemCount: 3
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
