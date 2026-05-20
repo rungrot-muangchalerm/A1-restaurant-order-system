@@ -514,6 +514,10 @@ app.put('/api/categories/:id', (req, res) => {
     res.status(200).json({ status: "200", message: "อัปเดตหมวดหมู่สำเร็จ", category: { id: req.params.id, ...req.body } })
 })
 
+app.delete('/api/categories/:id', (req, res) => {
+    res.status(200).json({ status: "200", message: "ลบหมวดหมู่สำเร็จ" })
+})
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
