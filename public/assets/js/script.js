@@ -29,6 +29,16 @@ fetch('/api/me').then(res => res.json()).then(data => {
 
 })
 
+fetch('/api/restaurant-status').then(res => res.json()).then(data => {
+    if (data.status == '200') {
+        document.getElementById('average').textContent = (data.average)
+        document.getElementById('menu').textContent = (data.menu)
+        document.getElementById('delivery').textContent = (data.delivery)
+    } else {
+        console.log(`status err${data}`)
+    }
+})
+
 // fetch('/api/me').then(r => r.json()).then(d => {
 //     if (d.status !== "200") {
 //         console.log(`status err 400`);

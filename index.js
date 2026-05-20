@@ -27,9 +27,9 @@ app.post('/api/auth/login', (req, res) => {
 app.get('/api/restaurant-status', (req, res) => {
     res.status(200).json({
         status: "200",
-        average: "18",
-        menu: "42",
-        delivery: "3"
+        average: "19",
+        menu: "45",
+        delivery: "9"
     })
 })
 
