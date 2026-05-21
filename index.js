@@ -508,7 +508,10 @@ app.post("/api/users", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างผู้ใช้สำเร็จ",
-        user: { id: "99", ...req.body },
+        user: {
+            id: "99",
+            ...req.body
+        },
     });
 });
 
@@ -624,7 +627,10 @@ app.post("/api/tables", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างโต๊ะสำเร็จ",
-        table: { id: "100", ...req.body },
+        table: {
+            id: "100",
+            ...req.body
+        },
     });
 });
 
@@ -632,25 +638,66 @@ app.put("/api/tables/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตโต๊ะสำเร็จ",
-        table: { id: req.params.id, ...req.body },
+        table: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/tables/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบโต๊ะสำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบโต๊ะสำเร็จ"
+    });
 });
 
 app.get("/api/categories", (req, res) => {
     res.status(200).json({
         status: "200",
         categories: [
-            { id: "1", name: "อาหารจานเดียว", sortOrder: 1, isActive: true },
-            { id: "2", name: "กับข้าว", sortOrder: 2, isActive: true },
-            { id: "3", name: "เส้นและแกง", sortOrder: 3, isActive: true },
-            { id: "4", name: "ของทานเล่น", sortOrder: 4, isActive: true },
-            { id: "5", name: "เครื่องดื่ม", sortOrder: 5, isActive: true },
-            { id: "6", name: "ของหวาน", sortOrder: 6, isActive: true },
-            { id: "7", name: "ชุดเซ็ต", sortOrder: 7, isActive: true },
+            {
+                id: "1",
+                name: "อาหารจานเดียว",
+                sortOrder: 1,
+                isActive: true
+            },
+            {
+                id: "2",
+                name: "กับข้าว",
+                sortOrder: 2,
+                isActive: true
+            },
+            {
+                id: "3",
+                name: "เส้นและแกง",
+                sortOrder: 3,
+                isActive: true
+            },
+            {
+                id: "4",
+                name: "ของทานเล่น",
+                sortOrder: 4,
+                isActive: true
+            },
+            {
+                id: "5",
+                name: "เครื่องดื่ม",
+                sortOrder: 5,
+                isActive: true
+            },
+            {
+                id: "6",
+                name: "ของหวาน",
+                sortOrder: 6,
+                isActive: true
+            },
+            {
+                id: "7",
+                name: "ชุดเซ็ต",
+                sortOrder: 7,
+                isActive: true
+            },
         ],
     });
 });
@@ -659,7 +706,10 @@ app.post("/api/categories", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างหมวดหมู่สำเร็จ",
-        category: { id: "99", ...req.body },
+        category: {
+            id: "99",
+            ...req.body
+        },
     });
 });
 
@@ -667,12 +717,18 @@ app.put("/api/categories/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตหมวดหมู่สำเร็จ",
-        category: { id: req.params.id, ...req.body },
+        category: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/categories/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบหมวดหมู่สำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบหมวดหมู่สำเร็จ"
+    });
 });
 
 app.get("/api/menu/:id", (req, res) => {
@@ -694,7 +750,10 @@ app.post("/api/menu", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างเมนูสำเร็จ",
-        menu: { id: "100", ...req.body },
+        menu: {
+            id: "100",
+            ...req.body
+        },
     });
 });
 
@@ -702,12 +761,18 @@ app.put("/api/menu/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตเมนูสำเร็จ",
-        menu: { id: req.params.id, ...req.body },
+        menu: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/menu/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบเมนูสำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบเมนูสำเร็จ"
+    });
 });
 
 app.get("/api/menu-options", (req, res) => {
@@ -720,10 +785,22 @@ app.get("/api/menu-options", (req, res) => {
                 name: "ระดับความเผ็ด",
                 type: "single",
                 choices: [
-                    { label: "ไม่เผ็ด", price: 0 },
-                    { label: "เผ็ดน้อย", price: 0 },
-                    { label: "เผ็ดกลาง", price: 0 },
-                    { label: "เผ็ดมาก", price: 0 },
+                    {
+                        label: "ไม่เผ็ด",
+                        price: 0
+                    },
+                    {
+                        label: "เผ็ดน้อย",
+                        price: 0
+                    },
+                    {
+                        label: "เผ็ดกลาง",
+                        price: 0
+                    },
+                    {
+                        label: "เผ็ดมาก",
+                        price: 0
+                    },
                 ],
             },
             {
@@ -732,9 +809,18 @@ app.get("/api/menu-options", (req, res) => {
                 name: "เพิ่มไข่",
                 type: "single",
                 choices: [
-                    { label: "ไข่ดาว", price: 10 },
-                    { label: "ไข่เจียว", price: 10 },
-                    { label: "ไม่เอา", price: 0 },
+                    {
+                        label: "ไข่ดาว",
+                        price: 10
+                    },
+                    {
+                        label: "ไข่เจียว",
+                        price: 10
+                    },
+                    {
+                        label: "ไม่เอา",
+                        price: 0
+                    },
                 ],
             },
             {
@@ -743,9 +829,18 @@ app.get("/api/menu-options", (req, res) => {
                 name: "ระดับความหวาน",
                 type: "single",
                 choices: [
-                    { label: "หวานน้อย", price: 0 },
-                    { label: "หวานปกติ", price: 0 },
-                    { label: "หวานมาก", price: 0 },
+                    {
+                        label: "หวานน้อย",
+                        price: 0
+                    },
+                    {
+                        label: "หวานปกติ",
+                        price: 0
+                    },
+                    {
+                        label: "หวานมาก",
+                        price: 0
+                    },
                 ],
             },
         ],
@@ -756,7 +851,10 @@ app.post("/api/menu-options", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างตัวเลือกเมนูสำเร็จ",
-        menuOption: { id: "100", ...req.body },
+        menuOption: {
+            id: "100",
+            ...req.body
+        },
     });
 });
 
@@ -764,12 +862,18 @@ app.put("/api/menu-options/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตตัวเลือกเมนูสำเร็จ",
-        menuOption: { id: req.params.id, ...req.body },
+        menuOption: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/menu-options/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบตัวเลือกเมนูสำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบตัวเลือกเมนูสำเร็จ"
+    });
 });
 
 app.get("/api/promotions", (req, res) => {
@@ -820,7 +924,10 @@ app.post("/api/promotions", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างโปรโมชั่นสำเร็จ",
-        promotion: { id: "100", ...req.body },
+        promotion: {
+            id: "100",
+            ...req.body
+        },
     });
 });
 
@@ -828,12 +935,18 @@ app.put("/api/promotions/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตโปรโมชั่นสำเร็จ",
-        promotion: { id: req.params.id, ...req.body },
+        promotion: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/promotions/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบโปรโมชั่นสำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบโปรโมชั่นสำเร็จ"
+    });
 });
 
 app.get("/api/orders", (req, res) => {
@@ -909,8 +1022,14 @@ app.get("/api/orders/:id", (req, res) => {
                     price: 85,
                     quantity: 2,
                     options: [
-                        { name: "ระดับความเผ็ด", choice: "เผ็ดมาก" },
-                        { name: "เพิ่มไข่", choice: "ไข่ดาว" },
+                        {
+                            name: "ระดับความเผ็ด",
+                            choice: "เผ็ดมาก"
+                        },
+                        {
+                            name: "เพิ่มไข่",
+                            choice: "ไข่ดาว"
+                        },
                     ],
                 },
                 {
@@ -919,7 +1038,10 @@ app.get("/api/orders/:id", (req, res) => {
                     name: "ชาไทยเย็น",
                     price: 45,
                     quantity: 2,
-                    options: [{ name: "ระดับความหวาน", choice: "หวานน้อย" }],
+                    options: [{
+                        name: "ระดับความหวาน",
+                        choice: "หวานน้อย"
+                    }],
                 },
             ],
         },
@@ -930,7 +1052,10 @@ app.post("/api/orders", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างออเดอร์สำเร็จ",
-        order: { id: "9999", ...req.body },
+        order: {
+            id: "9999",
+            ...req.body
+        },
     });
 });
 
@@ -938,12 +1063,18 @@ app.put("/api/orders/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตออเดอร์สำเร็จ",
-        order: { id: req.params.id, ...req.body },
+        order: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/orders/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบออเดอร์สำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบออเดอร์สำเร็จ"
+    });
 });
 
 app.get("/api/cart", (req, res) => {
@@ -957,7 +1088,10 @@ app.get("/api/cart", (req, res) => {
                     name: "ข้าวกะเพราไก่ไข่ดาว",
                     price: 85,
                     quantity: 2,
-                    options: [{ name: "ระดับความเผ็ด", choice: "เผ็ดมาก" }],
+                    options: [{
+                        name: "ระดับความเผ็ด",
+                        choice: "เผ็ดมาก"
+                    }],
                     subtotal: 170,
                 },
                 {
@@ -980,7 +1114,10 @@ app.post("/api/cart", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "เพิ่มสินค้าในตะกร้าสำเร็จ",
-        cartItem: { id: "99", ...req.body },
+        cartItem: {
+            id: "99",
+            ...req.body
+        },
     });
 });
 
@@ -988,12 +1125,18 @@ app.put("/api/cart/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตตะกร้าสำเร็จ",
-        cartItem: { id: req.params.id, ...req.body },
+        cartItem: {
+            id: req.params.id,
+            ...req.body
+        },
     });
 });
 
 app.delete("/api/cart/:id", (req, res) => {
-    res.status(200).json({ status: "200", message: "ลบสินค้าในตะกร้าสำเร็จ" });
+    res.status(200).json({
+        status: "200",
+        message: "ลบสินค้าในตะกร้าสำเร็จ"
+    });
 });
 
 app.post("/api/checkout", (req, res) => {
@@ -1063,8 +1206,14 @@ app.get("/api/order-status/:id", (req, res) => {
                     timestamp: "2026-05-21T12:05:00Z",
                     done: true,
                 },
-                { status: "ready", label: "พร้อมเสิร์ฟ", timestamp: null, done: false },
-                { status: "served", label: "เสิร์ฟแล้ว", timestamp: null, done: false },
+                {
+                    status: "ready", label: "พร้อมเสิร์ฟ",
+                    timestamp: null, done: false
+                },
+                {
+                    status: "served", label: "เสิร์ฟแล้ว",
+                    timestamp: null, done: false
+                },
             ],
             estimatedReadyAt: "2026-05-21T12:25:00Z",
             remainingMinutes: 15,
@@ -1161,7 +1310,10 @@ app.put("/api/kitchen/orders/:id/status", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ",
-        order: { id: req.params.id, status: req.body.status || "preparing" },
+        order: {
+            id: req.params.id,
+            status: req.body.status || "preparing"
+        },
     });
 });
 
@@ -1205,9 +1357,18 @@ app.get("/api/bills/:id", (req, res) => {
             orderId: "1001",
             tableName: "A2",
             customerName: "คุณเมย์",
-            items: [
-                { name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, subtotal: 170 },
-                { name: "ชาไทยเย็น", price: 45, quantity: 1, subtotal: 45 },
+            items: [{
+                name: "ข้าวกะเพราไก่ไข่ดาว",
+                price: 85,
+                quantity: 2,
+                subtotal: 170
+            },
+            {
+                name: "ชาไทยเย็น",
+                price: 45,
+                quantity: 1,
+                subtotal: 45
+            },
             ],
             total: 215,
             serviceCharge: 21.5,
@@ -1244,8 +1405,18 @@ app.get("/api/receipts/:id", (req, res) => {
             tableName: "A2",
             customerName: "คุณเมย์",
             items: [
-                { name: "ข้าวกะเพราไก่ไข่ดาว", price: 85, quantity: 2, subtotal: 170 },
-                { name: "ชาไทยเย็น", price: 45, quantity: 1, subtotal: 45 },
+                {
+                    name: "ข้าวกะเพราไก่ไข่ดาว",
+                    price: 85,
+                    quantity: 2,
+                    subtotal: 170
+                },
+                {
+                    name: "ชาไทยเย็น",
+                    price: 45,
+                    quantity: 1,
+                    subtotal: 45
+                },
             ],
             total: 215,
             serviceCharge: 21.5,
@@ -1344,7 +1515,10 @@ app.get("/api/pos/orders/:id", (req, res) => {
                     name: "ข้าวกะเพราไก่ไข่ดาว",
                     price: 85,
                     quantity: 2,
-                    options: [{ name: "ระดับความเผ็ด", choice: "เผ็ดมาก" }],
+                    options: [{
+                        name: "ระดับความเผ็ด",
+                        choice: "เผ็ดมาก"
+                    }],
                 },
                 {
                     id: "2",
@@ -1363,7 +1537,10 @@ app.post("/api/pos/orders", (req, res) => {
     res.status(201).json({
         status: "201",
         message: "สร้างออเดอร์ POS สำเร็จ",
-        order: { id: "8888", ...req.body },
+        order: {
+            id: "8888",
+            ...req.body
+        },
     });
 });
 
@@ -1392,14 +1569,36 @@ app.get("/api/reports/sales", (req, res) => {
             totalOrders: 4,
             averagePerOrder: 288.75,
             topSelling: [
-                { menuId: "1", name: "ข้าวกะเพราไก่ไข่ดาว", quantity: 5, revenue: 425 },
-                { menuId: "7", name: "ต้มยำกุ้งน้ำข้น", quantity: 2, revenue: 360 },
+                {
+                    menuId: "1",
+                    name: "ข้าวกะเพราไก่ไข่ดาว",
+                    quantity: 5,
+                    revenue: 425
+                },
+                {
+                    menuId: "7",
+                    name: "ต้มยำกุ้งน้ำข้น",
+                    quantity: 2,
+                    revenue: 360
+                },
             ],
             salesByCategory: [
-                { category: "อาหารจานเดียว", amount: 425 },
-                { category: "กับข้าว", amount: 360 },
-                { category: "เครื่องดื่ม", amount: 135 },
-                { category: "ชุดเซ็ต", amount: 235 },
+                {
+                    category: "อาหารจานเดียว",
+                    amount: 425
+                },
+                {
+                    category: "กับข้าว",
+                    amount: 360
+                },
+                {
+                    category: "เครื่องดื่ม",
+                    amount: 135
+                },
+                {
+                    category: "ชุดเซ็ต",
+                    amount: 235
+                },
             ],
         },
     });
