@@ -832,9 +832,7 @@ app.get("/api/menu-options", (req, res) => {
 });
 
 app.post("/api/menu-options", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "สร้างตัวเลือกเมนูสำเร็จ",
       menuOption: { id: "100", ...req.body },
@@ -842,9 +840,7 @@ app.post("/api/menu-options", (req, res) => {
 });
 
 app.put("/api/menu-options/:id", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตตัวเลือกเมนูสำเร็จ",
       menuOption: { id: req.params.id, ...req.body },
