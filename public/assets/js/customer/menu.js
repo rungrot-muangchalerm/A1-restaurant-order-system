@@ -1,25 +1,21 @@
 fetch('/api/menu').then(res => res.json()).then(data => {
     if (data.status === '200') {
         let categoryCount = {}
-
         data.menu.forEach(element => {
             if (!categoryCount[element.category]) {
                 categoryCount[element.category] = 0
             }
-
             categoryCount[element.category]++
         })
-
-        console.log(categoryCount['อาหารจานเดียว'])
-        console.log(categoryCount['กับข้าว'])
-        console.log(categoryCount['เส้นและแกง'])
-        console.log(categoryCount['ของทานเล่น'])
-        console.log(categoryCount['เครื่องดื่ม']);
-        console.log(categoryCount['ชุดเซ็ต']);
+        document.getElementById('menu-length').textContent = data.menu.length
+        document.getElementById('category-count').textContent = Object.keys(categoryCount).length
+        Me().then(data => {
+            document.getElementById('user').textContent = data.user
+            document.getElementById('role').textContent = data.role
+        });
     } else {
         console.log(`status err${data}`)
     }
-
     if (data.status === '200') {
         const container = document.getElementById('menu-container')
         const template = document.getElementById('menu-list')
