@@ -4,7 +4,7 @@ const port = 3000
 app.use(express.static('public'))
 app.use(express.json())
 
-app.get('/api/me', (req, res) => {
+app.get('/api/auth/me', (req, res) => {
     res.status(200).json({
         status: "200",
         user: "A2",
@@ -12,7 +12,7 @@ app.get('/api/me', (req, res) => {
     })
 })
 
-app.post('/api/register', (req, res) => {
+app.post('/api/auth/register', (req, res) => {
     res.status(200).json({
         status: "200",
         message: "success"
@@ -24,6 +24,10 @@ app.post('/api/auth/login', (req, res) => {
         status: "200",
         message: "success"
     })
+})
+
+app.post('/api/auth/logout', (req, res) => {
+    res.status(200).json({ status: "200", message: "ออกจากระบบสำเร็จ" })
 })
 
 app.get('/api/restaurant-status', (req, res) => {
@@ -412,9 +416,7 @@ app.get('/api/menu', (req, res) => {
         ]
     })
 })
-app.post('/api/auth/logout', (req, res) => {
-    res.status(200).json({ status: "200", message: "ออกจากระบบสำเร็จ" })
-})
+
 
 app.get('/api/users', (req, res) => {
     res.status(200).json({
