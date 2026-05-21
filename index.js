@@ -27,7 +27,10 @@ app.post('/api/auth/login', (req, res) => {
 })
 
 app.post('/api/auth/logout', (req, res) => {
-    res.status(200).json({ status: "200", message: "ออกจากระบบสำเร็จ" })
+    res.status(200).json({
+        status: "200",
+        message: "ออกจากระบบสำเร็จ"
+    })
 })
 
 app.get('/api/restaurant-status', (req, res) => {
