@@ -1,16 +1,24 @@
+let menuData = null
+
 async function loadMenu(keyword = '') {
     try {
-        const res = await fetch('/api/menu')
-        const data = await res.json()
+        if (!menuData) {
+            const res = await fetch('/api/menu')
+            const data = await res.json()
 
-        if (data.status !== '200') {
-            console.log(`status err ${data.status}`)
+            if (data.status !== '200') {
+                console.log(`status err ${data.status}`)
 
-            return {
-                ...data,
-                menu: []
+                return {
+                    ...data,
+                    menu: []
+                }
             }
+
+            menuData = data
         }
+
+        const data = menuData
 
         let categoryCount = {}
 
@@ -61,11 +69,19 @@ async function loadMenu(keyword = '') {
 
         document.querySelector('[data-role="sum"]').textContent = total
 
-        const filteredMenu = data.menu.filter(menu => {
-            return menu.name.includes(keyword)
-        })
+        const searchTerm = keyword.toLowerCase().trim()
 
-        const menuToRender = keyword === '' ? data.menu : filteredMenu
+        const filteredMenu = searchTerm === ''
+            ? data.menu
+            : data.menu.filter(menu => {
+                const name = (menu.name || '').toLowerCase()
+                const description = (menu.discription || '').toLowerCase()
+                const category = (menu.category || '').toLowerCase()
+
+                return name.includes(searchTerm) ||
+                       description.includes(searchTerm) ||
+                       category.includes(searchTerm)
+            })
 
         const container = document.getElementById('menu-container')
         const template = document.getElementById('menu-list')
@@ -75,7 +91,7 @@ async function loadMenu(keyword = '') {
 
             return {
                 ...data,
-                menu: menuToRender
+                menu: filteredMenu
             }
         }
 
@@ -84,21 +100,19 @@ async function loadMenu(keyword = '') {
 
             return {
                 ...data,
-                menu: menuToRender
+                menu: filteredMenu
             }
         }
 
-        // ลบเฉพาะเมนูที่เคย render แล้ว
-        // ไม่ลบ template ที่อยู่ข้างใน container
         container.querySelectorAll('[data-rendered="menu-item"]').forEach(item => {
             item.remove()
         })
 
-        menuToRender.forEach(element => {
+        filteredMenu.forEach(element => {
             const clone = template.content.cloneNode(true)
 
             clone.querySelector('[data-role="id"]').textContent = element.id
-            clone.querySelector('[data-role="length"]').textContent = menuToRender.length
+            clone.querySelector('[data-role="length"]').textContent = filteredMenu.length
 
             clone.querySelector('[data-role="img"]').src = element.Image
             clone.querySelector('[data-role="img"]').alt = element.name
@@ -113,7 +127,7 @@ async function loadMenu(keyword = '') {
 
         return {
             ...data,
-            menu: menuToRender
+            menu: filteredMenu
         }
 
     } catch (err) {
