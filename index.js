@@ -4,6 +4,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(express.json());
 
+// ==================== AUTH ====================
 app.get("/api/auth/me", (req, res) => {
     res.status(200).json({
         status: "200",
@@ -33,6 +34,7 @@ app.post("/api/auth/logout", (req, res) => {
     });
 });
 
+// ==================== CUSTOMER ====================
 app.get("/api/restaurant-status", (req, res) => {
     res.status(200).json({
         status: "200",
@@ -394,6 +396,464 @@ app.get("/api/menu", (req, res) => {
     });
 });
 
+app.get("/api/menu/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        menu: {
+            id: req.params.id,
+            name: "เมนูตัวอย่าง",
+            price: "100",
+            category: "อาหารจานเดียว",
+            discription: "รายละเอียดเมนู",
+            Image:
+                "https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=900",
+        },
+    });
+});
+
+app.get("/api/cart", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        cart: {
+            items: [{
+                id: "1",
+                menuId: "1",
+                name: "ข้าวกะเพราไก่ไข่ดาว",
+                price: 85,
+                quantity: 2,
+                options: [{
+                    name: "ระดับความเผ็ด",
+                    choice: "เผ็ดมาก"
+                }],
+                subtotal: 170,
+            }, {
+                id: "2",
+                menuId: "25",
+                name: "ชาไทยเย็น",
+                price: 45,
+                quantity: 1,
+                options: [],
+                subtotal: 45,
+            }],
+            total: 215,
+            itemCount: 3,
+        },
+    });
+});
+
+app.post("/api/cart", (req, res) => {
+    res.status(201).json({
+        status: "201",
+        message: "เพิ่มสินค้าในตะกร้าสำเร็จ",
+        cartItem: {
+            id: "99",
+            ...req.body
+        },
+    });
+});
+
+app.put("/api/cart/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        message: "อัปเดตตะกร้าสำเร็จ",
+        cartItem: {
+            id: req.params.id,
+            ...req.body
+        },
+    });
+});
+
+app.delete("/api/cart/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        message: "ลบสินค้าในตะกร้าสำเร็จ"
+    });
+});
+
+app.post("/api/checkout", (req, res) => {
+    res.status(201).json({
+        status: "201",
+        message: "สั่งซื้อสำเร็จ",
+        order: {
+            id: "5000",
+            ...req.body,
+            status: "pending",
+            createdAt: new Date().toISOString(),
+        },
+    });
+});
+
+app.get("/api/order-history", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        history: [{
+            id: "9001",
+            orderId: "1001",
+            tableName: "A2",
+            total: 265,
+            status: "completed",
+            completedAt: "2026-05-20T13:00:00Z",
+            items: 3,
+        }, {
+            id: "9002",
+            orderId: "1002",
+            tableName: "-",
+            total: 120,
+            status: "completed",
+            completedAt: "2026-05-19T14:30:00Z",
+            items: 2,
+        }, {
+            id: "9003",
+            orderId: "1003",
+            tableName: "B1",
+            total: 590,
+            status: "cancelled",
+            completedAt: "2026-05-18T12:00:00Z",
+            items: 5,
+        }],
+    });
+});
+
+app.get("/api/order-status/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        orderStatus: {
+            id: req.params.id,
+            currentStatus: "preparing",
+            timeline: [{
+                status: "pending",
+                label: "รับออเดอร์",
+                timestamp: "2026-05-21T12:00:00Z",
+                done: true,
+            }, {
+                status: "preparing",
+                label: "กำลังปรุง",
+                timestamp: "2026-05-21T12:05:00Z",
+                done: true,
+            }, {
+                status: "ready", label: "พร้อมเสิร์ฟ",
+                timestamp: null, done: false
+            }, {
+                status: "served", label: "เสิร์ฟแล้ว",
+                timestamp: null, done: false
+            }],
+            estimatedReadyAt: "2026-05-21T12:25:00Z",
+            remainingMinutes: 15,
+        },
+    });
+});
+
+// ==================== POS ====================
+app.get("/api/pos/tables", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        tables: [{
+            id: "1",
+            name: "A1",
+            seats: 4,
+            status: "available",
+            currentOrderId: null,
+        }, {
+            id: "2",
+            name: "A2",
+            seats: 2,
+            status: "occupied",
+            currentOrderId: "1001",
+        }, {
+            id: "3",
+            name: "A3",
+            seats: 6,
+            status: "reserved",
+            currentOrderId: null,
+        }, {
+            id: "4",
+            name: "B1",
+            seats: 4,
+            status: "occupied",
+            currentOrderId: "1003",
+        }, {
+            id: "5",
+            name: "B2",
+            seats: 8,
+            status: "cleaning",
+            currentOrderId: null,
+        }],
+    });
+});
+
+app.get("/api/pos/orders", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        orders: [{
+            id: "1001",
+            tableName: "A2",
+            customerName: "คุณเมย์",
+            total: 265,
+            status: "served",
+            createdAt: "2026-05-21T11:00:00Z",
+        }, {
+            id: "1003",
+            tableName: "B1",
+            customerName: "คุณต้น",
+            total: 590,
+            status: "pending",
+            createdAt: "2026-05-21T12:00:00Z",
+        }],
+    });
+});
+
+app.get("/api/pos/orders/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        order: {
+            id: req.params.id,
+            tableName: "A2",
+            customerName: "คุณเมย์",
+            total: 265,
+            status: "served",
+            createdAt: "2026-05-21T11:00:00Z",
+            items: [{
+                id: "1",
+                menuId: "1",
+                name: "ข้าวกะเพราไก่ไข่ดาว",
+                price: 85,
+                quantity: 2,
+                options: [{
+                    name: "ระดับความเผ็ด",
+                    choice: "เผ็ดมาก"
+                }],
+            }, {
+                id: "2",
+                menuId: "25",
+                name: "ชาไทยเย็น",
+                price: 45,
+                quantity: 1,
+                options: [],
+            }],
+        },
+    });
+});
+
+app.post("/api/pos/orders", (req, res) => {
+    res.status(201).json({
+        status: "201",
+        message: "สร้างออเดอร์ POS สำเร็จ",
+        order: {
+            id: "8888",
+            ...req.body
+        },
+    });
+});
+
+app.get("/api/pos/dashboard", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        dashboard: {
+            todayOrders: 12,
+            todaySales: 3840,
+            activeTables: 5,
+            availableTables: 8,
+            pendingOrders: 2,
+            preparingOrders: 3,
+            readyOrders: 1,
+        },
+    });
+});
+
+// ==================== KITCHEN ====================
+app.get("/api/kitchen/queue", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        queue: [{
+            id: "1003",
+            tableName: "B1",
+            items: 5,
+            note: "รีบหน่อยครับ",
+            createdAt: "2026-05-21T12:00:00Z",
+            elapsedMinutes: 5,
+        }, {
+            id: "1005",
+            tableName: "A3",
+            items: 3,
+            note: "",
+            createdAt: "2026-05-21T12:05:00Z",
+            elapsedMinutes: 3,
+        }],
+    });
+});
+
+app.get("/api/kitchen/preparing", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        preparing: [{
+            id: "1002",
+            tableName: "-",
+            items: 2,
+            note: "ห่อกลับบ้าน",
+            startedAt: "2026-05-21T11:35:00Z",
+            elapsedMinutes: 8,
+        }, {
+            id: "1006",
+            tableName: "C1",
+            items: 4,
+            note: "",
+            startedAt: "2026-05-21T12:10:00Z",
+            elapsedMinutes: 2,
+        }],
+    });
+});
+
+app.get("/api/kitchen/ready", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        ready: [{
+            id: "1004",
+            tableName: "A1",
+            items: 2,
+            completedAt: "2026-05-21T12:20:00Z",
+            waitedMinutes: 5,
+        }],
+    });
+});
+
+app.get("/api/kitchen/history", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        history: [{
+            id: "9001",
+            tableName: "A2",
+            items: 3,
+            completedAt: "2026-05-20T13:00:00Z",
+            totalTimeMinutes: 18,
+        }, {
+            id: "9002",
+            tableName: "-",
+            items: 2,
+            completedAt: "2026-05-19T14:30:00Z",
+            totalTimeMinutes: 12,
+        }],
+    });
+});
+
+app.put("/api/kitchen/orders/:id/status", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ",
+        order: {
+            id: req.params.id,
+            status: req.body.status || "preparing"
+        },
+    });
+});
+
+// ==================== CASHIER ====================
+app.get("/api/bills", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        bills: [{
+            id: "B001",
+            orderId: "1001",
+            tableName: "A2",
+            customerName: "คุณเมย์",
+            total: 265,
+            discount: 0,
+            vat: 18.55,
+            grandTotal: 283.55,
+            status: "unpaid",
+            createdAt: "2026-05-21T11:00:00Z",
+        }, {
+            id: "B002",
+            orderId: "1004",
+            tableName: "A1",
+            customerName: "คุณแอน",
+            total: 180,
+            discount: 20,
+            vat: 11.2,
+            grandTotal: 171.2,
+            status: "paid",
+            createdAt: "2026-05-21T12:15:00Z",
+        }],
+    });
+});
+
+app.get("/api/bills/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        bill: {
+            id: req.params.id,
+            orderId: "1001",
+            tableName: "A2",
+            customerName: "คุณเมย์",
+            items: [{
+                name: "ข้าวกะเพราไก่ไข่ดาว",
+                price: 85,
+                quantity: 2,
+                subtotal: 170
+            }, {
+                name: "ชาไทยเย็น",
+                price: 45,
+                quantity: 1,
+                subtotal: 45
+            }],
+            total: 215,
+            serviceCharge: 21.5,
+            vat: 16.56,
+            discount: 0,
+            grandTotal: 253.06,
+            status: "unpaid",
+            createdAt: "2026-05-21T11:00:00Z",
+        },
+    });
+});
+
+app.post("/api/payments", (req, res) => {
+    res.status(201).json({
+        status: "201",
+        message: "ชำระเงินสำเร็จ",
+        payment: {
+            id: "P001",
+            billId: req.body.billId,
+            amount: req.body.amount || 253.06,
+            method: req.body.method || "cash",
+            paidAt: new Date().toISOString(),
+        },
+    });
+});
+
+app.get("/api/receipts/:id", (req, res) => {
+    res.status(200).json({
+        status: "200",
+        receipt: {
+            id: req.params.id,
+            billId: "B001",
+            orderId: "1001",
+            tableName: "A2",
+            customerName: "คุณเมย์",
+            items: [{
+                name: "ข้าวกะเพราไก่ไข่ดาว",
+                price: 85,
+                quantity: 2,
+                subtotal: 170
+            }, {
+                name: "ชาไทยเย็น",
+                price: 45,
+                quantity: 1,
+                subtotal: 45
+            }],
+            total: 215,
+            serviceCharge: 21.5,
+            vat: 16.56,
+            discount: 0,
+            grandTotal: 253.06,
+            paymentMethod: "cash",
+            received: 260,
+            change: 6.94,
+            printedAt: "2026-05-21T12:30:00Z",
+        },
+    });
+});
+
+// ==================== ADMIN ====================
 app.get("/api/users", (req, res) => {
     res.status(200).json({
         status: "200",
@@ -661,21 +1121,6 @@ app.delete("/api/categories/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "ลบหมวดหมู่สำเร็จ"
-    });
-});
-
-app.get("/api/menu/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        menu: {
-            id: req.params.id,
-            name: "เมนูตัวอย่าง",
-            price: "100",
-            category: "อาหารจานเดียว",
-            discription: "รายละเอียดเมนู",
-            Image:
-                "https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=900",
-        },
     });
 });
 
@@ -976,445 +1421,6 @@ app.delete("/api/orders/:id", (req, res) => {
     res.status(200).json({
         status: "200",
         message: "ลบออเดอร์สำเร็จ"
-    });
-});
-
-app.get("/api/cart", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        cart: {
-            items: [{
-                id: "1",
-                menuId: "1",
-                name: "ข้าวกะเพราไก่ไข่ดาว",
-                price: 85,
-                quantity: 2,
-                options: [{
-                    name: "ระดับความเผ็ด",
-                    choice: "เผ็ดมาก"
-                }],
-                subtotal: 170,
-            }, {
-                id: "2",
-                menuId: "25",
-                name: "ชาไทยเย็น",
-                price: 45,
-                quantity: 1,
-                options: [],
-                subtotal: 45,
-            }],
-            total: 215,
-            itemCount: 3,
-        },
-    });
-});
-
-app.post("/api/cart", (req, res) => {
-    res.status(201).json({
-        status: "201",
-        message: "เพิ่มสินค้าในตะกร้าสำเร็จ",
-        cartItem: {
-            id: "99",
-            ...req.body
-        },
-    });
-});
-
-app.put("/api/cart/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        message: "อัปเดตตะกร้าสำเร็จ",
-        cartItem: {
-            id: req.params.id,
-            ...req.body
-        },
-    });
-});
-
-app.delete("/api/cart/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        message: "ลบสินค้าในตะกร้าสำเร็จ"
-    });
-});
-
-app.post("/api/checkout", (req, res) => {
-    res.status(201).json({
-        status: "201",
-        message: "สั่งซื้อสำเร็จ",
-        order: {
-            id: "5000",
-            ...req.body,
-            status: "pending",
-            createdAt: new Date().toISOString(),
-        },
-    });
-});
-
-app.get("/api/order-history", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        history: [{
-            id: "9001",
-            orderId: "1001",
-            tableName: "A2",
-            total: 265,
-            status: "completed",
-            completedAt: "2026-05-20T13:00:00Z",
-            items: 3,
-        }, {
-            id: "9002",
-            orderId: "1002",
-            tableName: "-",
-            total: 120,
-            status: "completed",
-            completedAt: "2026-05-19T14:30:00Z",
-            items: 2,
-        }, {
-            id: "9003",
-            orderId: "1003",
-            tableName: "B1",
-            total: 590,
-            status: "cancelled",
-            completedAt: "2026-05-18T12:00:00Z",
-            items: 5,
-        }],
-    });
-});
-
-app.get("/api/order-status/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        orderStatus: {
-            id: req.params.id,
-            currentStatus: "preparing",
-            timeline: [{
-                status: "pending",
-                label: "รับออเดอร์",
-                timestamp: "2026-05-21T12:00:00Z",
-                done: true,
-            }, {
-                status: "preparing",
-                label: "กำลังปรุง",
-                timestamp: "2026-05-21T12:05:00Z",
-                done: true,
-            }, {
-                status: "ready", label: "พร้อมเสิร์ฟ",
-                timestamp: null, done: false
-            }, {
-                status: "served", label: "เสิร์ฟแล้ว",
-                timestamp: null, done: false
-            }],
-            estimatedReadyAt: "2026-05-21T12:25:00Z",
-            remainingMinutes: 15,
-        },
-    });
-});
-
-app.get("/api/kitchen/queue", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        queue: [{
-            id: "1003",
-            tableName: "B1",
-            items: 5,
-            note: "รีบหน่อยครับ",
-            createdAt: "2026-05-21T12:00:00Z",
-            elapsedMinutes: 5,
-        }, {
-            id: "1005",
-            tableName: "A3",
-            items: 3,
-            note: "",
-            createdAt: "2026-05-21T12:05:00Z",
-            elapsedMinutes: 3,
-        }],
-    });
-});
-
-app.get("/api/kitchen/preparing", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        preparing: [{
-            id: "1002",
-            tableName: "-",
-            items: 2,
-            note: "ห่อกลับบ้าน",
-            startedAt: "2026-05-21T11:35:00Z",
-            elapsedMinutes: 8,
-        }, {
-            id: "1006",
-            tableName: "C1",
-            items: 4,
-            note: "",
-            startedAt: "2026-05-21T12:10:00Z",
-            elapsedMinutes: 2,
-        }],
-    });
-});
-
-app.get("/api/kitchen/ready", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        ready: [{
-            id: "1004",
-            tableName: "A1",
-            items: 2,
-            completedAt: "2026-05-21T12:20:00Z",
-            waitedMinutes: 5,
-        }],
-    });
-});
-
-app.get("/api/kitchen/history", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        history: [{
-            id: "9001",
-            tableName: "A2",
-            items: 3,
-            completedAt: "2026-05-20T13:00:00Z",
-            totalTimeMinutes: 18,
-        }, {
-            id: "9002",
-            tableName: "-",
-            items: 2,
-            completedAt: "2026-05-19T14:30:00Z",
-            totalTimeMinutes: 12,
-        }],
-    });
-});
-
-app.put("/api/kitchen/orders/:id/status", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ",
-        order: {
-            id: req.params.id,
-            status: req.body.status || "preparing"
-        },
-    });
-});
-
-app.get("/api/bills", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        bills: [{
-            id: "B001",
-            orderId: "1001",
-            tableName: "A2",
-            customerName: "คุณเมย์",
-            total: 265,
-            discount: 0,
-            vat: 18.55,
-            grandTotal: 283.55,
-            status: "unpaid",
-            createdAt: "2026-05-21T11:00:00Z",
-        }, {
-            id: "B002",
-            orderId: "1004",
-            tableName: "A1",
-            customerName: "คุณแอน",
-            total: 180,
-            discount: 20,
-            vat: 11.2,
-            grandTotal: 171.2,
-            status: "paid",
-            createdAt: "2026-05-21T12:15:00Z",
-        }],
-    });
-});
-
-app.get("/api/bills/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        bill: {
-            id: req.params.id,
-            orderId: "1001",
-            tableName: "A2",
-            customerName: "คุณเมย์",
-            items: [{
-                name: "ข้าวกะเพราไก่ไข่ดาว",
-                price: 85,
-                quantity: 2,
-                subtotal: 170
-            }, {
-                name: "ชาไทยเย็น",
-                price: 45,
-                quantity: 1,
-                subtotal: 45
-            }],
-            total: 215,
-            serviceCharge: 21.5,
-            vat: 16.56,
-            discount: 0,
-            grandTotal: 253.06,
-            status: "unpaid",
-            createdAt: "2026-05-21T11:00:00Z",
-        },
-    });
-});
-
-app.post("/api/payments", (req, res) => {
-    res.status(201).json({
-        status: "201",
-        message: "ชำระเงินสำเร็จ",
-        payment: {
-            id: "P001",
-            billId: req.body.billId,
-            amount: req.body.amount || 253.06,
-            method: req.body.method || "cash",
-            paidAt: new Date().toISOString(),
-        },
-    });
-});
-
-app.get("/api/receipts/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        receipt: {
-            id: req.params.id,
-            billId: "B001",
-            orderId: "1001",
-            tableName: "A2",
-            customerName: "คุณเมย์",
-            items: [{
-                name: "ข้าวกะเพราไก่ไข่ดาว",
-                price: 85,
-                quantity: 2,
-                subtotal: 170
-            }, {
-                name: "ชาไทยเย็น",
-                price: 45,
-                quantity: 1,
-                subtotal: 45
-            }],
-            total: 215,
-            serviceCharge: 21.5,
-            vat: 16.56,
-            discount: 0,
-            grandTotal: 253.06,
-            paymentMethod: "cash",
-            received: 260,
-            change: 6.94,
-            printedAt: "2026-05-21T12:30:00Z",
-        },
-    });
-});
-
-app.get("/api/pos/tables", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        tables: [{
-            id: "1",
-            name: "A1",
-            seats: 4,
-            status: "available",
-            currentOrderId: null,
-        }, {
-            id: "2",
-            name: "A2",
-            seats: 2,
-            status: "occupied",
-            currentOrderId: "1001",
-        }, {
-            id: "3",
-            name: "A3",
-            seats: 6,
-            status: "reserved",
-            currentOrderId: null,
-        }, {
-            id: "4",
-            name: "B1",
-            seats: 4,
-            status: "occupied",
-            currentOrderId: "1003",
-        }, {
-            id: "5",
-            name: "B2",
-            seats: 8,
-            status: "cleaning",
-            currentOrderId: null,
-        }],
-    });
-});
-
-app.get("/api/pos/orders", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        orders: [{
-            id: "1001",
-            tableName: "A2",
-            customerName: "คุณเมย์",
-            total: 265,
-            status: "served",
-            createdAt: "2026-05-21T11:00:00Z",
-        }, {
-            id: "1003",
-            tableName: "B1",
-            customerName: "คุณต้น",
-            total: 590,
-            status: "pending",
-            createdAt: "2026-05-21T12:00:00Z",
-        }],
-    });
-});
-
-app.get("/api/pos/orders/:id", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        order: {
-            id: req.params.id,
-            tableName: "A2",
-            customerName: "คุณเมย์",
-            total: 265,
-            status: "served",
-            createdAt: "2026-05-21T11:00:00Z",
-            items: [{
-                id: "1",
-                menuId: "1",
-                name: "ข้าวกะเพราไก่ไข่ดาว",
-                price: 85,
-                quantity: 2,
-                options: [{
-                    name: "ระดับความเผ็ด",
-                    choice: "เผ็ดมาก"
-                }],
-            }, {
-                id: "2",
-                menuId: "25",
-                name: "ชาไทยเย็น",
-                price: 45,
-                quantity: 1,
-                options: [],
-            }],
-        },
-    });
-});
-
-app.post("/api/pos/orders", (req, res) => {
-    res.status(201).json({
-        status: "201",
-        message: "สร้างออเดอร์ POS สำเร็จ",
-        order: {
-            id: "8888",
-            ...req.body
-        },
-    });
-});
-
-app.get("/api/pos/dashboard", (req, res) => {
-    res.status(200).json({
-        status: "200",
-        dashboard: {
-            todayOrders: 12,
-            todaySales: 3840,
-            activeTables: 5,
-            availableTables: 8,
-            pendingOrders: 2,
-            preparingOrders: 3,
-            readyOrders: 1,
-        },
     });
 });
 
