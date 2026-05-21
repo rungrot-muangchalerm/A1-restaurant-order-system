@@ -1064,9 +1064,7 @@ app.post("/api/cart", (req, res) => {
 });
 
 app.put("/api/cart/:id", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตตะกร้าสำเร็จ",
       cartItem: { id: req.params.id, ...req.body },
@@ -1078,9 +1076,7 @@ app.delete("/api/cart/:id", (req, res) => {
 });
 
 app.post("/api/checkout", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "สั่งซื้อสำเร็จ",
       order: {
@@ -1241,9 +1237,7 @@ app.get("/api/kitchen/history", (req, res) => {
 });
 
 app.put("/api/kitchen/orders/:id/status", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตสถานะออเดอร์ในครัวสำเร็จ",
       order: { id: req.params.id, status: req.body.status || "preparing" },
@@ -1306,9 +1300,7 @@ app.get("/api/bills/:id", (req, res) => {
 });
 
 app.post("/api/payments", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "ชำระเงินสำเร็จ",
       payment: {
@@ -1447,9 +1439,7 @@ app.get("/api/pos/orders/:id", (req, res) => {
 });
 
 app.post("/api/pos/orders", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "สร้างออเดอร์ POS สำเร็จ",
       order: { id: "8888", ...req.body },
@@ -1573,9 +1563,7 @@ app.get("/api/restaurant-settings", (req, res) => {
 });
 
 app.put("/api/restaurant-settings", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตการตั้งค่าร้านสำเร็จ",
       settings: { ...req.body },
