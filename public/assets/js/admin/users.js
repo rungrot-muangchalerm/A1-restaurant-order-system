@@ -1,5 +1,3 @@
-
-console.log("มาจริงมั้ย")
 fetch('/api/users').then(res => res.json()).then(data => {
     if (data.status === '200') {
         const container = document.getElementById('users-container')
