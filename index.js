@@ -735,9 +735,7 @@ app.get("/api/categories", (req, res) => {
 });
 
 app.post("/api/categories", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "สร้างหมวดหมู่สำเร็จ",
       category: { id: "99", ...req.body },
@@ -745,9 +743,7 @@ app.post("/api/categories", (req, res) => {
 });
 
 app.put("/api/categories/:id", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตหมวดหมู่สำเร็จ",
       category: { id: req.params.id, ...req.body },
