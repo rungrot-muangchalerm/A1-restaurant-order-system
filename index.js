@@ -1056,9 +1056,7 @@ app.get("/api/cart", (req, res) => {
 });
 
 app.post("/api/cart", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "เพิ่มสินค้าในตะกร้าสำเร็จ",
       cartItem: { id: "99", ...req.body },
