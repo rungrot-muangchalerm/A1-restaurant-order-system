@@ -770,9 +770,7 @@ app.get("/api/menu/:id", (req, res) => {
 });
 
 app.post("/api/menu", (req, res) => {
-  res
-    .status(201)
-    .json({
+  res.status(201).json({
       status: "201",
       message: "สร้างเมนูสำเร็จ",
       menu: { id: "100", ...req.body },
@@ -780,9 +778,7 @@ app.post("/api/menu", (req, res) => {
 });
 
 app.put("/api/menu/:id", (req, res) => {
-  res
-    .status(200)
-    .json({
+  res.status(200).json({
       status: "200",
       message: "อัปเดตเมนูสำเร็จ",
       menu: { id: req.params.id, ...req.body },
