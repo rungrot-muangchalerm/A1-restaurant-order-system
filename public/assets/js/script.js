@@ -1,4 +1,4 @@
-fetch('/api/me').then(res => res.json()).then(data => {
+fetch('/api/auth/me').then(res => res.json()).then(data => {
     if (data.status === "200") {
         document.getElementById('login').classList.add('d-none')
         document.getElementById('register').classList.add('d-none')

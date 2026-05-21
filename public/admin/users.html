@@ -262,10 +262,27 @@
           </div>
         </div>
       </div>
+
       <div class="col-12 col-xl-8">
         <div class="card">
           <div class="card-header bg-white fw-semibold">รายการผู้ใช้</div>
           <div class="table-responsive">
+            <template id="users-list">
+              <tr>
+                <td data-role="username">admin</td>
+                <td data-role="name">ผู้ดูแลร้าน</td>
+                <td>
+                  <span data-role="role" class="badge text-bg-dark">admin</span>
+                </td>
+                <td>05/05/2026 18:10</td>
+                <td>
+                  <span data-role="status" class="badge text-bg-success">ใช้งาน</span>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+                </td>
+              </tr>
+            </template>
             <table class="table table-hover align-middle mb-0">
               <thead class="table-light">
                 <tr>
@@ -277,63 +294,8 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>admin</td>
-                  <td>ผู้ดูแลร้าน</td>
-                  <td>
-                    <span class="badge text-bg-dark">admin</span>
-                  </td>
-                  <td>05/05/2026 18:10</td>
-                  <td>
-                    <span class="badge text-bg-success">ใช้งาน</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>staff01</td>
-                  <td>พนักงานหน้าร้าน</td>
-                  <td>
-                    <span class="badge text-bg-primary">staff</span>
-                  </td>
-                  <td>05/05/2026 18:00</td>
-                  <td>
-                    <span class="badge text-bg-success">ใช้งาน</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>kitchen01</td>
-                  <td>ครัวกลาง</td>
-                  <td>
-                    <span class="badge text-bg-warning">kitchen</span>
-                  </td>
-                  <td>05/05/2026 17:55</td>
-                  <td>
-                    <span class="badge text-bg-success">ใช้งาน</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>cashier01</td>
-                  <td>แคชเชียร์</td>
-                  <td>
-                    <span class="badge text-bg-info">cashier</span>
-                  </td>
-                  <td>05/05/2026 17:50</td>
-                  <td>
-                    <span class="badge text-bg-success">ใช้งาน</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
-                  </td>
-                </tr>
+              <tbody id="users-container">
+
               </tbody>
             </table>
           </div>
@@ -430,6 +392,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/admin/users.js"></script>
 </body>
 
 </html>

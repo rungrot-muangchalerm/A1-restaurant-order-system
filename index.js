@@ -8,7 +8,7 @@ app.get("/api/auth/me", (req, res) => {
     res.status(200).json({
         status: "200",
         user: "A2",
-        role: "table",
+        role: "admin",
     });
 });
 
@@ -126,7 +126,7 @@ app.get("/api/menu", (req, res) => {
             Image: "https://images.unsplash.com/photo-1707897634981-39bcfe435268?auto=format&fit=crop&fm=jpg&q=70&w=900",
             name: "ข้าวกะเพราไก่ไข่ดาว",
             discription: "ผัดกะเพราไก่สับหอมใบกะเพรา เสิร์ฟพร้อมไข่ดาวกรอบ",
-            price: "85",
+            price: "90",
             category: "อาหารจานเดียว"
         }, {
             id: "2",
