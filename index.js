@@ -9,7 +9,7 @@ app.get("/api/auth/me", (req, res) => {
     res.status(200).json({
         status: "200",
         user: "A2",
-        role: "admin",
+        role: "user",
     });
 });
 
