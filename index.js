@@ -257,6 +257,27 @@ app.get("/api/menu", (req, res) => {
             price: "75",
             category: "ของทานเล่น"
         }, {
+            id: "20",
+            Image: "https://images.unsplash.com/photo-1603133872878-684f208fb74b?auto=format&fit=crop&w=900&q=80",
+            name: "ไก่ทอดกระเทียมพริกไทย",
+            discription: "ไก่ทอดกรอบคลุกกระเทียมเจียวทองหอมกรุ่น",
+            price: "95",
+            category: "ของทานเล่น"
+        }, {
+            id: "21",
+            Image: "https://images.unsplash.com/photo-1626804475297-411dbe6314c3?auto=format&fit=crop&w=900&q=80",
+            name: "ทอดมันวุ้นเส้น",
+            discription: "วุ้นเส้นผสมเนื้อปลาทอดกรอบนอกนุ่มใน",
+            price: "85",
+            category: "ของทานเล่น"
+        }, {
+            id: "22",
+            Image: "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=900&q=80",
+            name: "กุ้งแช่น้ำปลา",
+            discription: "กุ้งสดตัวโตแช่น้ำปลาพริกกระเทียมรสจัด",
+            price: "150",
+            category: "ของทานเล่น"
+        }, {
             id: "23",
             Image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80",
             name: "หมูมะนาว",
