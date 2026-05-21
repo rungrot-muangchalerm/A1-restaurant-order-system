@@ -25,6 +25,4 @@ async function Me() {
         return null;
     }
 }
-// Me().then(data => {
-//     console.log(data);
-// });
+Me()

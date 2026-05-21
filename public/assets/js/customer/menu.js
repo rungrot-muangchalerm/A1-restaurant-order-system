@@ -1,37 +1,139 @@
-fetch('/api/menu').then(res => res.json()).then(data => {
-    if (data.status === '200') {
+async function loadMenu(keyword = '') {
+    try {
+        const res = await fetch('/api/menu')
+        const data = await res.json()
+
+        if (data.status !== '200') {
+            console.log(`status err ${data.status}`)
+
+            return {
+                ...data,
+                menu: []
+            }
+        }
+
         let categoryCount = {}
+
         data.menu.forEach(element => {
             if (!categoryCount[element.category]) {
                 categoryCount[element.category] = 0
             }
+
             categoryCount[element.category]++
         })
+
         document.getElementById('menu-length').textContent = data.menu.length
-        document.getElementById('category-count').textContent = Object.keys(categoryCount).length
-        Me().then(data => {
-            document.getElementById('user').textContent = data.user
-            document.getElementById('role').textContent = data.role
-        });
-    } else {
-        console.log(`status err${data}`)
-    }
-    if (data.status === '200') {
+
+        document.getElementById('category-count').textContent =
+            Object.keys(categoryCount).length
+
+        const meData = await Me()
+
+        if (meData) {
+            document.getElementById('user').textContent = meData.user
+            document.getElementById('role').textContent = meData.role
+        }
+
+        document.querySelector('[data-role="id1-food"]').textContent =
+            categoryCount['อาหารจานเดียว'] || 0
+
+        document.querySelector('[data-role="id2-food"]').textContent =
+            categoryCount['กับข้าว'] || 0
+
+        document.querySelector('[data-role="id3-food"]').textContent =
+            categoryCount['เส้นและแกง'] || 0
+
+        document.querySelector('[data-role="id4-food"]').textContent =
+            categoryCount['ของทานเล่น'] || 0
+
+        document.querySelector('[data-role="id5-food"]').textContent =
+            categoryCount['เครื่องดื่ม'] || 0
+
+        document.querySelector('[data-role="id6-food"]').textContent =
+            categoryCount['ของหวาน'] || 0
+
+        document.querySelector('[data-role="id7-food"]').textContent =
+            categoryCount['ชุดเซ็ต'] || 0
+
+        const total = Object.values(categoryCount).reduce((sum, value) => {
+            return sum + value
+        }, 0)
+
+        document.querySelector('[data-role="sum"]').textContent = total
+
+        const filteredMenu = data.menu.filter(menu => {
+            return menu.name.includes(keyword)
+        })
+
+        const menuToRender = keyword === '' ? data.menu : filteredMenu
+
         const container = document.getElementById('menu-container')
         const template = document.getElementById('menu-list')
-        data.menu.forEach(element => {
+
+        if (!container) {
+            console.log('หา #menu-container ไม่เจอ')
+
+            return {
+                ...data,
+                menu: menuToRender
+            }
+        }
+
+        if (!template) {
+            console.log('หา #menu-list ไม่เจอ')
+
+            return {
+                ...data,
+                menu: menuToRender
+            }
+        }
+
+        // ลบเฉพาะเมนูที่เคย render แล้ว
+        // ไม่ลบ template ที่อยู่ข้างใน container
+        container.querySelectorAll('[data-rendered="menu-item"]').forEach(item => {
+            item.remove()
+        })
+
+        menuToRender.forEach(element => {
             const clone = template.content.cloneNode(true)
+
             clone.querySelector('[data-role="id"]').textContent = element.id
-            clone.querySelector('[data-role="length"]').textContent = data.menu.length
+            clone.querySelector('[data-role="length"]').textContent = menuToRender.length
+
             clone.querySelector('[data-role="img"]').src = element.Image
+            clone.querySelector('[data-role="img"]').alt = element.name
+
             clone.querySelector('[data-role="name"]').textContent = element.name
             clone.querySelector('[data-role="discription"]').textContent = element.discription
-            clone.querySelector('[data-role="price"]').textContent = element.price
+            clone.querySelector('[data-role="price"]').textContent = `${element.price} บาท`
             clone.querySelector('[data-role="category"]').textContent = element.category
+
             container.appendChild(clone)
         })
-    } else {
-        console.log(`status err${data}`)
-    }
-})
 
+        return {
+            ...data,
+            menu: menuToRender
+        }
+
+    } catch (err) {
+        console.log(err)
+
+        return {
+            status: '500',
+            menu: []
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadMenu()
+
+    document.getElementById('search-btn').addEventListener('click', async () => {
+        const keyword = document.getElementById('keyword').value.trim()
+
+        const data = await loadMenu(keyword)
+
+        console.table(data.menu)
+    })
+})
