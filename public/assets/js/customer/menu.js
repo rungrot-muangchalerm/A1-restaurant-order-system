@@ -2,8 +2,8 @@
 console.log("มาจริงมั้ย")
 fetch('/api/menu').then(res => res.json()).then(data => {
     if (data.status === '200') {
-        const container = document.getElementById('users-container')
-        const template = document.getElementById('users-list')
+        const container = document.getElementById('menu-container')
+        const template = document.getElementById('menu-list')
         console.log(data.menu.length)
         data.menu.forEach(element => {
             const clone = template.content.cloneNode(true)
