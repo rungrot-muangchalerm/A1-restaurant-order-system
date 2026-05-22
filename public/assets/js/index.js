@@ -1,3 +1,11 @@
+fetch('/api/restaurant-status').then(res => res.json()).then(data => {
+    if (data.status === '200') {
+        document.getElementById('average').textContent = data.average
+        document.getElementById('menu').textContent = data.menu
+        document.getElementById('delivery').textContent = data.delivery
+    }
+})
+
 fetch('/api/recommended-menus').then(res => res.json()).then(data => {
     console.log(data)
     if (data.status === '200') {
@@ -13,3 +21,4 @@ fetch('/api/recommended-menus').then(res => res.json()).then(data => {
         });
     }
 })
+

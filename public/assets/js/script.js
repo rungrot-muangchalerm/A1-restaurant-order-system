@@ -3,7 +3,7 @@ fetch('/api/auth/me').then(res => res.json()).then(data => {
     if (data.status === '200') {
         document.getElementById('login').classList.add('d-none')
         document.getElementById('register').classList.add('d-none')
-
+        document.getElementById('logout').classList.remove('d-none')
         if (data.role === 'admin') {
             document.getElementById('POS').classList.remove('d-none')
             document.getElementById('kitchen').classList.remove('d-none')
