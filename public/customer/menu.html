@@ -526,145 +526,32 @@
           <h2 class="h4 mb-0"><i class="fa-solid fa-ice-cream me-2 text-primary"></i>ของหวาน</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
         </div>
-        <div class="row g-4">
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="ข้าวเหนียวมะม่วง">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-success">ตามฤดูกาล</span>
+        <div id="dessert-container" class="row g-4">
+          <template id="dessert-template">
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card h-100 shadow-sm">
+                <div class="ratio ratio-4x3">
+                  <img data-role="img" class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="ข้าวเหนียวมะม่วง">
                 </div>
-                <h2 class="h5 mb-1">ข้าวเหนียวมะม่วง</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">ข้าวเหนียวมูนหอมกะทิกับมะม่วงสุกหวาน</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>95 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="บัวลอยไข่หวาน">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-light text-secondary border">อุ่นใจ</span>
-                </div>
-                <h2 class="h5 mb-1">บัวลอยไข่หวาน</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">บัวลอยนุ่มในน้ำกะทิหอม พร้อมไข่หวาน</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>70 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                    <span class="badge text-bg-light text-secondary border">
+                      <i class="fa-solid fa-ice-cream me-1"></i><span data-role="category"></span>
+                    </span>
+                    <span class="badge text-bg-success">ตามฤดูกาล</span>
+                  </div>
+                  <h2 data-role="name" class="h5 mb-1">ข้าวเหนียวมะม่วง</h2>
+                  <p data-role="description" class="text-body-secondary small flex-grow-1 mb-3">ข้าวเหนียวมูนหอมกะทิกับมะม่วงสุกหวาน</p>
+                  <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
+                    <strong data-role="price">95 บาท</strong>
+                    <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
+                      <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="ทับทิมกรอบ">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-info">เย็นชื่นใจ</span>
-                </div>
-                <h2 class="h5 mb-1">ทับทิมกรอบ</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">ทับทิมกรอบสีสดในน้ำกะทิเย็นหอมหวาน</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>65 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="เฉาก๊วยนมสด">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-light text-secondary border">พร้อมขาย</span>
-                </div>
-                <h2 class="h5 mb-1">เฉาก๊วยนมสด</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">เฉาก๊วยหนึบกับนมสดหวานละมุน</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>60 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="กล้วยบวชชี">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-light text-secondary border">คลาสสิก</span>
-                </div>
-                <h2 class="h5 mb-1">กล้วยบวชชี</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">กล้วยน้ำว้าในกะทิหอม หวานกำลังดี</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>55 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <div class="card h-100 shadow-sm">
-              <div class="ratio ratio-4x3">
-                <img class="w-100 h-100 object-fit-cover rounded-top" src="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="ไอศกรีมกะทิ">
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
-                  <span class="badge text-bg-light text-secondary border">
-                    <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
-                  </span>
-                  <span class="badge text-bg-success">ขายดี</span>
-                </div>
-                <h2 class="h5 mb-1">ไอศกรีมกะทิ</h2>
-                <p class="text-body-secondary small flex-grow-1 mb-3">ไอศกรีมกะทิสด เสิร์ฟพร้อมถั่วและข้าวเหนียว</p>
-                <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
-                  <strong>65 บาท</strong>
-                  <a class="btn btn-primary btn-sm" href="/customer/menu-detail.html">
-                    <i class="fa-solid fa-circle-info me-1"></i>ดูรายละเอียด
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          </template>
         </div>
       </div>
       <div class="tab-pane fade" id="set-pane" role="tabpanel" aria-labelledby="set-tab" tabindex="0">

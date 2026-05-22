@@ -44,6 +44,9 @@ fetch('/api/menu').then(res => res.json()).then(data => {
 
         const drinkContainer = document.getElementById('drink-container')
         const drinkTemplate = document.getElementById('drink-template')
+
+        const dessertContainer = document.getElementById('dessert-container')
+        const dessertTemplate = document.getElementById('dessert-template')
         data.menu.forEach(element => {
             if (element.category === 'อาหารจานเดียว') {
                 const clone = singleDishTemplate.content.cloneNode(true)
@@ -86,7 +89,13 @@ fetch('/api/menu').then(res => res.json()).then(data => {
                 clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
                 drinkContainer.appendChild(clone)
             } else if (element.category === 'ของหวาน') {
-                console.log('d');
+                const clone = dessertTemplate.content.cloneNode(true)
+                clone.querySelector('[data-role="img"]').src = element.Image
+                clone.querySelector('[data-role="category"]').textContent = element.category
+                clone.querySelector('[data-role="name"]').textContent = element.name
+                clone.querySelector('[data-role="description"]').textContent = element.discription
+                clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
+                dessertContainer.appendChild(clone)
             } else if (element.category === 'ชุดเซ็ต') {
                 console.log('ไม่เจอเหี้ยไรเลย')
             }
