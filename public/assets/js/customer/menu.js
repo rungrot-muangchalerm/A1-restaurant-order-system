@@ -7,9 +7,11 @@ let menuData = null
 
 async function loadMenu(keyword = '') {
     try {
+        let data
+
         if (!menuData) {
             const res = await fetch('/api/menu')
-            const data = await res.json()
+            data = await res.json()
 
             if (data.status !== '200') {
                 console.log(`status err ${data.status}`)
@@ -21,20 +23,18 @@ async function loadMenu(keyword = '') {
             }
 
             menuData = data
+        } else {
+            data = menuData
         }
 
         let categoryCount = {}
 
+        data.menu.forEach(element => {
+            categoryCount[element.category] = (categoryCount[element.category] || 0) + 1
+        })
+
         document.getElementById('menu-length').textContent = data.menu.length
-        document.getElementById('length').textContent = data.id.length
         document.getElementById('category-count').textContent = Object.keys(categoryCount).length
-
-        const meData = await Me()
-
-        if (meData) {
-            document.getElementById('user').textContent = meData.user
-            document.getElementById('role').textContent = meData.role
-        }
 
         document.querySelector('[data-role="id1-food"]').textContent = categoryCount['อาหารจานเดียว'] || 0
 
