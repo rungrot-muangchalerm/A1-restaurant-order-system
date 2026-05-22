@@ -41,6 +41,9 @@ fetch('/api/menu').then(res => res.json()).then(data => {
 
         const snackContainer = document.getElementById('snack-container')
         const snackTemplate = document.getElementById('snack-template')
+
+        const drinkContainer = document.getElementById('drink-container')
+        const drinkTemplate = document.getElementById('drink-template')
         data.menu.forEach(element => {
             if (element.category === 'อาหารจานเดียว') {
                 const clone = singleDishTemplate.content.cloneNode(true)
@@ -75,7 +78,13 @@ fetch('/api/menu').then(res => res.json()).then(data => {
                 clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
                 snackContainer.appendChild(clone)
             } else if (element.category === 'เครื่องดื่ม') {
-                console.log('e');
+                const clone = drinkTemplate.content.cloneNode(true)
+                clone.querySelector('[data-role="img"]').src = element.Image
+                clone.querySelector('[data-role="category"]').textContent = element.category
+                clone.querySelector('[data-role="name"]').textContent = element.name
+                clone.querySelector('[data-role="description"]').textContent = element.discription
+                clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
+                drinkContainer.appendChild(clone)
             } else if (element.category === 'ของหวาน') {
                 console.log('d');
             } else if (element.category === 'ชุดเซ็ต') {
