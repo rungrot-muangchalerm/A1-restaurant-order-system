@@ -1,8 +1,6 @@
 fetch('/api/menu').then(res => res.json()).then(data => {
     if (data.status === '200') {
-        console.table(data)
-        console.table(data.menu)
-        console.log(data.menu.length)
+
         document.getElementById('menu-1').textContent = data.menu.length
         document.getElementById('menu-2').textContent = data.menu.length
 
