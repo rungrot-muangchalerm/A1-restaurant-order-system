@@ -1,0 +1,38 @@
+fetch('/api/menu').then(res => res.json()).then(data => {
+    if (data.status === '200') {
+        console.table(data)
+        console.table(data.menu)
+        console.log(data.menu.length)
+        document.getElementById('menu-1').textContent = data.menu.length
+        document.getElementById('menu-2').textContent = data.menu.length
+
+        let categoryCount = {}
+        data.menu.forEach(element => {
+            const category = element.category
+            if (!categoryCount[category]) {
+                categoryCount[category] = 0
+            }
+            categoryCount[category]++
+        })
+        document.getElementById('categrory').textContent = Object.keys(categoryCount).length
+
+        const allContainer = document.getElementById('menu-container')
+        const allTemplate = document.getElementById('menu-template')
+        data.menu.forEach(element => {
+            const clone = allTemplate.content.cloneNode(true)
+            clone.querySelector('[data-role="id"]').textContent = element.id
+            clone.querySelector('[data-role="length"]').textContent = data.menu.length
+            clone.querySelector('[data-role="Image"]').src = element.Image
+            clone.querySelector('[data-role="name"]').textContent = element.name
+            clone.querySelector('[data-role="discription"]').textContent = element.discription
+            clone.querySelector('[data-role="price"]').textContent = element.price
+            clone.querySelector('[data-role="category"]').textContent = element.category
+            allContainer.appendChild(clone)
+        })
+    }
+})
+
+fetch('/api/auth/me').then(res => res.json()).then(data => {
+    document.getElementById('user').textContent = data.user
+    document.getElementById('role').textContent = data.role
+})
