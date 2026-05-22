@@ -77,17 +77,23 @@ app.get("/api/restaurant-promotion", (req, res) => {
         status: "200",
         promotion: [{
             id: "1",
+            Image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
             promotion: "ลด 10% เมื่อครบ 500 บาท",
+            highlight: "มื้อครอบครัว",
             discription: "ไช้ได้ทั้งทานที่ร้านและกลับบ้าน เงื่อนไขแสดงตอนยืนยันออเดอร์",
         },
         {
             id: "2",
+            Image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
             promotion: "เครื่องดื่มลด 20 บาท",
+            highlight: "ทุกวันศุกร์",
             discription: "สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ",
         },
         {
             id: "3",
-            promotion: "สำหรับชาไทย น้ำสมุนไพร และเครื่องดื่มเย็นที่ร่วมรายการ",
+            Image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
+            promotion: "ชุดอิ่มคุ้ม ลด 15%",
+            highlight: "ชุดอิ่มคุ้ม",
             discription: "เมื่อสั่งเมนูหลัก 2 รายการขึ้นไป เหมาะกับโต๊ะเล็กและออฟฟิศ",
         }],
     });
