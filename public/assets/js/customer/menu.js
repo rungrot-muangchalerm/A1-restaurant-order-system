@@ -14,6 +14,15 @@ fetch('/api/menu').then(res => res.json()).then(data => {
         })
         document.getElementById('categrory').textContent = Object.keys(categoryCount).length
 
+        document.getElementById('count-all').textContent = data.menu.length
+        document.getElementById('count-single').textContent = categoryCount['อาหารจานเดียว'] || 0
+        document.getElementById('count-shared').textContent = categoryCount['กับข้าว'] || 0
+        document.getElementById('count-noodle').textContent = categoryCount['เส้นและแกง'] || 0
+        document.getElementById('count-snack').textContent = categoryCount['ของทานเล่น'] || 0
+        document.getElementById('count-drink').textContent = categoryCount['เครื่องดื่ม'] || 0
+        document.getElementById('count-dessert').textContent = categoryCount['ของหวาน'] || 0
+        document.getElementById('count-set').textContent = categoryCount['ชุดเซ็ต'] || 0
+
         const allContainer = document.getElementById('menu-container')
         const allTemplate = document.getElementById('menu-template')
         data.menu.forEach(element => {
