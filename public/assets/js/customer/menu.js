@@ -29,6 +29,20 @@ fetch('/api/menu').then(res => res.json()).then(data => {
             clone.querySelector('[data-role="category"]').textContent = element.category
             allContainer.appendChild(clone)
         })
+
+        const singleDishContainer = document.getElementById('singleDish-container')
+        const singleDishTemplate = document.getElementById('singleDish-template')
+        data.menu.forEach(element => {
+            if (element.category === 'อาหารจานเดียว') {
+                const clone = singleDishTemplate.content.cloneNode(true)
+                clone.querySelector('[data-role="img"]').src = element.Image
+                clone.querySelector('[data-role="name"]').textContent = element.name
+                clone.querySelector('[data-role="description"]').textContent = element.discription
+                clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
+                clone.querySelector('[data-role="category"]').textContent = element.category
+                singleDishContainer.appendChild(clone)
+            }
+        })
     }
 })
 
