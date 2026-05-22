@@ -552,55 +552,25 @@
           </span>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="text-warning mb-3">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+      <div id="reviews-container" class="row g-4">
+        <template id="reviews-template">
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div data-role="stars" class="text-warning mb-3">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p data-role="message" class="text-body-secondary">"สแกนโต๊ะแล้วสั่งเองได้เลย เห็นว่าอาหารกำลังปรุงหรือพร้อมเสิร์ฟแล้ว ไม่ต้องเรียกพนักงานบ่อย"</p>
+                <div data-role="user" class="fw-semibold">คุณเมย์</div>
+                <div data-role="where" class="small text-body-secondary">ลูกค้าทานที่ร้าน</div>
               </div>
-              <p class="text-body-secondary">"สแกนโต๊ะแล้วสั่งเองได้เลย เห็นว่าอาหารกำลังปรุงหรือพร้อมเสิร์ฟแล้ว ไม่ต้องเรียกพนักงานบ่อย"</p>
-              <div class="fw-semibold">คุณเมย์</div>
-              <div class="small text-body-secondary">ลูกค้าทานที่ร้าน</div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="text-warning mb-3">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-              </div>
-              <p class="text-body-secondary">"เมนูมีรูป ราคา และรายละเอียดชัดดี สั่งกลับบ้านแล้วรู้เวลารับอาหารโดยประมาณ"</p>
-              <div class="fw-semibold">คุณนนท์</div>
-              <div class="small text-body-secondary">ลูกค้ากลับบ้าน</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="text-warning mb-3">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <p class="text-body-secondary">"แวะหลังเลิกงานแล้วสั่งเมนูเดิมได้ไว ไม่ต้องจำชื่อเมนูยาว ๆ อาหารออกเร็วเหมือนเดิม"</p>
-              <div class="fw-semibold">คุณต้น</div>
-              <div class="small text-body-secondary">ลูกค้าประจำ</div>
-            </div>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
 

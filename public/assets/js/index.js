@@ -36,3 +36,26 @@ fetch('/api/restaurant-promotion').then(res => res.json()).then(data => {
         container.appendChild(clone)
     });
 })
+
+fetch('/api/reviewer').then(res => res.json()).then(data => {
+    console.table(data)
+    console.table(data.reviews)
+    const container = document.getElementById('reviews-container')
+    const template = document.getElementById('reviews-template')
+    data.reviews.forEach(element => {
+        const clone = template.content.cloneNode(true)
+        const rate = parseFloat(element.rate)
+        const full = Math.floor(rate)
+        const half = rate % 1 >= 0.5 ? 1 : 0
+        const empty = 5 - full - half
+        let stars = ''
+        for (let i = 0; i < full; i++) stars += '<i class="fa-solid fa-star"></i>'
+        if (half) stars += '<i class="fa-solid fa-star-half-stroke"></i>'
+        for (let i = 0; i < empty; i++) stars += '<i class="fa-regular fa-star"></i>'
+        clone.querySelector('[data-role="stars"]').innerHTML = stars
+        clone.querySelector('[data-role="message"]').textContent = '"' + element.message + '"'
+        clone.querySelector('[data-role="user"]').textContent = element.user
+        clone.querySelector('[data-role="where"]').textContent = element.where
+        container.appendChild(clone)
+    });
+})
