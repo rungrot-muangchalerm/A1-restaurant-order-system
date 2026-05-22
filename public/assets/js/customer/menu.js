@@ -1,3 +1,8 @@
+fetch('/api/auth/me').then(res => res.json()).then(data => {
+    document.getElementById('user').textContent = data.user
+    document.getElementById('role').textContent = data.role
+})
+
 let menuData = null
 
 async function loadMenu(keyword = '') {
@@ -18,22 +23,11 @@ async function loadMenu(keyword = '') {
             menuData = data
         }
 
-        const data = menuData
-
         let categoryCount = {}
 
-        data.menu.forEach(element => {
-            if (!categoryCount[element.category]) {
-                categoryCount[element.category] = 0
-            }
-
-            categoryCount[element.category]++
-        })
-
         document.getElementById('menu-length').textContent = data.menu.length
-
-        document.getElementById('category-count').textContent =
-            Object.keys(categoryCount).length
+        document.getElementById('length').textContent = data.id.length
+        document.getElementById('category-count').textContent = Object.keys(categoryCount).length
 
         const meData = await Me()
 
@@ -42,26 +36,19 @@ async function loadMenu(keyword = '') {
             document.getElementById('role').textContent = meData.role
         }
 
-        document.querySelector('[data-role="id1-food"]').textContent =
-            categoryCount['อาหารจานเดียว'] || 0
+        document.querySelector('[data-role="id1-food"]').textContent = categoryCount['อาหารจานเดียว'] || 0
 
-        document.querySelector('[data-role="id2-food"]').textContent =
-            categoryCount['กับข้าว'] || 0
+        document.querySelector('[data-role="id2-food"]').textContent = categoryCount['กับข้าว'] || 0
 
-        document.querySelector('[data-role="id3-food"]').textContent =
-            categoryCount['เส้นและแกง'] || 0
+        document.querySelector('[data-role="id3-food"]').textContent = categoryCount['เส้นและแกง'] || 0
 
-        document.querySelector('[data-role="id4-food"]').textContent =
-            categoryCount['ของทานเล่น'] || 0
+        document.querySelector('[data-role="id4-food"]').textContent = categoryCount['ของทานเล่น'] || 0
 
-        document.querySelector('[data-role="id5-food"]').textContent =
-            categoryCount['เครื่องดื่ม'] || 0
+        document.querySelector('[data-role="id5-food"]').textContent = categoryCount['เครื่องดื่ม'] || 0
 
-        document.querySelector('[data-role="id6-food"]').textContent =
-            categoryCount['ของหวาน'] || 0
+        document.querySelector('[data-role="id6-food"]').textContent = categoryCount['ของหวาน'] || 0
 
-        document.querySelector('[data-role="id7-food"]').textContent =
-            categoryCount['ชุดเซ็ต'] || 0
+        document.querySelector('[data-role="id7-food"]').textContent = categoryCount['ชุดเซ็ต'] || 0
 
         const total = Object.values(categoryCount).reduce((sum, value) => {
             return sum + value
@@ -79,8 +66,8 @@ async function loadMenu(keyword = '') {
                 const category = (menu.category || '').toLowerCase()
 
                 return name.includes(searchTerm) ||
-                       description.includes(searchTerm) ||
-                       category.includes(searchTerm)
+                    description.includes(searchTerm) ||
+                    category.includes(searchTerm)
             })
 
         const container = document.getElementById('menu-container')
