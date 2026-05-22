@@ -38,6 +38,9 @@ fetch('/api/menu').then(res => res.json()).then(data => {
 
         const noodleContainer = document.getElementById('noodle-container')
         const noodleTemplate = document.getElementById('noodle-template')
+
+        const snackContainer = document.getElementById('snack-container')
+        const snackTemplate = document.getElementById('snack-template')
         data.menu.forEach(element => {
             if (element.category === 'อาหารจานเดียว') {
                 const clone = singleDishTemplate.content.cloneNode(true)
@@ -64,7 +67,13 @@ fetch('/api/menu').then(res => res.json()).then(data => {
                 clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
                 noodleContainer.appendChild(clone)
             } else if (element.category === 'ของทานเล่น') {
-                console.log('d')
+                const clone = snackTemplate.content.cloneNode('true')
+                clone.querySelector('[data-role="img"]').src = element.Image
+                clone.querySelector('[data-role="category"]').textContent = element.category
+                clone.querySelector('[data-role="name"]').textContent = element.name
+                clone.querySelector('[data-role="description"]').textContent = element.discription
+                clone.querySelector('[data-role="price"]').textContent = element.price + ' บาท'
+                snackContainer.appendChild(clone)
             } else if (element.category === 'เครื่องดื่ม') {
                 console.log('e');
             } else if (element.category === 'ของหวาน') {
