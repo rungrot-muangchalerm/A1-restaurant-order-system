@@ -463,7 +463,7 @@
 4. `cashier/receipt.html` หน้าใบเสร็จ
 
 ### 12.5 ฝั่ง admin และ back office
-1. `admin/dashboard.html` หน้าแดชบอร์ดผู้ดูแลระบบ
+1. `admin/index.html` หน้าแดชบอร์ดผู้ดูแลระบบ
 2. `admin/users.html` หน้าจัดการผู้ใช้และบทบาท
 3. `admin/restaurant-settings.html` หน้าจัดการข้อมูลร้าน
 4. `admin/categories.html` หน้าจัดการหมวดหมู่เมนู
