@@ -457,7 +457,7 @@
 4. `kitchen/history.html` หน้าประวัติรายการครัว
 
 ### 12.4 ฝั่งแคชเชียร์
-1. `cashier/search.html` หน้าค้นหาออเดอร์เพื่อชำระเงิน
+1. `cashier/index.html` หน้าค้นหาออเดอร์เพื่อชำระเงิน
 2. `cashier/payment.html` หน้าชำระเงิน
 3. `cashier/bill-summary.html` หน้าสรุปบิล
 4. `cashier/receipt.html` หน้าใบเสร็จ
@@ -553,7 +553,7 @@
 14. ในระบบจริงสิทธิ์ของ role จะใช้ควบคุมการใช้งานจริงของแต่ละเมนู แต่ใน mockup ให้แสดงลิงก์ครบเพื่อเห็นภาพรวมของระบบ
 15. ใช้ Font Awesome CDN ร่วมกับ Bootstrap สำหรับไอคอนใน navbar ปุ่ม และส่วนควบคุมหลัก
 16. ห้ามสร้างไฟล์ CSS หรือ JavaScript แยก และห้ามเขียน custom JavaScript ในไฟล์ HTML
-17. ห้ามใช้ `<base href>` ในไฟล์ HTML ให้ใช้ root-relative path สำหรับลิงก์ภายใน เช่น `/`, `/auth/login.html`, `/customer/menu.html`, `/cashier/search.html`
+17. ห้ามใช้ `<base href>` ในไฟล์ HTML ให้ใช้ root-relative path สำหรับลิงก์ภายใน เช่น `/`, `/auth/login.html`, `/customer/menu.html`, `/cashier/index.html`
 18. ห้ามทำหน้าแรกให้เป็น shortcut หรือ link hub สำหรับเข้าระบบต่าง ๆ เนื้อหาหลักของหน้าแรกต้องเป็นร้านอาหาร
 19. หน้าเมนูลูกค้าและหน้า admin menu ต้องใช้ชุดเมนูตัวอย่างเดียวกัน 42 รายการ เพื่อให้จำนวนและชื่อเมนูไม่ขัดกัน
 20. หน้า admin menu ต้องมี pagination 10 รายการต่อหน้า และมี pagination ทั้งบนและล่างของตาราง
