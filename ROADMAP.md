@@ -245,7 +245,7 @@
 7. Navbar ต้องมีปุ่ม `Login` และ `Register` อยู่ข้างกัน โดย `Login` เป็นทางเข้าสำหรับทุกบทบาท และ `Register` เป็นทางสมัครสมาชิกของลูกค้า
 8. Navbar ต้องมี dropdown สำหรับ POS, ครัว, แคชเชียร์ และ Admin เพื่อแสดงภาพรวมของระบบใน mockup
 9. ในระบบจริง เมนูหลังบ้านต้องถูกควบคุมด้วยสิทธิ์หลัง login แต่ใน mockup สามารถแสดงลิงก์ครบเพื่อให้คณะกรรมการเห็น scope ทั้งระบบ
-10. ทุกลิงก์ภายในต้องใช้ root-relative path เช่น `/`, `/auth/login.html`, `/customer/menu.html`, `/admin/menu.html`
+10. ทุกลิงก์ภายในต้องใช้ root-relative path เช่น `/`, `/auth/login.html`, `/customer/index.html`, `/admin/menu.html`
 
 ### FR-FULL-01 การเข้าสู่ระบบและสิทธิ์
 1. ระบบต้องรองรับการเข้าสู่ระบบสำหรับ customer, staff, kitchen, cashier, manager, owner และ admin ผ่านหน้า login เดียว
@@ -435,7 +435,7 @@
 3. `auth/register.html` หน้าสมัครสมาชิก
 
 ### 12.1 ฝั่งลูกค้า
-1. `customer/menu.html` หน้าเมนูลูกค้า แสดง 42 เมนู แบ่ง 7 หมวด
+1. `customer/index.html` หน้าเมนูลูกค้า แสดง 42 เมนู แบ่ง 7 หมวด
 2. `customer/menu-detail.html` หน้ารายละเอียดเมนู เป็น sub-page ที่เข้าจากหน้าเมนูเท่านั้น
 3. `customer/cart.html` หน้าตะกร้าสินค้า
 4. `customer/checkout.html` หน้ายืนยันออเดอร์ เป็น sub-page ที่เข้าจากหน้าตะกร้าเท่านั้น
@@ -553,7 +553,7 @@
 14. ในระบบจริงสิทธิ์ของ role จะใช้ควบคุมการใช้งานจริงของแต่ละเมนู แต่ใน mockup ให้แสดงลิงก์ครบเพื่อเห็นภาพรวมของระบบ
 15. ใช้ Font Awesome CDN ร่วมกับ Bootstrap สำหรับไอคอนใน navbar ปุ่ม และส่วนควบคุมหลัก
 16. ห้ามสร้างไฟล์ CSS หรือ JavaScript แยก และห้ามเขียน custom JavaScript ในไฟล์ HTML
-17. ห้ามใช้ `<base href>` ในไฟล์ HTML ให้ใช้ root-relative path สำหรับลิงก์ภายใน เช่น `/`, `/auth/login.html`, `/customer/menu.html`, `/cashier/index.html`
+17. ห้ามใช้ `<base href>` ในไฟล์ HTML ให้ใช้ root-relative path สำหรับลิงก์ภายใน เช่น `/`, `/auth/login.html`, `/customer/index.html`, `/cashier/index.html`
 18. ห้ามทำหน้าแรกให้เป็น shortcut หรือ link hub สำหรับเข้าระบบต่าง ๆ เนื้อหาหลักของหน้าแรกต้องเป็นร้านอาหาร
 19. หน้าเมนูลูกค้าและหน้า admin menu ต้องใช้ชุดเมนูตัวอย่างเดียวกัน 42 รายการ เพื่อให้จำนวนและชื่อเมนูไม่ขัดกัน
 20. หน้า admin menu ต้องมี pagination 10 รายการต่อหน้า และมี pagination ทั้งบนและล่างของตาราง
@@ -575,7 +575,7 @@
 7. `customer/checkout.html` ต้องไม่อยู่ใน navbar และต้องเข้าจากตะกร้าเท่านั้น
 8. หน้า login ต้องไม่มีตัวเลือก `เข้าใช้งานในฐานะ`
 9. หน้า login และ register ต้องไม่มีข้อความที่ทำให้ดูเป็นหน้า shortcut ของทีมร้านหรือระบบหลังบ้าน
-10. หน้า `customer/menu.html` ต้องแสดงเมนูครบ 42 รายการในหมวดทั้งหมด และแต่ละหมวดต้องมี 6 รายการ
+10. หน้า `customer/index.html` ต้องแสดงเมนูครบ 42 รายการในหมวดทั้งหมด และแต่ละหมวดต้องมี 6 รายการ
 11. หน้า `admin/menu.html` ต้องแสดงเมนูครบ 42 รายการชุดเดียวกับหน้า customer menu
 12. หน้า `admin/menu.html` ต้องแบ่ง pagination 10 รายการต่อหน้า จำนวน 5 หน้า และมีปุ่ม pagination ทั้งด้านบนและด้านล่างตาราง
 13. ทุกฟอร์มต้องมี label หรือ accessible name ครบถ้วน
@@ -586,7 +586,7 @@
 18. Link ภายในต้องใช้ root-relative path เสมอ
 
 ## 17. ชุดข้อมูลเมนูตัวอย่างสำหรับ Mockup
-ชุดข้อมูลนี้ต้องใช้ร่วมกันทั้ง `customer/menu.html` และ `admin/menu.html`
+ชุดข้อมูลนี้ต้องใช้ร่วมกันทั้ง `customer/index.html` และ `admin/menu.html`
 
 | ลำดับ | เมนู | หมวดหมู่ | ราคา | ครัว |
 |---:|---|---|---:|---|
