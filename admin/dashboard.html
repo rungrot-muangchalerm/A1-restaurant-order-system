@@ -12,8 +12,14 @@
 <body class="bg-light">
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="/">
+      <a class="navbar-brand fw-semibold d-flex" href="/">
         <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>ครัวบ้านดี
+        <!-- <span class="d-block d-sm-none">XS</span>
+        <span class="d-none d-sm-block d-md-none">SM</span>
+        <span class="d-none d-md-block d-lg-none">MD</span>
+        <span class="d-none d-lg-block d-xl-none">LG</span>
+        <span class="d-none d-xl-block d-xxl-none">XL</span>
+        <span class="d-none d-xxl-block">XXL</span> -->
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="เปิดเมนู">
         <span class="navbar-toggler-icon"></span>
@@ -30,17 +36,17 @@
               <i class="fa-solid fa-utensils me-1"></i>เมนู
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-none">
             <a class="nav-link" href="/customer/cart.html">
               <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-none">
             <a class="nav-link" href="/customer/order-status.html">
               <i class="fa-solid fa-receipt me-1"></i>ติดตาม
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-none">
             <a class="nav-link" href="/customer/history.html">
               <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
             </a>
@@ -55,11 +61,23 @@
               <i class="fa-solid fa-location-dot me-1"></i>ติดต่อ
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-table-list me-1"></i>POS
-            </a>
-            <ul class="dropdown-menu">
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-primary" href="/auth/login.html">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>Login
+          </a>
+          <a class="btn btn-outline-primary" href="/auth/register.html">
+            <i class="fa-solid fa-user-plus me-1"></i>Register
+          </a>
+          <div class="dropdown d-none">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-users-gear me-1"></i>จัดการร้าน
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="max-height: 70vh; overflow-y: auto;">
+              <li>
+                <h6 class="dropdown-header"><i class="fa-solid fa-table-list me-2"></i>POS
+                </h6>
+              </li>
               <li>
                 <a class="dropdown-item" href="/pos/dashboard.html">
                   <i class="fa-solid fa-chart-line me-2"></i>แดชบอร์ดพนักงาน
@@ -90,13 +108,14 @@
                   <i class="fa-solid fa-bell-concierge me-2"></i>รายการพร้อมเสิร์ฟ
                 </a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-kitchen-set me-1"></i>ครัว
-            </a>
-            <ul class="dropdown-menu">
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header"><i class="fa-solid fa-kitchen-set me-2"></i>ครัว
+                </h6>
+              </li>
               <li>
                 <a class="dropdown-item" href="/kitchen/queue.html">
                   <i class="fa-solid fa-hourglass-start me-2"></i>คิวครัว
@@ -117,13 +136,14 @@
                   <i class="fa-solid fa-clock-rotate-left me-2"></i>ประวัติครัว
                 </a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-cash-register me-1"></i>แคชเชียร์
-            </a>
-            <ul class="dropdown-menu">
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header"><i class="fa-solid fa-cash-register me-2"></i>แคชเชียร์
+                </h6>
+              </li>
               <li>
                 <a class="dropdown-item" href="/cashier/search.html">
                   <i class="fa-solid fa-magnifying-glass me-2"></i>ค้นหาออเดอร์
@@ -144,15 +164,16 @@
                   <i class="fa-solid fa-receipt me-2"></i>ใบเสร็จ
                 </a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-user-shield me-1"></i>Admin
-            </a>
-            <ul class="dropdown-menu">
+
               <li>
-                <a class="dropdown-item" href="/admin/dashboard.html">
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header"><i class="fa-solid fa-user-shield me-2"></i>Admin
+                </h6>
+              </li>
+              <li>
+                <a class="dropdown-item active" aria-current="page" href="/admin/dashboard.html">
                   <i class="fa-solid fa-chart-pie me-2"></i>แดชบอร์ด Admin
                 </a>
               </li>
@@ -206,15 +227,11 @@
                   <i class="fa-solid fa-shield-halved me-2"></i>ประวัติการใช้งาน
                 </a>
               </li>
+
             </ul>
-          </li>
-        </ul>
-        <div class="d-flex gap-2">
-          <a class="btn btn-primary" href="/auth/login.html">
-            <i class="fa-solid fa-right-to-bracket me-1"></i>Login
-          </a>
-          <a class="btn btn-outline-primary" href="/auth/register.html">
-            <i class="fa-solid fa-user-plus me-1"></i>Register
+          </div>
+          <a class="btn btn-outline-danger d-none" href="/auth/login.html">
+            <i class="fa-solid fa-right-from-bracket me-1"></i>Logout
           </a>
         </div>
       </div>
