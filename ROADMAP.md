@@ -451,7 +451,7 @@
 6. `pos/ready-to-serve.html` หน้ารายการพร้อมเสิร์ฟ
 
 ### 12.3 ฝั่งครัว
-1. `kitchen/queue.html` หน้าคิวครัว
+1. `kitchen/index.html` หน้าคิวครัว
 2. `kitchen/preparing.html` หน้ารายการกำลังปรุง
 3. `kitchen/ready.html` หน้ารายการพร้อมเสิร์ฟ
 4. `kitchen/history.html` หน้าประวัติรายการครัว
