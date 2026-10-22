@@ -11,7 +11,7 @@
 
 <body class="bg-light">
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand fw-semibold d-flex" href="/">
         <i class="fa-solid fa-bowl-rice me-2 text-primary"></i>ครัวบ้านดี
         <!-- <span class="d-block d-sm-none">XS</span>
@@ -307,49 +307,49 @@
 
     <ul class="nav nav-pills gap-2 mb-4" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all-pane" type="button" role="tab" aria-selected="true">
+        <button class="nav-link active" data-bs-toggle="pill" data-bs-target=".all-pane" type="button" role="tab" aria-selected="true">
           <i class="fa-solid fa-border-all me-1"></i>ทั้งหมด
           <span class="badge text-bg-light text-primary ms-1">42</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#single-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".single-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-bowl-rice me-1"></i>อาหารจานเดียว
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#shared-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".shared-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-bowl-food me-1"></i>กับข้าว
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#noodle-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".noodle-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-plate-wheat me-1"></i>เส้นและแกง
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#snack-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".snack-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-drumstick-bite me-1"></i>ของทานเล่น
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#drink-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".drink-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-mug-saucer me-1"></i>เครื่องดื่ม
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dessert-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".dessert-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#set-pane" type="button" role="tab" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target=".set-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-people-group me-1"></i>ชุดเซ็ต
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
@@ -357,7 +357,7 @@
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" role="tabpanel" tabindex="0">
+      <div class="tab-pane all-pane fade show active" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-border-all me-2 text-primary"></i>รายการทั้งหมด</h2>
           <span class="badge text-bg-primary">42 เมนู</span>
@@ -1373,7 +1373,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane single-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-rice me-2 text-primary"></i>อาหารจานเดียว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1519,7 +1519,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane shared-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-food me-2 text-primary"></i>กับข้าว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1665,7 +1665,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane noodle-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-plate-wheat me-2 text-primary"></i>เส้นและแกง</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1811,7 +1811,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane snack-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-drumstick-bite me-2 text-primary"></i>ของทานเล่น</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1957,7 +1957,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane drink-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-mug-saucer me-2 text-primary"></i>เครื่องดื่ม</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -2103,7 +2103,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane dessert-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-ice-cream me-2 text-primary"></i>ของหวาน</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -2249,7 +2249,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" role="tabpanel" tabindex="0">
+      <div class="tab-pane set-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-people-group me-2 text-primary"></i>ชุดเซ็ต</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
