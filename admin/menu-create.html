@@ -378,6 +378,30 @@
     const preview = form.querySelector('.image-preview');
     const placeholder = form.querySelector('.image-placeholder');
     let previewUrl;
+    const params = new URLSearchParams(window.location.search);
+    const editing = params.get('mode') === 'edit';
+    const originalImage = editing ? params.get('image') : '';
+    const showOriginalImage = () => {
+      if (originalImage && originalImage.startsWith('/assets/')) {
+        preview.src = originalImage;
+        preview.classList.remove('d-none');
+        placeholder.classList.add('d-none');
+      }
+    };
+    if (editing) {
+      document.title = 'แก้ไขเมนู | ครัวบ้านดี Admin';
+      document.querySelector('main h1').textContent = 'แก้ไขเมนู';
+      form.querySelector('button[type="submit"]').textContent = 'บันทึกการแก้ไข';
+      for (const name of ['name', 'category', 'price', 'description', 'tag']) {
+        const control = form.elements.namedItem(name);
+        const value = params.get(name) || '';
+        if (control.tagName === 'SELECT' && value && !Array.from(control.options).some(option => option.value === value)) {
+          control.add(new Option(value, value));
+        }
+        control.value = value;
+      }
+      showOriginalImage();
+    }
     fileInput.addEventListener('change', () => {
       if (previewUrl) URL.revokeObjectURL(previewUrl);
       preview.removeAttribute('src');
@@ -385,7 +409,7 @@
       placeholder.classList.remove('d-none');
       fileInput.setCustomValidity('');
       const file = fileInput.files[0];
-      if (!file) return;
+      if (!file) { showOriginalImage(); return; }
       if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
         fileInput.setCustomValidity('เลือกรูป JPG, PNG หรือ WebP ขนาดไม่เกิน 5 MB');
         fileInput.reportValidity();
