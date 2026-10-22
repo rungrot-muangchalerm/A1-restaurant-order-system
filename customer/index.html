@@ -21,12 +21,12 @@
         <span class="d-none d-xl-block d-xxl-none">XL</span>
         <span class="d-none d-xxl-block">XXL</span> -->
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="เปิดเมนู">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target=".offcanvas" aria-label="เปิดเมนู">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+      <div class="offcanvas offcanvas-end" tabindex="-1">
         <div class="offcanvas-header">
-          <h2 class="offcanvas-title h5" id="mainNavLabel">เมนูครัวบ้านดี</h2>
+          <h2 class="offcanvas-title h5">เมนูครัวบ้านดี</h2>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="ปิดเมนู"></button>
         </div>
         <div class="offcanvas-body">
@@ -41,17 +41,17 @@
                 <i class="fa-solid fa-utensils me-1"></i>เมนู
               </a>
             </li>
-            <li id="cart" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/cart.html">
                 <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
               </a>
             </li>
-            <li id="order-status" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/order-status.html">
                 <i class="fa-solid fa-receipt me-1"></i>ติดตาม
               </a>
             </li>
-            <li id="history" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/history.html">
                 <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
               </a>
@@ -68,18 +68,18 @@
             </li>
           </ul>
           <div class="d-flex flex-column flex-lg-row align-items-start gap-2">
-            <a data-role="login" class="btn btn-primary" href="/auth/login.html">
+            <a class="btn btn-primary" href="/auth/login.html">
               <i class="fa-solid fa-right-to-bracket me-1"></i>Login
             </a>
-            <a id="register" class="btn btn-outline-primary" href="/auth/register.html">
+            <a class="btn btn-outline-primary" href="/auth/register.html">
               <i class="fa-solid fa-user-plus me-1"></i>Register
             </a>
-            <div id="staff_menu" class="dropdown d-none">
-              <button id="staffMenu" class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown d-none">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-users-gear me-1"></i>จัดการร้าน
               </button>
-              <ul class="dropdown-menu dropdown-menu-end position-static" aria-labelledby="staffMenu">
-                <li id="pos_menu">
+              <ul class="dropdown-menu dropdown-menu-end position-static">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <h6 class="dropdown-header"><i class="fa-solid fa-table-list me-2"></i>POS
@@ -118,7 +118,7 @@
                   </ul>
                 </li>
 
-                <li id="kitchen_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -150,7 +150,7 @@
                   </ul>
                 </li>
 
-                <li id="cashier_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -182,7 +182,7 @@
                   </ul>
                 </li>
 
-                <li id="admin_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -251,7 +251,7 @@
 
               </ul>
             </div>
-            <a id="logout" class="btn btn-outline-danger d-none" href="/auth/login.html">
+            <a class="btn btn-outline-danger d-none" href="/auth/login.html">
               <i class="fa-solid fa-right-from-bracket me-1"></i>Logout
             </a>
           </div>
@@ -305,59 +305,59 @@
       </a>
     </div>
 
-    <ul class="nav nav-pills gap-2 mb-4" id="menuTabs" role="tablist">
+    <ul class="nav nav-pills gap-2 mb-4" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-pane" type="button" role="tab" aria-controls="all-pane" aria-selected="true">
+        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all-pane" type="button" role="tab" aria-selected="true">
           <i class="fa-solid fa-border-all me-1"></i>ทั้งหมด
           <span class="badge text-bg-light text-primary ms-1">42</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="single-tab" data-bs-toggle="pill" data-bs-target="#single-pane" type="button" role="tab" aria-controls="single-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#single-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-bowl-rice me-1"></i>อาหารจานเดียว
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="shared-tab" data-bs-toggle="pill" data-bs-target="#shared-pane" type="button" role="tab" aria-controls="shared-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#shared-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-bowl-food me-1"></i>กับข้าว
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="noodle-tab" data-bs-toggle="pill" data-bs-target="#noodle-pane" type="button" role="tab" aria-controls="noodle-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#noodle-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-plate-wheat me-1"></i>เส้นและแกง
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="snack-tab" data-bs-toggle="pill" data-bs-target="#snack-pane" type="button" role="tab" aria-controls="snack-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#snack-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-drumstick-bite me-1"></i>ของทานเล่น
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="drink-tab" data-bs-toggle="pill" data-bs-target="#drink-pane" type="button" role="tab" aria-controls="drink-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#drink-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-mug-saucer me-1"></i>เครื่องดื่ม
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="dessert-tab" data-bs-toggle="pill" data-bs-target="#dessert-pane" type="button" role="tab" aria-controls="dessert-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dessert-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-ice-cream me-1"></i>ของหวาน
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="set-tab" data-bs-toggle="pill" data-bs-target="#set-pane" type="button" role="tab" aria-controls="set-pane" aria-selected="false">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#set-pane" type="button" role="tab" aria-selected="false">
           <i class="fa-solid fa-people-group me-1"></i>ชุดเซ็ต
           <span class="badge text-bg-light text-primary ms-1">6</span>
         </button>
       </li>
     </ul>
 
-    <div class="tab-content" id="menuTabsContent">
-      <div class="tab-pane fade show active" id="all-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-border-all me-2 text-primary"></i>รายการทั้งหมด</h2>
           <span class="badge text-bg-primary">42 เมนู</span>
@@ -1373,7 +1373,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="single-pane" role="tabpanel" aria-labelledby="single-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-rice me-2 text-primary"></i>อาหารจานเดียว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1519,7 +1519,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="shared-pane" role="tabpanel" aria-labelledby="shared-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-bowl-food me-2 text-primary"></i>กับข้าว</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1665,7 +1665,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="noodle-pane" role="tabpanel" aria-labelledby="noodle-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-plate-wheat me-2 text-primary"></i>เส้นและแกง</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1811,7 +1811,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="snack-pane" role="tabpanel" aria-labelledby="snack-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-drumstick-bite me-2 text-primary"></i>ของทานเล่น</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -1957,7 +1957,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="drink-pane" role="tabpanel" aria-labelledby="drink-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-mug-saucer me-2 text-primary"></i>เครื่องดื่ม</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -2103,7 +2103,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="dessert-pane" role="tabpanel" aria-labelledby="dessert-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-ice-cream me-2 text-primary"></i>ของหวาน</h2>
           <span class="badge text-bg-primary">6 เมนู</span>
@@ -2249,7 +2249,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="set-pane" role="tabpanel" aria-labelledby="set-tab" tabindex="0">
+      <div class="tab-pane fade" role="tabpanel" tabindex="0">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="h4 mb-0"><i class="fa-solid fa-people-group me-2 text-primary"></i>ชุดเซ็ต</h2>
           <span class="badge text-bg-primary">6 เมนู</span>

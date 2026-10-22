@@ -21,12 +21,12 @@
         <span class="d-none d-xl-block d-xxl-none">XL</span>
         <span class="d-none d-xxl-block">XXL</span> -->
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="เปิดเมนู">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target=".offcanvas" aria-label="เปิดเมนู">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+      <div class="offcanvas offcanvas-end" tabindex="-1">
         <div class="offcanvas-header">
-          <h2 class="offcanvas-title h5" id="mainNavLabel">เมนูครัวบ้านดี</h2>
+          <h2 class="offcanvas-title h5">เมนูครัวบ้านดี</h2>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="ปิดเมนู"></button>
         </div>
         <div class="offcanvas-body">
@@ -41,17 +41,17 @@
                 <i class="fa-solid fa-utensils me-1"></i>เมนู
               </a>
             </li>
-            <li id="cart" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/cart.html">
                 <i class="fa-solid fa-cart-shopping me-1"></i>ตะกร้า
               </a>
             </li>
-            <li id="order-status" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/order-status.html">
                 <i class="fa-solid fa-receipt me-1"></i>ติดตาม
               </a>
             </li>
-            <li id="history" class="nav-item d-none">
+            <li class="nav-item d-none">
               <a class="nav-link" href="/customer/history.html">
                 <i class="fa-solid fa-clock-rotate-left me-1"></i>ประวัติ
               </a>
@@ -68,18 +68,18 @@
             </li>
           </ul>
           <div class="d-flex flex-column flex-lg-row align-items-start gap-2">
-            <a data-role="login" class="btn btn-primary" href="/auth/login.html">
+            <a class="btn btn-primary" href="/auth/login.html">
               <i class="fa-solid fa-right-to-bracket me-1"></i>Login
             </a>
-            <a id="register" class="btn btn-outline-primary" href="/auth/register.html">
+            <a class="btn btn-outline-primary" href="/auth/register.html">
               <i class="fa-solid fa-user-plus me-1"></i>Register
             </a>
-            <div id="staff_menu" class="dropdown d-none">
-              <button id="staffMenu" class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown d-none">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-users-gear me-1"></i>จัดการร้าน
               </button>
-              <ul class="dropdown-menu dropdown-menu-end position-static" aria-labelledby="staffMenu">
-                <li id="pos_menu">
+              <ul class="dropdown-menu dropdown-menu-end position-static">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <h6 class="dropdown-header"><i class="fa-solid fa-table-list me-2"></i>POS
@@ -118,7 +118,7 @@
                   </ul>
                 </li>
 
-                <li id="kitchen_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -150,7 +150,7 @@
                   </ul>
                 </li>
 
-                <li id="cashier_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -182,7 +182,7 @@
                   </ul>
                 </li>
 
-                <li id="admin_menu">
+                <li>
                   <ul class="list-unstyled mb-0">
                     <li>
                       <hr class="dropdown-divider">
@@ -251,7 +251,7 @@
 
               </ul>
             </div>
-            <a id="logout" class="btn btn-outline-danger d-none" href="/auth/login.html">
+            <a class="btn btn-outline-danger d-none" href="/auth/login.html">
               <i class="fa-solid fa-right-from-bracket me-1"></i>Logout
             </a>
           </div>
@@ -270,20 +270,20 @@
       <div class="card-body">
         <form class="row g-3" action="#" method="get">
           <div class="col-12 col-md-3">
-            <label class="form-label" for="orderNo">เลขที่ออเดอร์</label>
-            <input class="form-control" id="orderNo" placeholder="ORD-...">
+            <label class="form-label">เลขที่ออเดอร์</label>
+            <input class="form-control" placeholder="ORD-...">
           </div>
           <div class="col-12 col-md-2">
-            <label class="form-label" for="tableNo">โต๊ะ</label>
-            <input class="form-control" id="tableNo" placeholder="A2">
+            <label class="form-label">โต๊ะ</label>
+            <input class="form-control" placeholder="A2">
           </div>
           <div class="col-12 col-md-3">
-            <label class="form-label" for="customer">ลูกค้า</label>
-            <input class="form-control" id="customer" placeholder="ชื่อหรือเบอร์โทร">
+            <label class="form-label">ลูกค้า</label>
+            <input class="form-control" placeholder="ชื่อหรือเบอร์โทร">
           </div>
           <div class="col-12 col-md-2">
-            <label class="form-label" for="status">สถานะ</label>
-            <select class="form-select" id="status">
+            <label class="form-label">สถานะ</label>
+            <select class="form-select">
               <option>รอชำระ</option>
               <option>กำลังปรุง</option>
               <option>พร้อมเสิร์ฟ</option>
